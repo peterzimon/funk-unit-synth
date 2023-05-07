@@ -53,26 +53,11 @@ void Para::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
 }
 
 /**
- * Return the CV and gate values to MidiHandler (this is called in MidiHandler)
-*/
-void Para::get_cv_gate(uint16_t *cv, int *gate) {
-    // printf("\r\nVoices: [");
-    for (int voice = 0; voice < settings.voices; voice++) {
-        // printf("%d, ", m_voices[voice]);
-        if (m_voices[voice] != -1) {
-            cv[voice] = cv_for_note(m_voices[voice], voice); // Parent class method
-        }
-        gate[voice] = (m_notes[voice] != -1) ? 1 : 0;
-    }
-    // printf("]");
-}
-
-/**
  * Return whatever is needed for DCO. I guess it's the frequency and the
- * amplitude value
+ * amplitude value. This is called in midi handler.
 */
 void Para::get_freq_amp() {
-    
+
 }
 
 
