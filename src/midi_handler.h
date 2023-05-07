@@ -5,7 +5,7 @@
 #include "ui.h"
 #include "math.h"
 
-#include <mcp48x2.h>
+// #include <mcp48x2.h>
 #include <utils.h>
 #include <midi_parser.h>
 #include <ringbuffer.h>
@@ -41,8 +41,8 @@ private:
     IConverter *m_converter;
     Para m_para;
 
-    int m_gates[MAX_VOICES];
-    uint16_t m_cvs[MAX_VOICES];
+    int m_freqs[MAX_VOICES];
+    int m_amps[MAX_VOICES];
 
     bool m_pitch_bend_dirty;
     int16_t m_pitch_bend_cv;
@@ -50,12 +50,12 @@ private:
     uint8_t m_buffer_var[MIDI_BUFFER_SIZE];
     RingBuffer m_input_buffer;
 
-    MCP48X2 *m_dac_1;
-    MCP48X2 *m_dac_2;
+    // MCP48X2 *m_dac_1;
+    // MCP48X2 *m_dac_2;
     UI &m_ui = UI::get_instance();
 
     void m_read_midi();
-    bool m_any_gate_on();
+    // bool m_any_gate_on();
     void m_update_output(void);
 };
 

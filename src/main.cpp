@@ -29,7 +29,6 @@
  *
  * @TODO:
  * 
- * - rewrite classes to singletons and remove class attachments
  * - make sure MIDI handling works as intended
  * - add basic DCO handling for a single voice
  */

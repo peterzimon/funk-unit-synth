@@ -24,6 +24,7 @@ public:
     void note_on(uint8_t channel, uint8_t note, uint8_t velocity);
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
     void get_cv_gate(uint16_t *cv, int *gate);
+    void get_freq_amp();
 
 private:
     int m_notes[MAX_VOICES];

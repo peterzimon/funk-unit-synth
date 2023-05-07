@@ -38,8 +38,7 @@
 
 enum device_mode {
     MONO,
-    PARA,
-    POLY
+    PARA
 };
 
 struct Settings

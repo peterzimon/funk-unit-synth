@@ -17,8 +17,8 @@ void MidiHandler::init(void) {
 
     int hardware_gate_gp;
     for (int i = 0; i < settings.voices; i++) {
-        m_cvs[i] = 0;
-        m_gates[i] = 0;
+        m_freqs[i] = 0;
+        m_amps[i] = 0;
 
         // Gates
         hardware_gate_gp = settings.gate_gps[i];
@@ -47,7 +47,7 @@ void MidiHandler::set_mode(void) {
     m_converter->reset();
 
     for (int i = 0; i < settings.voices; i++) {
-        m_cvs[i] = m_gates[i] = 0;
+        m_freqs[i] = m_amps[i] = 0;
     }
 
     m_update_output();
@@ -66,7 +66,7 @@ void MidiHandler::process() {
 */
 void MidiHandler::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_on(channel, note, velocity);
-    m_converter->get_cv_gate(m_cvs, m_gates);
+    m_converter->get_freq_amp();
     m_update_output();
 }
 
@@ -76,7 +76,7 @@ void MidiHandler::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 */
 void MidiHandler::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_off(channel, note, velocity);
-    m_converter->get_cv_gate(m_cvs, m_gates);
+    m_converter->get_freq_amp();
     m_update_output();
 }
 
@@ -86,7 +86,7 @@ void MidiHandler::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
 */
 void MidiHandler::pitch_bend(uint8_t channel, uint16_t bend) {
     m_converter->update_pitch_bend(bend);
-    m_converter->get_cv_gate(m_cvs, m_gates);
+    m_converter->get_freq_amp();
     m_update_output();
 }
 
@@ -114,71 +114,18 @@ void MidiHandler::m_read_midi() {
     }
 }
 
-bool MidiHandler::m_any_gate_on() {
-    for (size_t i = 0; i < settings.voices; i++) {
-        if (m_gates[i]) return true;
-    }
-    return false;
-}
+// bool MidiHandler::m_any_gate_on() {
+//     for (size_t i = 0; i < settings.voices; i++) {
+//         if (m_gates[i]) return true;
+//     }
+//     return false;
+// }
 
 /**
  * Updates the control voltages, gates and the UI
 */
 void MidiHandler::m_update_output(void) {
-    int cv;
-    MCP48X2 *dac;
-    mcp48x2_channel channel;
-
-    for (int i = 0; i < MAX_VOICES; i++) {
-        cv = m_cvs[i];
-        cv = cv < 0 ? 0 : cv;
-
-        // printf("%d, ", cv);
-
-        // // This could be nicer
-        switch (i)
-        {
-        case 0:
-            dac = m_dac_1;
-            channel = MCP48X2_CHANNEL_A;
-            break;
-        case 1:
-            dac = m_dac_1;
-            channel = MCP48X2_CHANNEL_B;
-            break;
-        case 2:
-            dac = m_dac_2;
-            channel = MCP48X2_CHANNEL_A;
-            break;
-        case 3:
-            dac = m_dac_2;
-            channel = MCP48X2_CHANNEL_B;
-            break;
-        }
-
-        if (cv != -1) {
-            dac->config(channel, MCP48X2_GAIN_X2, 1);   // Set channel (set_channel function doesn't work)
-            dac->write(cv);
-        }
-
-        switch (settings.mode)
-        {
-        case PARA:
-            if (m_any_gate_on()) {
-                gpio_put(settings.gate_gps[i], 1);
-            } else {
-                gpio_put(settings.gate_gps[i], 0);
-            }
-            break;
-        case POLY:
-            if (settings.gate_gps[i] != -1) {
-                gpio_put(settings.gate_gps[i], m_gates[i]);
-            }
-            break;
-        }
-
-        // No need to update UI since it's just a LED which is driven by the 
-        // gate output.
+    for (int voice = 0; voice < MAX_VOICES; voice++) {
+        
     }
-    // printf("`\r\n");
 }

@@ -67,6 +67,15 @@ void Para::get_cv_gate(uint16_t *cv, int *gate) {
     // printf("]");
 }
 
+/**
+ * Return whatever is needed for DCO. I guess it's the frequency and the
+ * amplitude value
+*/
+void Para::get_freq_amp() {
+    
+}
+
+
 /** ----------------------------------------------------------------------------
  * PRIVATE
 */
