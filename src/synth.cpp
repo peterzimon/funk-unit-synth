@@ -112,8 +112,11 @@ void Synth::m_update_dcos(void) {
     for (int voice = 0; voice < MAX_VOICES; voice++) {
         float freq = m_converter->get_freq(voice);
         m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freq);
-        pwm_set_chan_level(m_amp_pwm_slices[voice], 
-                            pwm_gpio_to_channel(settings.amp_pins[voice]), 
-                            (int)(DIV_COUNTER * (freq * 0.00025f - 1 / (100 * freq))));
+
+        float amp = 0;
+        if (freq != 0) {
+            amp = (int)(DIV_COUNTER * (freq * 0.00025f - 1 / (100 * freq)));
+        }
+        pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amp);
     }
 }
