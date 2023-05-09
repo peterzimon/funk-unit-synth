@@ -12,17 +12,18 @@
 
 #include "i_converter.h"
 #include "./converters/para.h"
+#include "./converters/para_time_based.h"
 
 #define MIDI_BUFFER_SIZE 32
 
-class MidiHandler: public MidiParser {
+class Synth: public MidiParser {
 public:
-    static MidiHandler& get_instance() {
-        static MidiHandler instance;
+    static Synth& get_instance() {
+        static Synth instance;
         return instance;
     }
 
-    DISALLOW_COPY_AND_ASSIGN(MidiHandler);
+    DISALLOW_COPY_AND_ASSIGN(Synth);
 
     void init();
     // void attach(MCP48X2 *dac);
@@ -35,11 +36,12 @@ public:
     void pitch_bend(uint8_t channel, uint16_t bend);
 
 protected:
-    MidiHandler() = default;
+    Synth() = default;
 
 private:
     IConverter *m_converter;
     Para m_para;
+    ParaTimeBased m_para_time_based;
 
     int m_freqs[MAX_VOICES];
     int m_amps[MAX_VOICES];

@@ -63,14 +63,14 @@
  */
 #include "settings.h"
 #include "ui.h"
-#include "midi_handler.h"
+#include "synth.h"
 
 Settings settings;
 // MCP48X2 dac_1;
 // MCP48X2 dac_2;
 
 UI &ui = UI::get_instance();
-MidiHandler &midi_handler = MidiHandler::get_instance();
+Synth &synth = Synth::get_instance();
 
 int main() {
     stdio_init_all();
@@ -85,11 +85,11 @@ int main() {
     // midi_handler.attach(&dac_1);
     // midi_handler.attach(&dac_2);
 
-    midi_handler.init();
+    synth.init();
     
     while (1) {
         ui.update();
-        midi_handler.process();
+        synth.process();
     }
 
     return 0;

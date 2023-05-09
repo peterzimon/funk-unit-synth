@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <math.h>
-#include "midi_handler.h"
+#include "synth.h"
 
 /**
  * Initialises buffer which holds incoming MIDI messages. Set mode according to 
  * settings.
 */
-void MidiHandler::init(void) {
+void Synth::init(void) {
     
     // 
     uart_init(MIDI_UART_INSTANCE, MIDI_BAUDRATE);
@@ -37,10 +37,10 @@ void MidiHandler::init(void) {
  * set up a pointer to the converter of the selected mode, then reset all voices
  * and gates.
 */
-void MidiHandler::set_mode(void) {
+void Synth::set_mode(void) {
     switch (settings.mode) {
         case PARA:
-            m_converter = &m_para;
+            m_converter = &m_para_time_based;
             break;
     }
 
@@ -56,7 +56,7 @@ void MidiHandler::set_mode(void) {
 /**
  * The process function that's called in the main loop
 */
-void MidiHandler::process() {
+void Synth::process() {
     m_read_midi();
 }
 
@@ -64,7 +64,7 @@ void MidiHandler::process() {
  * Callback function that the MidiParser (parent) class calls if a NOTE ON event 
  * was fired.
 */
-void MidiHandler::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
+void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_on(channel, note, velocity);
     m_converter->get_freq_amp();
     m_update_output();
@@ -74,7 +74,7 @@ void MidiHandler::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
  * Callback function that the MidiParser (parent) class calls if a NOTE OFF 
  * event was fired.
 */
-void MidiHandler::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
+void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_off(channel, note, velocity);
     m_converter->get_freq_amp();
     m_update_output();
@@ -84,7 +84,7 @@ void MidiHandler::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
  * Callback function that the MidiParser (parent) class calls if a PITCH BEND
  * event was fired.
 */
-void MidiHandler::pitch_bend(uint8_t channel, uint16_t bend) {
+void Synth::pitch_bend(uint8_t channel, uint16_t bend) {
     m_converter->update_pitch_bend(bend);
     m_converter->get_freq_amp();
     m_update_output();
@@ -98,7 +98,7 @@ void MidiHandler::pitch_bend(uint8_t channel, uint16_t bend) {
  * Reads incoming MIDI messages via MidiParser parent class. This function is 
  * called for infinity from the main loop.
 */
-void MidiHandler::m_read_midi() {
+void Synth::m_read_midi() {
     if (!uart_is_readable(MIDI_UART_INSTANCE)) return;
     
     uint8_t data = uart_getc(MIDI_UART_INSTANCE);
@@ -114,7 +114,7 @@ void MidiHandler::m_read_midi() {
     }
 }
 
-// bool MidiHandler::m_any_gate_on() {
+// bool Synth::m_any_gate_on() {
 //     for (size_t i = 0; i < settings.voices; i++) {
 //         if (m_gates[i]) return true;
 //     }
@@ -124,7 +124,7 @@ void MidiHandler::m_read_midi() {
 /**
  * Updates the control voltages, gates and the UI
 */
-void MidiHandler::m_update_output(void) {
+void Synth::m_update_output(void) {
     for (int voice = 0; voice < MAX_VOICES; voice++) {
         
     }
