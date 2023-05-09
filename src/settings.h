@@ -5,9 +5,10 @@
 #include <pico/stdio.h>
 #include "hardware/spi.h"
 #include "hardware/uart.h"
+#include "hardware/pio.h"
 
 // GLOBAL
-#define MAX_VOICES          4
+#define MAX_VOICES          6
 
 // DAC
 #define DAC_SPI_PORT        spi0
@@ -45,11 +46,15 @@ struct Settings
 {
     device_mode mode;
     uint8_t midi_channel = 0;
-    uint8_t voices = 3;
+    uint8_t voices = 6;
 
-    int gate_gps[MAX_VOICES] = {
-        21, -1, -1, -1
-    };
+    const uint8_t reset_pins[MAX_VOICES] = {13, 8, 12, 9, 11, 10};
+    const uint8_t amp_pins[MAX_VOICES] = {16, 19, 15, 18, 14, 17};
+    const uint8_t voice_to_pio[MAX_VOICES] = {0, 0, 0, 0, 1, 1};
+    const uint8_t voice_to_sm[MAX_VOICES] = {0, 1, 2, 3, 0, 1};
+
+    // Two PIOs with 6 state machines (4 and 2) are used to set the frequency of the DCOs
+    const PIO pio[2] = {pio0, pio1};
 };
 
 extern Settings settings;

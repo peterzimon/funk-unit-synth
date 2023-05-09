@@ -11,6 +11,7 @@
 
 #define MAX_PITCH_BEND      0x3fff
 #define PITCH_BEND_CENTER   0x2000
+#define BASE_NOTE           440.0f
 
 class IConverter {
     public:
@@ -20,11 +21,10 @@ class IConverter {
         virtual void note_off(uint8_t channel, uint8_t note, uint8_t velocity) { }
         virtual void note_on(uint8_t channel, uint8_t note, uint8_t velocity) { }
         virtual void mod_wheel(uint8_t channel, uint8_t value) { }
-        virtual void get_freq_amp() { }
+        virtual float get_freq(uint8_t voice) { return 0; }
         
+        float frequency_from_midi_note(int note);
         void update_pitch_bend(uint16_t bend);
-        uint16_t freq_for_note();
-        uint16_t amp_for_note();
 
     private:
 };

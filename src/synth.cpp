@@ -2,33 +2,24 @@
 #include <math.h>
 #include "synth.h"
 
-/**
- * Initialises buffer which holds incoming MIDI messages. Set mode according to 
- * settings.
-*/
 void Synth::init(void) {
     
-    // 
+    // MIDI init
     uart_init(MIDI_UART_INSTANCE, MIDI_BAUDRATE);
     gpio_set_function(GP_MIDI_RX, GPIO_FUNC_UART);
-
-    // Software init
     m_input_buffer.init(m_buffer_var, MIDI_BUFFER_SIZE);
 
-    int hardware_gate_gp;
     for (int i = 0; i < settings.voices; i++) {
-        m_freqs[i] = 0;
-        m_amps[i] = 0;
+        // PWM init
+        gpio_set_function(settings.amp_pins[i], GPIO_FUNC_PWM);
+        m_amp_pwm_slices[i] = pwm_gpio_to_slice_num(settings.amp_pins[i]);
+        pwm_set_wrap(m_amp_pwm_slices[i], DIV_COUNTER);
+        pwm_set_enabled(m_amp_pwm_slices[i], true);
 
-        // Gates
-        hardware_gate_gp = settings.gate_gps[i];
-        if (hardware_gate_gp != -1) {
-            gpio_init(settings.gate_gps[i]);
-            gpio_set_dir(settings.gate_gps[i], GPIO_OUT);
-            gpio_pull_down(settings.gate_gps[i]);
-            gpio_put(settings.gate_gps[i], 0);
-        }
+        // Gate(s)
+        // TODO:
     }
+
     set_mode();
 }
 
@@ -45,12 +36,7 @@ void Synth::set_mode(void) {
     }
 
     m_converter->reset();
-
-    for (int i = 0; i < settings.voices; i++) {
-        m_freqs[i] = m_amps[i] = 0;
-    }
-
-    m_update_output();
+    m_update_dcos();
 }
 
 /**
@@ -66,8 +52,7 @@ void Synth::process() {
 */
 void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_on(channel, note, velocity);
-    m_converter->get_freq_amp();
-    m_update_output();
+    m_update_dcos();
 }
 
 /**
@@ -76,8 +61,7 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 */
 void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_off(channel, note, velocity);
-    m_converter->get_freq_amp();
-    m_update_output();
+    m_update_dcos();
 }
 
 /**
@@ -86,8 +70,7 @@ void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
 */
 void Synth::pitch_bend(uint8_t channel, uint16_t bend) {
     m_converter->update_pitch_bend(bend);
-    m_converter->get_freq_amp();
-    m_update_output();
+    m_update_dcos();
 }
 
 /** ----------------------------------------------------------------------------
@@ -114,18 +97,23 @@ void Synth::m_read_midi() {
     }
 }
 
-// bool Synth::m_any_gate_on() {
-//     for (size_t i = 0; i < settings.voices; i++) {
-//         if (m_gates[i]) return true;
-//     }
-//     return false;
-// }
+void Synth::m_set_frequency(PIO pio, uint sm, float freq) {
+    uint32_t clk_div = clock_get_hz(clk_sys) / 2 / freq;
+    if (freq == 0) clk_div = 0;
+    pio_sm_put(pio, sm, clk_div);
+    pio_sm_exec(pio, sm, pio_encode_pull(false, false));
+    pio_sm_exec(pio, sm, pio_encode_out(pio_y, 32));
+}
 
 /**
- * Updates the control voltages, gates and the UI
+ * Updates DCOs
 */
-void Synth::m_update_output(void) {
+void Synth::m_update_dcos(void) {
     for (int voice = 0; voice < MAX_VOICES; voice++) {
-        
+        float freq = m_converter->get_freq(voice);
+        m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freq);
+        pwm_set_chan_level(m_amp_pwm_slices[voice], 
+                            pwm_gpio_to_channel(settings.amp_pins[voice]), 
+                            (int)(DIV_COUNTER * (freq * 0.00025f - 1 / (100 * freq))));
     }
 }

@@ -10,22 +10,12 @@ IConverter::IConverter() {
 }
 
 /**
- * Return frequency for a given MIDI note
-*/
-uint16_t IConverter::freq_for_note() {
-    return 0;
-}
-
-/**
- * Return frequency for a given MIDI note
-*/
-uint16_t IConverter::amp_for_note() {
-    return 0;
-}
-
-/**
  * TBD
 */
 void IConverter::update_pitch_bend(uint16_t bend) {
     
+}
+
+float IConverter::frequency_from_midi_note(int note) {
+    return pow(2, (note - 69) / 12.0f) * BASE_NOTE;
 }

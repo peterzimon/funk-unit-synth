@@ -5,7 +5,10 @@
 #include "ui.h"
 #include "math.h"
 
-// #include <mcp48x2.h>
+#include "hardware/pio.h"
+#include "hardware/clocks.h"
+#include "hardware/pwm.h"
+
 #include <utils.h>
 #include <midi_parser.h>
 #include <ringbuffer.h>
@@ -15,6 +18,7 @@
 #include "./converters/para_time_based.h"
 
 #define MIDI_BUFFER_SIZE 32
+const uint16_t DIV_COUNTER = 1250;
 
 class Synth: public MidiParser {
 public:
@@ -26,7 +30,6 @@ public:
     DISALLOW_COPY_AND_ASSIGN(Synth);
 
     void init();
-    // void attach(MCP48X2 *dac);
     void process();
 
     void set_mode();
@@ -34,6 +37,7 @@ public:
     void note_on(uint8_t channel, uint8_t note, uint8_t velocity);
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
     void pitch_bend(uint8_t channel, uint16_t bend);
+
 
 protected:
     Synth() = default;
@@ -43,8 +47,7 @@ private:
     Para m_para;
     ParaTimeBased m_para_time_based;
 
-    int m_freqs[MAX_VOICES];
-    int m_amps[MAX_VOICES];
+    uint8_t m_amp_pwm_slices[MAX_VOICES];
 
     bool m_pitch_bend_dirty;
     int16_t m_pitch_bend_cv;
@@ -52,13 +55,11 @@ private:
     uint8_t m_buffer_var[MIDI_BUFFER_SIZE];
     RingBuffer m_input_buffer;
 
-    // MCP48X2 *m_dac_1;
-    // MCP48X2 *m_dac_2;
     UI &m_ui = UI::get_instance();
 
     void m_read_midi();
-    // bool m_any_gate_on();
-    void m_update_output(void);
+    void m_set_frequency(PIO pio, uint sm, float freq);
+    void m_update_dcos(void);
 };
 
 #endif

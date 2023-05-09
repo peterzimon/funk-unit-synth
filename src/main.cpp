@@ -51,12 +51,13 @@
 #include "hardware/gpio.h"
 #include "hardware/spi.h"
 #include "hardware/uart.h"
+#include "hardware/pio.h"
+#include "frequency.pio.h"
 
 /* 
  * Custom libraries
  */
 #include <utils.h>
-#include <mcp48x2.h>
 
 /*
  * Project headers
@@ -65,10 +66,10 @@
 #include "ui.h"
 #include "synth.h"
 
+/**
+ * Classes
+*/
 Settings settings;
-// MCP48X2 dac_1;
-// MCP48X2 dac_2;
-
 UI &ui = UI::get_instance();
 Synth &synth = Synth::get_instance();
 
@@ -79,13 +80,20 @@ int main() {
 
     sleep_ms(1000);
     ui.init();
-    // dac_1.init(DAC_SPI_PORT, GP_DAC_1_CS, GP_DAC_SCK, GP_DAC_MOSI); // DAC 1 used for ADSR
-    // dac_2.init(DAC_SPI_PORT, GP_DAC_2_CS, GP_DAC_SCK, GP_DAC_MOSI); // Voices 3 & 4
-    
-    // midi_handler.attach(&dac_1);
-    // midi_handler.attach(&dac_2);
 
     synth.init();
+
+    // Init PIOs
+    uint offset[2];
+    offset[0] = pio_add_program(settings.pio[0], &frequency_program);
+    offset[1] = pio_add_program(settings.pio[1], &frequency_program);
+    for (int i = 0; i < settings.voices; i++) {
+        init_sm_pin(settings.pio[settings.voice_to_pio[i]], 
+                    settings.voice_to_sm[i], 
+                    offset[settings.voice_to_pio[i]], 
+                    settings.reset_pins[i]);
+        pio_sm_set_enabled(settings.pio[settings.voice_to_pio[i]], settings.voice_to_sm[i], true);
+    }
     
     while (1) {
         ui.update();

@@ -56,11 +56,15 @@ void ParaTimeBased::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
 }
 
 /**
- * Return whatever is needed for DCO. I guess it's the frequency and the
- * amplitude value. This is called in midi handler.
+ * Return the frequency of a voice. Return 0Hz if no note is set for the 
+ * given voice. 
+ * 
+ * TODO: 0 AS DEFAULT MAY NOT WORK BECAUSE OF DIVISION BY 0 IN THE PIO!! 
+ * TO BE TESTED!!
 */
-void ParaTimeBased::get_freq_amp() {
-
+float ParaTimeBased::get_freq(uint8_t voice) {
+    if (m_notes[voice] == -1) return 0;
+    return frequency_from_midi_note(m_notes[voice]);
 }
 
 
