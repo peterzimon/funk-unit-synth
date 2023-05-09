@@ -12,13 +12,9 @@
  * 
  * Classes
  * -------
- *      MidiHandler: MidiParser 
+ *      Synth: MidiParser 
  *          - parses incoming MIDI data
- *          - selects cv calculator class based on selected mode
- *          - passes on MIDI message to cv calculator
- *          - receives calculated CV and gate values
- *          - updates DAC to new CV values
- *          - updates gates
+ *          - updates DCO frequencies and amp levels
  * 
  *      IConverter
  *          - interface for different converters (modes). Converter
@@ -29,8 +25,9 @@
  *
  * @TODO:
  * 
- * - make sure MIDI handling works as intended
- * - add basic DCO handling for a single voice
+ * ATM theoretically the synth reads MIDI and sets the frequency of 6 (PIO) pins
+ * and the voltage of 6 (PWM) pins according to the incoming notes. The played 
+ * notes are distributed equally amongst unused voices. Next step: test this!
  */
 
 /*
@@ -83,7 +80,7 @@ int main() {
 
     synth.init();
 
-    // Init PIOs
+    // Init PIOs: they must be initialised here in main.cpp
     uint offset[2];
     offset[0] = pio_add_program(settings.pio[0], &frequency_program);
     offset[1] = pio_add_program(settings.pio[1], &frequency_program);
