@@ -22,6 +22,7 @@ class IConverter {
         virtual void note_on(uint8_t channel, uint8_t note, uint8_t velocity) { }
         virtual void mod_wheel(uint8_t channel, uint8_t value) { }
         virtual float get_freq(uint8_t voice) { return 0; }
+        virtual bool get_gate() { return false; }
         
         float frequency_from_midi_note(int note);
         void update_pitch_bend(uint16_t bend);

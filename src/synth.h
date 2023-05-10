@@ -15,7 +15,6 @@
 
 #include "i_converter.h"
 #include "./converters/para.h"
-#include "./converters/para_time_based.h"
 
 #define MIDI_BUFFER_SIZE 32
 const uint16_t DIV_COUNTER = 1250;
@@ -45,9 +44,8 @@ protected:
 private:
     IConverter *m_converter;
     Para m_para;
-    ParaTimeBased m_para_time_based;
 
-    uint8_t m_amp_pwm_slices[MAX_VOICES];
+    uint8_t m_amp_pwm_slices[VOICES];
 
     bool m_pitch_bend_dirty;
     int16_t m_pitch_bend_cv;
@@ -60,6 +58,7 @@ private:
     void m_read_midi();
     void m_set_frequency(PIO pio, uint sm, float freq);
     void m_update_dcos(void);
+    void m_update_gate();
 };
 
 #endif

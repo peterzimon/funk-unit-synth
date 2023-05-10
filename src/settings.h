@@ -8,7 +8,7 @@
 #include "hardware/pio.h"
 
 // GLOBAL
-#define MAX_VOICES          6
+#define VOICES              6
 
 // DAC
 #define DAC_SPI_PORT        spi0
@@ -16,9 +16,6 @@
 #define GP_DAC_MOSI         7
 #define GP_DAC_1_CS         5
 #define GP_DAC_2_CS         10
-
-// NUMBER OF VOICES
-#define GP_VOICES_SWITCH    15
 
 // MIDI
 #define LOWEST_MIDI_NOTE    0x00
@@ -45,13 +42,13 @@ enum device_mode {
 struct Settings
 {
     device_mode mode;
-    uint8_t midi_channel = 0;
-    uint8_t voices = 6;
+    const uint8_t midi_channel = 0;
+    const uint8_t voices = 6;
 
-    const uint8_t reset_pins[MAX_VOICES] = {10, 11, 12, 13, 14, 15};
-    const uint8_t amp_pins[MAX_VOICES] = {16, 17, 18, 19, 20, 21};
-    const uint8_t voice_to_pio[MAX_VOICES] = {0, 0, 0, 0, 1, 1};
-    const uint8_t voice_to_sm[MAX_VOICES] = {0, 1, 2, 3, 0, 1};
+    const uint8_t reset_pins[VOICES] = {10, 11, 12, 13, 14, 15};
+    const uint8_t amp_pins[VOICES] = {16, 17, 18, 19, 20, 21};
+    const uint8_t voice_to_pio[VOICES] = {0, 0, 0, 0, 1, 1};
+    const uint8_t voice_to_sm[VOICES] = {0, 1, 2, 3, 0, 1};
 
     // Two PIOs with 6 state machines (4 and 2) are used to set the frequency of the DCOs
     const PIO pio[2] = {pio0, pio1};

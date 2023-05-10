@@ -9,7 +9,7 @@ void Synth::init(void) {
     gpio_set_function(GP_MIDI_RX, GPIO_FUNC_UART);
     m_input_buffer.init(m_buffer_var, MIDI_BUFFER_SIZE);
 
-    for (int i = 0; i < settings.voices; i++) {
+    for (int i = 0; i < VOICES; i++) {
         // PWM init
         gpio_set_function(settings.amp_pins[i], GPIO_FUNC_PWM);
         m_amp_pwm_slices[i] = pwm_gpio_to_slice_num(settings.amp_pins[i]);
@@ -31,7 +31,7 @@ void Synth::init(void) {
 void Synth::set_mode(void) {
     switch (settings.mode) {
         case PARA:
-            m_converter = &m_para_time_based;
+            m_converter = &m_para;
             break;
     }
 
@@ -53,6 +53,7 @@ void Synth::process() {
 void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_on(channel, note, velocity);
     m_update_dcos();
+    m_update_gate();
 }
 
 /**
@@ -62,6 +63,7 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_off(channel, note, velocity);
     m_update_dcos();
+    m_update_gate();
 }
 
 /**
@@ -71,6 +73,7 @@ void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
 void Synth::pitch_bend(uint8_t channel, uint16_t bend) {
     m_converter->update_pitch_bend(bend);
     m_update_dcos();
+    m_update_gate();
 }
 
 /** ----------------------------------------------------------------------------
@@ -109,7 +112,11 @@ void Synth::m_set_frequency(PIO pio, uint sm, float freq) {
  * Updates DCOs
 */
 void Synth::m_update_dcos(void) {
-    for (int voice = 0; voice < MAX_VOICES; voice++) {
+
+    // Temporarily return until I figure out how to handle paraphony
+    return;
+
+    for (int voice = 0; voice < VOICES; voice++) {
         float freq = m_converter->get_freq(voice);
         m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freq);
 
@@ -119,4 +126,8 @@ void Synth::m_update_dcos(void) {
         }
         pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amp);
     }
+}
+
+void Synth::m_update_gate() {
+    // GATE VALUE: m_converter->get_gate();
 }

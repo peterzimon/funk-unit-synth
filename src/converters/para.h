@@ -1,5 +1,5 @@
-#ifndef _PARA_H
-#define _PARA_H
+#ifndef _PARA_TIME_BASED_H
+#define _PARA_TIME_BASED_H
 
 /**
  * Paraphonic converter
@@ -23,26 +23,19 @@ public:
     void reset(void);
     void note_on(uint8_t channel, uint8_t note, uint8_t velocity);
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
-    void get_cv_gate(uint16_t *cv, int *gate);
-    void get_freq_amp();
+    float get_freq(uint8_t voice);
+    bool get_gate();
 
 private:
-    int m_notes[MAX_VOICES];
-    int m_voices[MAX_VOICES];
-    int m_cvs[MAX_VOICES];
+    int m_notes[VOICES];
+    uint32_t m_voice_millis[VOICES];
     int m_filler_note;
-    int m_lru[MAX_VOICES];
+    bool m_reset;
 
-    void m_update_unused_voices();
-    int m_find_new_note_index(uint8_t note);
+    int m_find_voice();
+    void m_update_voices();
     void m_find_filler_note();
-    int m_find_note_index(uint8_t note);
-
-    void m_lru_add_note_index(int note_index);
-    void m_lru_remove_note_index(int note_index);
-    int m_lru_find_note_index(int note_index);
-    void m_lru_shift_left(int from_index);
-    void m_lru_shift_right();
+    void m_debug();
 };
 
 #endif

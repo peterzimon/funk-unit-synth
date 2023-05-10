@@ -25,9 +25,8 @@
  *
  * @TODO:
  * 
- * ATM theoretically the synth reads MIDI and sets the frequency of 6 (PIO) pins
- * and the voltage of 6 (PWM) pins according to the incoming notes. The played 
- * notes are distributed equally amongst unused voices. Next step: test this!
+ * - paraphonic logic works!! YAY! clean up debug/printf calls once all done
+ * - test DCOs
  */
 
 /*
@@ -86,7 +85,7 @@ int main() {
     uint offset[2];
     offset[0] = pio_add_program(settings.pio[0], &frequency_program);
     offset[1] = pio_add_program(settings.pio[1], &frequency_program);
-    for (int i = 0; i < settings.voices; i++) {
+    for (int i = 0; i < VOICES; i++) {
         init_sm_pin(settings.pio[settings.voice_to_pio[i]], 
                     settings.voice_to_sm[i], 
                     offset[settings.voice_to_pio[i]], 
