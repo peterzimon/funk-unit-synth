@@ -23,6 +23,8 @@ void ParaTimeBased::reset() {
 */
 void ParaTimeBased::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 
+    printf("Note on\n");
+
     // Return if note is already playing
     for (int i = 0; i < settings.voices; i++) {
         if (m_notes[i] == (int)note) return;

@@ -1264,7 +1264,7 @@
     (pin "1" (uuid 540fa16c-d15e-420d-9847-bf09c681c7dc))
     (pin "2" (uuid 96163af9-65a3-481d-a03f-17316b030431))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R28") (unit 1)
         )
@@ -1307,7 +1307,7 @@
     (pin "11" (uuid 9ac6a516-f8d4-49f4-b12f-60d295375d31))
     (pin "4" (uuid cce256c9-f2fd-4c61-a039-568d3e707a63))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "U9") (unit 1)
         )
@@ -1337,7 +1337,7 @@
     )
     (pin "1" (uuid 94fe39a9-e4f7-4604-ad42-cfd622169da7))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR063") (unit 1)
         )
@@ -1367,7 +1367,7 @@
     )
     (pin "1" (uuid 8509dd2d-07be-42f4-813e-f49524d0120b))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR058") (unit 1)
         )
@@ -1398,7 +1398,7 @@
     (pin "1" (uuid 22df3ab0-728f-48b2-9b76-31dd24fd270b))
     (pin "2" (uuid 5e211a6d-be96-4741-a201-4dc162c5b1d5))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R23") (unit 1)
         )
@@ -1430,7 +1430,7 @@
     (pin "2" (uuid b50b263b-9207-40c0-9148-9117cd7c778d))
     (pin "3" (uuid 9fd1f794-5158-45ed-a000-1153328ff469))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "RV_LFO_SPEED2") (unit 1)
         )
@@ -1457,7 +1457,7 @@
     (pin "2" (uuid 17b2dc05-64fc-4e72-b028-af8a27e09427))
     (pin "3" (uuid 4e2ec757-1810-4544-90ad-c396e09e83cf))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "RV_LFO_AMOUNT1") (unit 1)
         )
@@ -1483,7 +1483,7 @@
     (pin "1" (uuid 5d7ff8b2-4034-42f3-8eb2-b9b351a4c015))
     (pin "2" (uuid 4469a894-c28a-47a8-8a0b-f7940ced95af))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "C15") (unit 1)
         )
@@ -1513,7 +1513,7 @@
     )
     (pin "1" (uuid d69bd10d-150b-48f8-b064-fb6168b2942d))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR090") (unit 1)
         )
@@ -1538,7 +1538,7 @@
     )
     (pin "1" (uuid 279b4ec4-4713-47a0-984e-bc7192eee699))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR060") (unit 1)
         )
@@ -1575,7 +1575,7 @@
     (pin "4" (uuid d47b8342-5a29-4ee7-8cd0-876ecefd7e98))
     (pin "8" (uuid bb6e6501-6014-41a1-b290-798bafc005a5))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "U2") (unit 1)
         )
@@ -1605,7 +1605,7 @@
     )
     (pin "1" (uuid f5676673-6e28-4345-9aa3-336f136ba2cf))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR089") (unit 1)
         )
@@ -1632,7 +1632,7 @@
     (pin "2" (uuid b500ba4e-6324-4121-82ea-9f6dcff81052))
     (pin "3" (uuid 9b9073d7-4e79-43fc-bceb-ba92b27be1b4))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "Q1") (unit 1)
         )
@@ -1675,7 +1675,7 @@
     (pin "11" (uuid fe08fd4f-d33b-401d-9e25-2073671a8072))
     (pin "4" (uuid 2950cbf3-b983-4a8d-86a1-aa4349c8f877))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "U9") (unit 5)
         )
@@ -1706,7 +1706,7 @@
     (pin "1" (uuid 13752190-78f9-46c6-be14-f2d73061b32d))
     (pin "2" (uuid 0e19625b-56a7-455b-9bd8-97321863c8cc))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R33") (unit 1)
         )
@@ -1736,7 +1736,7 @@
     )
     (pin "1" (uuid df0aef77-4595-47ec-b602-13235ae7e276))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR061") (unit 1)
         )
@@ -1762,7 +1762,7 @@
     (pin "1" (uuid 8f3306a0-9b6c-4b56-89a2-f39b0e5a764c))
     (pin "2" (uuid 5892d2cb-2eda-4ce4-b137-58807ac195ab))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R24") (unit 1)
         )
@@ -1793,7 +1793,7 @@
     (pin "1" (uuid 1a1bc80d-6e0e-45f5-865b-9aeebef54337))
     (pin "2" (uuid 92d8318b-bfd0-49b2-86ed-9f0b6956d517))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R30") (unit 1)
         )
@@ -1824,7 +1824,7 @@
     (pin "1" (uuid b97f049b-d566-49c7-afb7-81929b8feb71))
     (pin "2" (uuid 581aef05-ec59-4926-88ba-b94971959261))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R31") (unit 1)
         )
@@ -1855,7 +1855,7 @@
     (pin "1" (uuid c0f7a450-a83a-4ad8-b7db-072f5b0e9183))
     (pin "2" (uuid c4c70bf8-8597-4100-a2c1-1261cf76a8b9))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R27") (unit 1)
         )
@@ -1898,7 +1898,7 @@
     (pin "11" (uuid 1fe6f15f-31c0-4d5a-85fa-0d9a3505183a))
     (pin "4" (uuid 4ff7d989-7e9c-470f-bdc4-0c6ddb01a6d1))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "U9") (unit 2)
         )
@@ -1930,7 +1930,7 @@
     (pin "2" (uuid 05e834eb-b46c-4af3-86e7-5de5c273d066))
     (pin "3" (uuid e1c4e484-7d3c-4fc2-bafd-daf8f6c4c8da))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "Q2") (unit 1)
         )
@@ -1961,7 +1961,7 @@
     (pin "1" (uuid c4875b5c-dd6d-4cbe-80a1-b5caae12da7e))
     (pin "2" (uuid 08394e7f-03fd-4890-bab4-0147c20b48eb))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R20") (unit 1)
         )
@@ -1998,7 +1998,7 @@
     (pin "4" (uuid 28c6c1f8-193d-4fd8-bd1d-44b2f78ec170))
     (pin "8" (uuid 3f45745d-5ffd-4a52-9db3-4e3403fae0ff))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "U10") (unit 3)
         )
@@ -2041,7 +2041,7 @@
     (pin "11" (uuid 1767bf5c-adb3-423c-b304-6e05e373af98))
     (pin "4" (uuid 318d81fb-0747-4872-9dd1-96e236f554c2))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "U1") (unit 3)
         )
@@ -2071,7 +2071,7 @@
     )
     (pin "1" (uuid d432000a-ea04-4c04-8e2c-01f7bb6ec92b))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR059") (unit 1)
         )
@@ -2096,7 +2096,7 @@
     )
     (pin "1" (uuid a2a46697-c654-4323-a662-fd52b16c77ac))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR055") (unit 1)
         )
@@ -2127,7 +2127,7 @@
     (pin "1" (uuid 01d136e4-cf13-4c9f-9494-407bf9c88fc3))
     (pin "2" (uuid 0e46e686-b3bf-481c-860e-6221b5b9ea2e))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R18") (unit 1)
         )
@@ -2157,7 +2157,7 @@
     )
     (pin "1" (uuid e8957771-a957-4c2d-bf36-525a67994480))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR087") (unit 1)
         )
@@ -2189,7 +2189,7 @@
     (pin "2" (uuid 1a7dc92d-cfd8-4cad-854c-ecd1fd9801b0))
     (pin "3" (uuid c4b5d2db-c8d5-4d3f-8c13-bb76092acf5c))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "RV_PWM_SPEED1") (unit 1)
         )
@@ -2221,7 +2221,7 @@
     (pin "4" (uuid 27103ed9-c971-48a2-b324-2dba35e006de))
     (pin "8" (uuid 4481dbd2-f5ed-4f94-a746-ea1aee7137ac))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "U10") (unit 2)
         )
@@ -2252,7 +2252,7 @@
     (pin "1" (uuid 69f5753e-de8a-4e49-89cf-823971ebc467))
     (pin "2" (uuid 8c156b8c-6d27-4e54-91fa-43fea3435f04))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "C17") (unit 1)
         )
@@ -2283,7 +2283,7 @@
     (pin "1" (uuid 61eeb087-7cfa-440f-8f38-e8a2300b632f))
     (pin "2" (uuid 8d13b7e3-ce5a-4445-a5ef-d71e7e875f2b))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R32") (unit 1)
         )
@@ -2314,7 +2314,7 @@
     (pin "1" (uuid 78e802fd-f0f5-4a46-9bd6-4486a6332d0b))
     (pin "2" (uuid bf30ea6b-2ff5-43e4-b570-9afd0e260b58))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "C14") (unit 1)
         )
@@ -2345,7 +2345,7 @@
     (pin "1" (uuid df85c727-f4d1-4174-a81c-2764a9c02f5a))
     (pin "2" (uuid 03a3c3b1-9677-4c04-be8a-20a17b2263fa))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R22") (unit 1)
         )
@@ -2376,7 +2376,7 @@
     (pin "1" (uuid 88a50f12-140f-4b87-ab39-33e9f1c645b7))
     (pin "2" (uuid c03f6a5d-d89a-4fff-aa84-2e8fd080b64b))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R25") (unit 1)
         )
@@ -2406,7 +2406,7 @@
     )
     (pin "1" (uuid 868a0617-d742-4a74-a024-b475ed6297a1))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR086") (unit 1)
         )
@@ -2437,7 +2437,7 @@
     (pin "1" (uuid a50e767c-4845-495f-acab-b6525b19ff14))
     (pin "2" (uuid b8cb2395-9c32-4288-b6a5-49a0146fd65a))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "C18") (unit 1)
         )
@@ -2468,7 +2468,7 @@
     (pin "1" (uuid 651435fa-5ddf-4500-b0f4-fd74407672a9))
     (pin "2" (uuid f58d5aee-3301-4418-a89b-f01ddb102379))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "C13") (unit 1)
         )
@@ -2498,7 +2498,7 @@
     )
     (pin "1" (uuid c2fd3daa-07f3-4726-a9d4-ff9cd903c520))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR062") (unit 1)
         )
@@ -2529,7 +2529,7 @@
     (pin "1" (uuid cb43fe20-8009-4217-a07b-b7ba853592aa))
     (pin "2" (uuid 0b430387-e354-492f-80f8-ca9236f3d413))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R21") (unit 1)
         )
@@ -2560,7 +2560,7 @@
     (pin "1" (uuid 778e69e2-f90e-43e6-bd25-88bdec82e514))
     (pin "2" (uuid d58d9264-e7cf-40d0-b1b1-1fb6c9623a71))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R26") (unit 1)
         )
@@ -2591,7 +2591,7 @@
     (pin "1" (uuid 593efeb5-6bd8-45e0-a3ad-619f889240f4))
     (pin "2" (uuid 02091bdd-d0fc-4abf-8fdb-8b0ec15f5e01))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "C16") (unit 1)
         )
@@ -2622,7 +2622,7 @@
     (pin "1" (uuid f2ef5922-fc1a-4c0c-b3d7-6351b0d849e6))
     (pin "2" (uuid 4282cb39-e156-40a2-a4f8-3444743ccc6f))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R17") (unit 1)
         )
@@ -2652,7 +2652,7 @@
     )
     (pin "1" (uuid 48528891-f138-4d8b-b29b-b1097df2ac25))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR056") (unit 1)
         )
@@ -2682,7 +2682,7 @@
     )
     (pin "1" (uuid 1ad8cd19-b49c-4cf8-a068-e667f26ce761))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR088") (unit 1)
         )
@@ -2720,7 +2720,7 @@
     (pin "11" (uuid 1c9c8f89-900b-40d6-aaca-a7c2ec3f0431))
     (pin "4" (uuid 698ba684-3d91-485e-b71b-593e8ff63a7a))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "U1") (unit 4)
         )
@@ -2750,7 +2750,7 @@
     )
     (pin "1" (uuid 3dfd6be7-7905-4a50-9347-ac6b21d50777))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "#PWR057") (unit 1)
         )
@@ -2781,7 +2781,7 @@
     (pin "1" (uuid 7ebde3f5-1901-43b8-a4cf-fc61606e8ddd))
     (pin "2" (uuid 875f98cf-ff29-4e7d-ac25-aea4584c9356))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R29") (unit 1)
         )
@@ -2812,7 +2812,7 @@
     (pin "1" (uuid ec425cbb-1f4a-4b9e-b6e5-8b2f0d2987ad))
     (pin "2" (uuid c9547874-e59e-4d03-8d80-799f190ab774))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R16") (unit 1)
         )
@@ -2843,7 +2843,7 @@
     (pin "1" (uuid 9550c280-c6d2-4bbc-adf4-602ffa04ed00))
     (pin "2" (uuid 5814c9d7-e1a5-45a7-bd31-5f38e51cbb20))
     (instances
-      (project "shmoergh-funk-livecontrol"
+      (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/2e981da9-3fd3-40a6-a1fb-543bdfad6423"
           (reference "R19") (unit 1)
         )

@@ -73,6 +73,8 @@ Synth &synth = Synth::get_instance();
 int main() {
     stdio_init_all();
 
+    printf("\n\n--- SHMØERGH FUNK LIVE ONE ---\r\n\n");
+
     settings.mode = PARA;
 
     sleep_ms(1000);
