@@ -33,8 +33,7 @@ private:
     bool m_reset;
 
     int m_find_voice();
-    void m_update_voices();
-    void m_find_filler_note();
+    void m_distribute_notes();
     void m_debug();
 };
 

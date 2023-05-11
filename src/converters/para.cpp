@@ -15,19 +15,63 @@ void Para::reset() {
 }
 
 /**
- * If it's the first note after releasing all notes (or at the very beginning), 
- * then all voices will play the same note. After this, all new notes will be 
- * equally distributed amongst the unused voices. Once all voices are used then
- * the least recently used will be used for any new note.
+ * There are two modes depending on the value of (bool) PARA_STACK_VOICES. If 
+ * it's `true` then on the first note all the voices will play the same note and
+ * all subsequent notes will be distribute evenly amongst the voices.
  * 
- * This logic allows using a single gate (the first voice's gate!) to trigger
- * the ADSR.
-*/
+ * If it's `false` then voices will take notes as they are played, if a single
+ * note is played then just a single voice is on, all others are off. If two
+ * notes, then two and so on. This is possible because all the DCOs have an amp
+ * compensation and it's possible to shut them down without dedicated VCAs.
+ * 
+ * In both cases all the played notes are kept even if the keys are released,
+ * which is needed to be able to ring them if the (ADSR) release is not zero. 
+ * Ie. if we shut them all down on key up then there wouldn't be any note played
+ * during the release phase.
+ * 
+ * Here's an example how it works with PARA_STACK_VOICES = false
+ * 
+ * HOLD FIRST NOTE
+ * notes/voices = {note1, 0, 0, 0, 0, 0}
+ * 
+ * HOLD SECOND NOTE
+ * notes/voices = {note1, note2, 0, 0, 0, 0}
+ * 
+ * HOLD THIRD NOTE
+ * notes/voices = {note1, note2, note3, 0, 0, 0}
+ * 
+ * RELEASE SECOND NOTE
+ * notes/voices = {note1, note2, note3, 0, 0, 0} -> YES, keep all notes playing!
+ * 
+ * RELEASE THIRD NOTE
+ * notes/voices = {note1, note2, note3, 0, 0, 0} -> YES, keep all notes playing!
+ * 
+ * RELEASE ALL NOTES
+ * notes/voices = {note1, note2, note3, 0, 0, 0} -> YES, keep all notes playing 
+ *                                                  so that it keeps ringing!
+ * 
+ * HOLD FIRST NOTE
+ * notes/voices = {note1, 0, 0, 0, 0, 0} -> reset all notes except 1st
+ * 
+ * With PARA_STACK_VOICES = true the difference is that instead of 0's the
+ * played notes are equally distributed.
+ * 
+ * For this though 6 voices may be too many! Maybe 5 voices would be better
+ * because if a wrong note is held it's not removed from the played notes until
+ * a new note claims its place. Needs to be tested!
+ */
 void Para::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 
     if (m_reset) {
-        for (int i = 0; i < VOICES; i++) {
-            m_notes[i] = (int)note;
+        if (PARA_STACK_VOICES) {
+            for (int i = 0; i < VOICES; i++) {
+                m_notes[i] = (int)note;
+            }
+        } else {
+            m_notes[0] = (int)note;
+            for (int i = 1; i < VOICES; i++) {
+                m_notes[i] = -1;
+            }
         }
         m_voice_millis[0] = Utils::millis();
         m_reset = false;
@@ -45,7 +89,11 @@ void Para::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_voice_millis[new_note_index] = Utils::millis();
     m_notes[new_note_index] = (int)note;
 
-    m_update_voices();
+    if (PARA_STACK_VOICES) {
+        m_distribute_notes();
+    }
+
+    m_debug();
 }
 
 /**
@@ -62,9 +110,11 @@ void Para::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     for (int i = 0; i < VOICES; i++) {
         if (m_voice_millis[i] != 0) {
             m_reset = false;
-            return;
+            break;
         }
     }
+
+    m_debug();
 }
 
 /**
@@ -119,7 +169,7 @@ int Para::m_find_voice() {
  * 3 voices. If only 1 note is held then the same note would be played by all 
  * voices (fallback to unison mode).
 */
-void Para::m_update_voices() {
+void Para::m_distribute_notes() {
     
     // Collect distinct notes
     int distinct_notes[VOICES];

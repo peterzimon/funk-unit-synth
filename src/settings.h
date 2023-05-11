@@ -9,6 +9,7 @@
 
 // GLOBAL
 #define VOICES              6
+#define PARA_STACK_VOICES   false
 
 // DAC
 #define DAC_SPI_PORT        spi0
