@@ -1,11 +1,5 @@
-#ifndef _PARA_H
-#define _PARA_H
-
-/**
- * Paraphonic converter
- * 
- * To be documented...
- */
+#ifndef _MONO_H
+#define _MONO_H
 
 #include <stdio.h>
 #include "math.h"
@@ -15,21 +9,27 @@
 #include "../settings.h"
 #include "../i_converter.h"
 
-class Para: public IConverter {
-public:    
+#define NOTE_STACK_SIZE 25
+
+class Mono: public IConverter {
+public:
+
     void reset(void);
     void note_on(uint8_t channel, uint8_t note, uint8_t velocity);
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
     float get_freq(uint8_t voice);
     bool get_gate();
-
 private:
-    int m_notes[VOICES];
-    uint32_t m_voice_millis[VOICES];
-    bool m_reset;
+    int m_note_stack[NOTE_STACK_SIZE];
+    bool m_note_playing;
 
-    int m_find_voice();
-    void m_distribute_notes();
+    int m_note;
+    int m_keys_pressed;
+    bool m_gate;
+
+    void m_push_note(uint8_t note);
+    void m_pop_note(uint8_t note);
+    int m_find_note(uint8_t note);
     void m_debug();
 };
 

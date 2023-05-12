@@ -74,7 +74,7 @@ int main() {
 
     printf("\n\n--- SHMØERGH FUNK LIVE ONE ---\r\n\n");
 
-    settings.mode = PARA;
+    settings.mode = MONO;
 
     sleep_ms(1000);
     ui.init();

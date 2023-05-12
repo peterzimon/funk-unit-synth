@@ -1,5 +1,4 @@
 #include "para.h"
-#include "../settings.h"
 
 /**
  * Resets everything

@@ -30,6 +30,9 @@ void Synth::init(void) {
 */
 void Synth::set_mode(void) {
     switch (settings.mode) {
+        case MONO:
+            m_converter = &m_mono;
+            break;
         case PARA:
             m_converter = &m_para;
             break;

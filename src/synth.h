@@ -15,6 +15,7 @@
 
 #include "i_converter.h"
 #include "./converters/para.h"
+#include "./converters/mono.h"
 
 #define MIDI_BUFFER_SIZE 32
 const uint16_t DIV_COUNTER = 1250;
@@ -43,6 +44,7 @@ protected:
 
 private:
     IConverter *m_converter;
+    Mono m_mono;
     Para m_para;
 
     uint8_t m_amp_pwm_slices[VOICES];
