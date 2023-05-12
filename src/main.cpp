@@ -74,12 +74,10 @@ int main() {
 
     printf("\n\n--- SHMØERGH FUNK LIVE ONE ---\r\n\n");
 
-    settings.mode = MONO;
-
     sleep_ms(1000);
     ui.init();
 
-    synth.init();
+    synth.init(PARA);
 
     // Init PIOs: they must be initialised here in main.cpp
     uint offset[2];

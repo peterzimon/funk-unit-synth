@@ -2,7 +2,7 @@
 #include <math.h>
 #include "synth.h"
 
-void Synth::init(void) {
+void Synth::init(device_mode default_mode) {
     
     // MIDI init
     uart_init(MIDI_UART_INSTANCE, MIDI_BAUDRATE);
@@ -20,7 +20,7 @@ void Synth::init(void) {
         // TODO:
     }
 
-    set_mode();
+    set_mode(default_mode);
 }
 
 /**
@@ -28,8 +28,8 @@ void Synth::init(void) {
  * set up a pointer to the converter of the selected mode, then reset all voices
  * and gates.
 */
-void Synth::set_mode(void) {
-    switch (settings.mode) {
+void Synth::set_mode(device_mode mode) {
+    switch (mode) {
         case MONO:
             m_converter = &m_mono;
             break;

@@ -29,10 +29,10 @@ public:
 
     DISALLOW_COPY_AND_ASSIGN(Synth);
 
-    void init();
+    void init(device_mode default_mode);
     void process();
 
-    void set_mode();
+    void set_mode(device_mode mode);
     
     void note_on(uint8_t channel, uint8_t note, uint8_t velocity);
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
