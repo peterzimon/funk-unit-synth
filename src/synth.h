@@ -30,6 +30,7 @@ public:
     DISALLOW_COPY_AND_ASSIGN(Synth);
 
     void init(device_mode default_mode);
+    void init_dcos();
     void process();
 
     void set_mode(device_mode mode);

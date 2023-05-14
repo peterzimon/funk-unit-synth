@@ -23,6 +23,12 @@ void Synth::init(device_mode default_mode) {
     set_mode(default_mode);
 }
 
+void Synth::init_dcos() {
+    for (int i = 0; i < VOICES; i++) {
+        m_set_frequency(settings.pio[settings.voice_to_pio[i]], settings.voice_to_sm[i], DEFAULT_FREQ);
+    }
+}
+
 /**
  * Each mode has its own converter that implements the same interface. Here we
  * set up a pointer to the converter of the selected mode, then reset all voices
@@ -117,7 +123,7 @@ void Synth::m_set_frequency(PIO pio, uint sm, float freq) {
 void Synth::m_update_dcos(void) {
 
     // Temporarily return until I figure out how to handle paraphony
-    return;
+    // return;
 
     for (int voice = 0; voice < VOICES; voice++) {
         float freq = m_converter->get_freq(voice);

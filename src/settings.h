@@ -10,6 +10,7 @@
 // GLOBAL
 #define VOICES              6
 #define PARA_STACK_VOICES   false
+#define DEFAULT_FREQ        220.0
 
 // DAC
 #define DAC_SPI_PORT        spi0

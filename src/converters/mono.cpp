@@ -33,7 +33,7 @@ void Mono::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
         last_note = true;
     }
     m_pop_note(note);
-    if (!last_note) m_note = m_note_stack[0];
+    if (!last_note && m_note_stack[0] != -1) m_note = m_note_stack[0];
     m_note_playing = (m_note_stack[0] != -1);
 
     m_debug();
@@ -50,7 +50,8 @@ bool Mono::get_gate() {
 
 void Mono::m_push_note(uint8_t note) {
 
-    // Check if note exists in the stack. If it does, do nothing.
+    // Check if note exists in the stack. If it does, do nothing unless the last 
+    // note is -1 (gate is off)
     if (m_find_note(note)) {
         return;
     }

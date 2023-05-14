@@ -48,6 +48,7 @@
 #include "hardware/spi.h"
 #include "hardware/uart.h"
 #include "hardware/pio.h"
+#include "hardware/clocks.h"
 #include "frequency.pio.h"
 
 /* 
@@ -69,20 +70,25 @@ Settings settings;
 UI &ui = UI::get_instance();
 Synth &synth = Synth::get_instance();
 
+PIO pio = pio0;
+uint sm = pio_claim_unused_sm(pio, true);
+// uint offset = pio_add_program(pio, &frequency_program);
+
 int main() {
     stdio_init_all();
 
     printf("\n\n--- SHMØERGH FUNK LIVE ONE ---\r\n\n");
 
-    sleep_ms(1000);
+    // sleep_ms(1000);
     ui.init();
 
-    synth.init(PARA);
+    synth.init(MONO);
 
     // Init PIOs: they must be initialised here in main.cpp
     uint offset[2];
     offset[0] = pio_add_program(settings.pio[0], &frequency_program);
     offset[1] = pio_add_program(settings.pio[1], &frequency_program);
+
     for (int i = 0; i < VOICES; i++) {
         init_sm_pin(settings.pio[settings.voice_to_pio[i]], 
                     settings.voice_to_sm[i], 
@@ -90,6 +96,9 @@ int main() {
                     settings.reset_pins[i]);
         pio_sm_set_enabled(settings.pio[settings.voice_to_pio[i]], settings.voice_to_sm[i], true);
     }
+
+    // sleep_ms(500);
+    synth.init_dcos();
     
     while (1) {
         ui.update();
