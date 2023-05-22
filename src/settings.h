@@ -11,6 +11,7 @@
 #define VOICES              6
 #define PARA_STACK_VOICES   false
 #define DEFAULT_FREQ        220.0
+#define AMP_COMP            0.75    // Use this to fine tune DCO amplification
 
 // DAC
 #define DAC_SPI_PORT        spi0

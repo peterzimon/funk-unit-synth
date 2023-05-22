@@ -980,7 +980,8 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a77378ba-0a0c-4296-b51b-61aed1267a5b)
   )
-  (text "Discharge RC = 10k * 270pF = 2.7us" (at 99.06 22.86 0)
+  (text "Discharge RC = 10k * 470pF = 4.7us\nCould go with 560p too"
+    (at 99.06 22.86 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b3c5a8fb-52d0-452d-83fc-34b23d8d5617)
   )
@@ -1139,7 +1140,7 @@
     (property "Reference" "C2" (at 119.38 26.6192 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "270p" (at 119.38 28.9306 90)
+    (property "Value" "470p" (at 119.38 28.9306 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Capacitor_THT:C_Disc_D3.4mm_W2.1mm_P2.50mm" (at 115.57 33.9852 0)

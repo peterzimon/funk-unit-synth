@@ -131,7 +131,7 @@ void Synth::m_update_dcos(void) {
 
         float amp = 0;
         if (freq != 0) {
-            amp = (int)(DIV_COUNTER * (freq * 0.00025f - 1 / (100 * freq)));
+            amp = (int)(DIV_COUNTER * (freq * 0.00025f - 1 / (100 * freq)) * AMP_COMP);
         }
         pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amp);
     }
