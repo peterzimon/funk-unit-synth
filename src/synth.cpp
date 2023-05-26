@@ -121,19 +121,27 @@ void Synth::m_set_frequency(PIO pio, uint sm, float freq) {
  * Updates DCOs
 */
 void Synth::m_update_dcos(void) {
+    // Sometimes the delay in setting the frequency of the PIOs can cause them 
+    // to be out of phase by 180deg. This causes phase cancellation with voices
+    // playing the same note (e.g. in mono mode). To minimise the chances of
+    // this, first calculate the frequencies and amplitudes (which require time)
+    // and set the frequency and amp only after then, in a separate loop.
+    float freqs[VOICES];
+    uint16_t amps[VOICES];
 
-    // Temporarily return until I figure out how to handle paraphony
-    // return;
+    for (int voice = 0; voice < VOICES; voice++)
+    {
+        freqs[voice] = m_converter->get_freq(voice);
+        if (freqs[voice] != 0) {
+            amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
+        } else {
+            amps[voice] = 0;
+        }
+    }
 
     for (int voice = 0; voice < VOICES; voice++) {
-        float freq = m_converter->get_freq(voice);
-        m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freq);
-
-        float amp = 0;
-        if (freq != 0) {
-            amp = (int)(DIV_COUNTER * (freq * 0.00025f - 1 / (100 * freq)) * AMP_COMP);
-        }
-        pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amp);
+        m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
+        pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amps[voice]);
     }
 }
 
