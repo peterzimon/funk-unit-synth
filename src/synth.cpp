@@ -44,6 +44,7 @@ void Synth::set_mode(device_mode mode) {
             break;
     }
 
+    settings.mode = mode;
     m_converter->reset();
     m_update_dcos();
 }
@@ -128,19 +129,40 @@ void Synth::m_update_dcos(void) {
     // and set the frequency and amp only after then, in a separate loop.
     float freqs[VOICES];
     uint16_t amps[VOICES];
+    float prevFreq = 0.0;
+    float freq;
+    int amp;
 
-    for (int voice = 0; voice < VOICES; voice++)
+    switch (settings.mode)
     {
-        freqs[voice] = m_converter->get_freq(voice);
-        if (freqs[voice] != 0) {
-            amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
-        } else {
-            amps[voice] = 0;
+    case MONO:
+        freq = m_converter->get_freq(0);
+        amp = (int)(DIV_COUNTER * freq / MAX_FREQ);
+        for (int voice = 0; voice < VOICES; voice++) {
+            freqs[voice] = freq;
+            amps[voice] = amp;
         }
+        break;
+
+    case PARA:
+        for (int voice = 0; voice < VOICES; voice++) {
+            freq = m_converter->get_freq(voice);
+            if (freq != 0) {
+                prevFreq = freq;
+                freqs[voice] = freq;
+                amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
+            } else {
+                freqs[voice] = prevFreq;
+                amps[voice] = 0;
+            }
+        }
+        break;
     }
 
     for (int voice = 0; voice < VOICES; voice++) {
-        m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
+        if (freqs[voice]) {
+            m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
+        }
         pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amps[voice]);
     }
 }
