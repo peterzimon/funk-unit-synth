@@ -90,7 +90,7 @@ void Para::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 
     // Return if note is already playing
     for (int i = 0; i < VOICES; i++) {
-        if (m_notes[i] == (int)note) return;
+        if (m_notes[i] == (int)note && m_voice_millis[i] != 0) return;
     }
 
     // If the note is not playing find a voice for the new note
@@ -112,7 +112,7 @@ void Para::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     for (int i = 0; i < VOICES; i++) {
         if (m_notes[i] == (int)note) {
             m_voice_millis[i] = 0;
-            if (settings.solo && i != 0) {
+            if (settings.solo && !m_last_note_playing(m_notes[i])) {
                 m_notes[i] = -1;
             }
         }
@@ -206,6 +206,15 @@ void Para::m_distribute_notes() {
     }
 
     m_debug();
+}
+
+bool Para::m_last_note_playing(int note) {
+    for (int i = 0; i < VOICES; i++) {
+        if (m_notes[i] != note && m_voice_millis[i] != 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
 void Para::m_debug() {

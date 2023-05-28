@@ -29,6 +29,7 @@ private:
     bool m_reset;
 
     int m_find_voice();
+    bool m_last_note_playing(int note);
     void m_distribute_notes();
     void m_debug();
 };

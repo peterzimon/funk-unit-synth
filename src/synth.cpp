@@ -17,7 +17,9 @@ void Synth::init(device_mode default_mode) {
         pwm_set_enabled(m_amp_pwm_slices[i], true);
 
         // Gate(s)
-        // TODO:
+        gpio_init(GP_GATE);
+        gpio_set_dir(GP_GATE, GPIO_OUT);
+        gpio_put(GP_GATE, 1);
     }
 
     set_mode(default_mode);
@@ -171,5 +173,5 @@ void Synth::m_update_dcos(void) {
 }
 
 void Synth::m_update_gate() {
-    // GATE VALUE: m_converter->get_gate();
+    gpio_put(GP_GATE, !m_converter->get_gate());
 }

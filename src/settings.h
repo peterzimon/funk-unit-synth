@@ -11,13 +11,14 @@
 #define VOICES              6
 #define PARA_STACK_VOICES   false
 #define DEFAULT_FREQ        220.0
-// #define AMP_COMP            0.75    // Use this to fine tune DCO amplification
 #define MAX_FREQ            5000.0      // This depends on the integrator's RC constant.
                                         // Rint = 200kohm, Cint = 1nF
                                         // fmax = 1/RC = 5kHz
                                         // Change this value if you change any of
                                         // the above components in the circuit.
 
+#define GP_GATE             2           // Temporary, until I test if envelope
+                                        // is going to be digital or analog
 
 // DAC
 #define DAC_SPI_PORT        spi0
