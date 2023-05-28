@@ -51,6 +51,13 @@ enum device_mode {
 struct Settings
 {
     device_mode mode;
+
+    // Solo is a submode of paraphonic mode. If it's off then the all played
+    // voices will be on until the first voice is pressed again (the first
+    // voice controls the gate to the envelope). When solo is _on_ then non-
+    // first voices will turn off when their respective key is released.
+    bool solo = false;
+    
     const uint8_t midi_channel = 0;
     const uint8_t voices = 6;
 

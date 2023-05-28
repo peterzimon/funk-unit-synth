@@ -55,6 +55,16 @@ void Para::reset() {
  * With PARA_STACK_VOICES = true the difference is that instead of 0's the
  * played notes are equally distributed.
  * 
+ * ---
+ * 
+ * Additionally there's another submode of paraphonic mode depeneding on the 
+ * value of 'settings.solo'. When it's on, then instead of keep playing the 
+ * notes on releasing non-first notes, it'll shut off. This is useful when 
+ * playing solos so there's no stuck notes, however this also means that only
+ * the last note will be kept and thus played through to the envelope.
+ * 
+ * ---
+ * 
  * For this though 6 voices may be too many! Maybe 5 voices would be better
  * because if a wrong note is held it's not removed from the played notes until
  * a new note claims its place. Needs to be tested!
@@ -102,6 +112,9 @@ void Para::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     for (int i = 0; i < VOICES; i++) {
         if (m_notes[i] == (int)note) {
             m_voice_millis[i] = 0;
+            if (settings.solo && i != 0) {
+                m_notes[i] = -1;
+            }
         }
     }
 

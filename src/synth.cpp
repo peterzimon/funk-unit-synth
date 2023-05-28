@@ -21,6 +21,9 @@ void Synth::init(device_mode default_mode) {
     }
 
     set_mode(default_mode);
+
+    // Testing solo/chord modes
+    settings.solo = true;
 }
 
 void Synth::init_dcos() {
