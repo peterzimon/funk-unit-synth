@@ -408,7 +408,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "shmoergh-funk-livecontrol.kicad_pro",
+    "filename": "shmoergh-funk-live-control.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -506,7 +506,7 @@
     ],
     [
       "2e981da9-3fd3-40a6-a1fb-543bdfad6423",
-      "LFO"
+      "LFO + PWM"
     ],
     [
       "42407d8b-94dc-4f64-92f9-b98d15e7f7d8",

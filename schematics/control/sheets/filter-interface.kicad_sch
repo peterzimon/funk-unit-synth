@@ -352,7 +352,7 @@
   (symbol (lib_id "power:GND") (at 101.6 92.71 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4298c5f8-a6ca-4f0a-aa24-01f06a3eed2f)
-    (property "Reference" "#PWR033" (at 101.6 99.06 0)
+    (property "Reference" "#PWR063" (at 101.6 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 101.6 97.79 0)
@@ -368,7 +368,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/5f1e1d4e-4c4f-4a8f-b34b-98240184a323"
-          (reference "#PWR033") (unit 1)
+          (reference "#PWR063") (unit 1)
         )
       )
     )
@@ -377,7 +377,7 @@
   (symbol (lib_id "power:GND") (at 132.08 83.82 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 58b5a8b8-f57e-4a20-a8de-4e7c7e7a54b0)
-    (property "Reference" "#PWR032" (at 132.08 90.17 0)
+    (property "Reference" "#PWR064" (at 132.08 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 132.08 88.9 0)
@@ -393,7 +393,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/5f1e1d4e-4c4f-4a8f-b34b-98240184a323"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR064") (unit 1)
         )
       )
     )
@@ -456,7 +456,7 @@
   (symbol (lib_id "power:GND") (at 101.6 68.58 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 97143d3c-e409-4e7b-afb2-a75254851e4b)
-    (property "Reference" "#PWR031" (at 101.6 74.93 0)
+    (property "Reference" "#PWR062" (at 101.6 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 101.6 73.66 0)
@@ -472,7 +472,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/5f1e1d4e-4c4f-4a8f-b34b-98240184a323"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR062") (unit 1)
         )
       )
     )
@@ -481,7 +481,7 @@
   (symbol (lib_id "power:+12V") (at 101.6 54.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9e906f08-f746-43a6-81db-abbb4185621d)
-    (property "Reference" "#PWR030" (at 101.6 58.42 0)
+    (property "Reference" "#PWR061" (at 101.6 58.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 101.6 50.8 0)
@@ -497,7 +497,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/5f1e1d4e-4c4f-4a8f-b34b-98240184a323"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR061") (unit 1)
         )
       )
     )

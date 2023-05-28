@@ -1069,7 +1069,7 @@
   (symbol (lib_id "Device:R") (at 151.13 58.42 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 03282111-a523-4aac-bd44-2759063dfbae)
-    (property "Reference" "R49" (at 151.13 53.1622 90)
+    (property "Reference" "R25" (at 151.13 53.1622 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k" (at 151.13 55.4736 90)
@@ -1086,12 +1086,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "R49") (unit 1)
+          (reference "R25") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "R35") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
     )
@@ -1100,7 +1100,7 @@
   (symbol (lib_id "Amplifier_Operational:TL072") (at 35.56 162.56 0) (unit 3)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 07603b8b-f680-49ac-aa4d-bbd2d16fc798)
-    (property "Reference" "U14" (at 34.4932 161.3916 0)
+    (property "Reference" "U6" (at 34.4932 161.3916 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TL072" (at 34.4932 163.703 0)
@@ -1123,12 +1123,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "U14") (unit 3)
+          (reference "U6") (unit 3)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "U8") (unit 3)
+          (reference "U?") (unit 3)
         )
       )
     )
@@ -1137,7 +1137,7 @@
   (symbol (lib_id "Device:R") (at 118.11 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 10fae239-d9b9-4604-87e2-db94dfea1d32)
-    (property "Reference" "R48" (at 119.888 66.1416 0)
+    (property "Reference" "R24" (at 119.888 66.1416 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "22k" (at 119.888 68.453 0)
@@ -1154,12 +1154,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "R48") (unit 1)
+          (reference "R24") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "R34") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
     )
@@ -1194,7 +1194,7 @@
   (symbol (lib_id "Device:R") (at 220.98 115.57 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1c37eea7-39c2-409d-8d23-ced8e361ad23)
-    (property "Reference" "R51" (at 220.98 110.3122 90)
+    (property "Reference" "R27" (at 220.98 110.3122 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100" (at 220.98 112.6236 90)
@@ -1211,12 +1211,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "R51") (unit 1)
+          (reference "R27") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "R37") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
     )
@@ -1225,7 +1225,7 @@
   (symbol (lib_id "Amplifier_Operational:NE5532") (at 203.2 115.57 0) (mirror x) (unit 2)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1c68baa0-fd8f-4640-902c-6d31fa85e9f3)
-    (property "Reference" "U13" (at 203.2 106.2482 0)
+    (property "Reference" "U5" (at 203.2 106.2482 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NE5532" (at 203.2 108.5596 0)
@@ -1248,12 +1248,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "U13") (unit 2)
+          (reference "U5") (unit 2)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "U9") (unit 2)
+          (reference "U?") (unit 2)
         )
       )
     )
@@ -1289,7 +1289,7 @@
   (symbol (lib_id "Device:R") (at 220.98 125.73 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1f803f0e-966c-47d8-b18a-50228ccc01a2)
-    (property "Reference" "R52" (at 220.98 120.4722 90)
+    (property "Reference" "R28" (at 220.98 120.4722 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100" (at 220.98 122.7836 90)
@@ -1306,12 +1306,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "R52") (unit 1)
+          (reference "R28") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "R38") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
     )
@@ -1346,7 +1346,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 240.03 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2b464c5b-9b70-4521-8e1c-bb0a73fed798)
-    (property "Reference" "#PWR093" (at 240.03 125.73 0)
+    (property "Reference" "#PWR032" (at 240.03 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 240.03 124.46 0)
@@ -1362,7 +1362,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR093") (unit 1)
+          (reference "#PWR032") (unit 1)
         )
       )
     )
@@ -1371,7 +1371,7 @@
   (symbol (lib_id "power:GND") (at 158.75 68.58 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 310e3ad2-e929-49e4-bb2a-e205b56742c2)
-    (property "Reference" "#PWR085" (at 158.75 74.93 0)
+    (property "Reference" "#PWR029" (at 158.75 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 158.75 73.66 0)
@@ -1387,12 +1387,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR085") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "#PWR038") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -1401,7 +1401,7 @@
   (symbol (lib_id "Amplifier_Operational:TL072") (at 96.52 162.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 345733ec-9c6d-4954-9402-e3b6fec200d6)
-    (property "Reference" "U14" (at 96.52 153.2382 0)
+    (property "Reference" "U6" (at 96.52 153.2382 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TL072" (at 96.52 155.5496 0)
@@ -1424,12 +1424,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "U14") (unit 1)
+          (reference "U6") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "U8") (unit 1)
+          (reference "U?") (unit 1)
         )
       )
     )
@@ -1438,7 +1438,7 @@
   (symbol (lib_id "Device:C") (at 54.61 166.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3a367e58-ff2a-4395-ba07-6f3269316c8c)
-    (property "Reference" "C26" (at 57.531 165.2016 0)
+    (property "Reference" "C11" (at 57.531 165.2016 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 57.531 167.513 0)
@@ -1455,12 +1455,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "C26") (unit 1)
+          (reference "C11") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "C22") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
     )
@@ -1492,7 +1492,7 @@
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "RV_LINE_OUT_LVL1") (unit 1)
+          (reference "RV_LINE_OUT_LVL?") (unit 1)
         )
       )
     )
@@ -1523,7 +1523,7 @@
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "D_NEGATIVE_LIMITER1") (unit 1)
+          (reference "D_NEGATIVE_LIMITER?") (unit 1)
         )
       )
     )
@@ -1532,7 +1532,7 @@
   (symbol (lib_id "Device:R") (at 171.45 96.52 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8cb61d54-62c5-4241-9b4a-9aec34c5713c)
-    (property "Reference" "R50" (at 171.45 91.2622 90)
+    (property "Reference" "R26" (at 171.45 91.2622 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k" (at 171.45 93.5736 90)
@@ -1549,12 +1549,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "R50") (unit 1)
+          (reference "R26") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "R36") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
     )
@@ -1563,7 +1563,7 @@
   (symbol (lib_id "Device:C") (at 43.18 166.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9c6ef434-8208-447e-ae37-38d48c07d1ac)
-    (property "Reference" "C24" (at 46.101 165.2016 0)
+    (property "Reference" "C9" (at 46.101 165.2016 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 46.101 167.513 0)
@@ -1580,12 +1580,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "C24") (unit 1)
+          (reference "C9") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "C20") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
     )
@@ -1594,7 +1594,7 @@
   (symbol (lib_id "Amplifier_Operational:TL072") (at 129.54 58.42 0) (mirror x) (unit 2)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ac37c2b6-4e8b-47ac-b576-e19affa84b58)
-    (property "Reference" "U14" (at 129.54 49.0982 0)
+    (property "Reference" "U6" (at 129.54 49.0982 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TL072" (at 129.54 51.4096 0)
@@ -1617,12 +1617,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "U14") (unit 2)
+          (reference "U6") (unit 2)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "U8") (unit 2)
+          (reference "U?") (unit 2)
         )
       )
     )
@@ -1631,7 +1631,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 196.85 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b06e0401-7d5d-4789-8d12-162ec37fb586)
-    (property "Reference" "#PWR091" (at 196.85 73.66 0)
+    (property "Reference" "#PWR031" (at 196.85 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 196.85 72.39 0)
@@ -1647,7 +1647,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR091") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
     )
@@ -1656,7 +1656,7 @@
   (symbol (lib_id "Device:C") (at 54.61 158.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ba932573-e010-4554-8851-1c2dba36432f)
-    (property "Reference" "C25" (at 57.531 157.5816 0)
+    (property "Reference" "C10" (at 57.531 157.5816 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 57.531 159.893 0)
@@ -1673,12 +1673,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "C25") (unit 1)
+          (reference "C10") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "C21") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
     )
@@ -1687,7 +1687,7 @@
   (symbol (lib_id "power:+12V") (at 33.02 154.94 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c5ecb3a4-5100-4dcd-a81e-7b680ec2a26b)
-    (property "Reference" "#PWR079" (at 33.02 158.75 0)
+    (property "Reference" "#PWR023" (at 33.02 158.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 33.401 150.5458 0)
@@ -1703,12 +1703,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR079") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "#PWR0159") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -1717,7 +1717,7 @@
   (symbol (lib_id "power:GND") (at 144.78 111.76 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c7144f07-26af-4185-85ab-3ca3c1207356)
-    (property "Reference" "#PWR084" (at 144.78 118.11 0)
+    (property "Reference" "#PWR028" (at 144.78 118.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 144.907 116.1542 0)
@@ -1733,12 +1733,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR084") (unit 1)
+          (reference "#PWR028") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "#PWR0162") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -1747,7 +1747,7 @@
   (symbol (lib_id "Device:C") (at 43.18 158.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ca8fcb66-3f4b-40d1-9ee8-08c6c7a9b1ec)
-    (property "Reference" "C23" (at 46.101 157.5816 0)
+    (property "Reference" "C8" (at 46.101 157.5816 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 46.101 159.893 0)
@@ -1764,12 +1764,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "C23") (unit 1)
+          (reference "C8") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "C19") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
     )
@@ -1801,7 +1801,7 @@
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "RV_HEADPHONE_LIM1") (unit 1)
+          (reference "RV_HEADPHONE_LIM?") (unit 1)
         )
       )
     )
@@ -1810,7 +1810,7 @@
   (symbol (lib_id "power:GND") (at 85.09 162.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ea1bf9b9-dcf1-445a-adfe-798cb07e3a40)
-    (property "Reference" "#PWR082" (at 85.09 168.91 0)
+    (property "Reference" "#PWR026" (at 85.09 168.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 85.217 166.9542 0)
@@ -1826,12 +1826,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR082") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -1840,7 +1840,7 @@
   (symbol (lib_id "Amplifier_Operational:NE5532") (at 26.67 162.56 0) (unit 3)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid edcf0c07-7ac5-4fb5-b43c-67defff241f1)
-    (property "Reference" "U13" (at 25.6032 161.3916 0)
+    (property "Reference" "U5" (at 25.6032 161.3916 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "NE5532" (at 25.6032 163.703 0)
@@ -1863,12 +1863,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "U13") (unit 3)
+          (reference "U5") (unit 3)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "U9") (unit 3)
+          (reference "U?") (unit 3)
         )
       )
     )
@@ -1877,7 +1877,7 @@
   (symbol (lib_id "power:GND") (at 67.31 162.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f234f00a-454d-4df7-817a-588406b30d43)
-    (property "Reference" "#PWR081" (at 67.31 168.91 0)
+    (property "Reference" "#PWR025" (at 67.31 168.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 67.437 166.9542 0)
@@ -1893,12 +1893,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR081") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "#PWR0158") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -1907,7 +1907,7 @@
   (symbol (lib_id "power:GND") (at 118.11 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f49f34bd-205f-47c3-a559-d7902b76367f)
-    (property "Reference" "#PWR083" (at 118.11 80.01 0)
+    (property "Reference" "#PWR027" (at 118.11 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 118.237 78.0542 0)
@@ -1923,12 +1923,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR083") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "#PWR0161") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -1937,7 +1937,7 @@
   (symbol (lib_id "power:-12V") (at 33.02 170.18 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f649ab54-2123-4e23-bb27-e2e7e372bc01)
-    (property "Reference" "#PWR080" (at 33.02 172.72 0)
+    (property "Reference" "#PWR024" (at 33.02 172.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "-12V" (at 32.639 174.5742 0)
@@ -1953,12 +1953,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR080") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "#PWR0160") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -1967,7 +1967,7 @@
   (symbol (lib_id "Amplifier_Operational:NE5532") (at 165.1 125.73 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f9c3f5ac-df48-43a7-9346-086b160cdace)
-    (property "Reference" "U13" (at 165.1 116.4082 0)
+    (property "Reference" "U5" (at 165.1 116.4082 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NE5532" (at 165.1 118.7196 0)
@@ -1990,12 +1990,12 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "U13") (unit 1)
+          (reference "U5") (unit 1)
         )
       )
       (project "hog-f1-control"
         (path "/dc2591b6-b10b-47dd-b114-9bbf4671925e/00000000-0000-0000-0000-000062e7f652"
-          (reference "U9") (unit 1)
+          (reference "U?") (unit 1)
         )
       )
     )
@@ -2004,7 +2004,7 @@
   (symbol (lib_name "GND_2") (lib_id "power:GND") (at 179.07 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fe47b2e0-3e2e-4a0d-b7d7-184d9c88cfe9)
-    (property "Reference" "#PWR092" (at 179.07 73.66 0)
+    (property "Reference" "#PWR030" (at 179.07 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 179.07 72.39 0)
@@ -2020,7 +2020,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/4fe3ce85-cfca-4e9e-9d02-7d8d63ef80e2"
-          (reference "#PWR092") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
     )
