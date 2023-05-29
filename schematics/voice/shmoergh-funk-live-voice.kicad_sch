@@ -1683,7 +1683,7 @@
     (property "Reference" "R9" (at 167.64 131.9022 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "470k" (at 167.64 134.2136 90)
+    (property "Value" "about 150k-200k" (at 167.64 134.2136 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Shmoergh_Custom_Footprints:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" (at 167.64 138.938 90)
