@@ -24,8 +24,7 @@
 #define DAC_SPI_PORT        spi0
 #define GP_DAC_SCK          6
 #define GP_DAC_MOSI         7
-#define GP_DAC_1_CS         5
-#define GP_DAC_2_CS         10
+#define GP_DAC_CS           5
 
 // MIDI
 #define LOWEST_MIDI_NOTE    0x00

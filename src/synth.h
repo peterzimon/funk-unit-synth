@@ -12,18 +12,22 @@
 #include <utils.h>
 #include <midi_parser.h>
 #include <ringbuffer.h>
+#include <adsr.h>
+#include <mcp48x2.h>
 
 #include "i_converter.h"
 #include "./converters/para.h"
 #include "./converters/mono.h"
 
 #define MIDI_BUFFER_SIZE 32
+#define ENVELOPE_DAC_SIZE 4096
+
 const uint16_t DIV_COUNTER = 1250;
 
 class Synth: public MidiParser {
 public:
-    static Synth& get_instance() {
-        static Synth instance;
+    static Synth& get_instance(int adsrDacSize) {
+        static Synth instance(adsrDacSize);
         return instance;
     }
 
@@ -41,12 +45,15 @@ public:
 
 
 protected:
-    Synth() = default;
+    Synth(int adsrDacSize);
+//     Synth(int adsrDacSize) = default;
 
 private:
     IConverter *m_converter;
     Mono m_mono;
     Para m_para;
+    ADSR m_adsr;
+    MCP48X2 m_dac;
 
     uint8_t m_amp_pwm_slices[VOICES];
 
@@ -62,6 +69,7 @@ private:
     void m_set_frequency(PIO pio, uint sm, float freq);
     void m_update_dcos(void);
     void m_update_gate();
+    void m_update_envelope();
 };
 
 #endif

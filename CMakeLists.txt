@@ -28,6 +28,7 @@ target_link_libraries(${PROJECT_NAME}
                         hardware_pio
                         hardware_pwm
                         mcp48x2
+                        adsr
                         ringbuffer
                         midi_parser
                         utils)

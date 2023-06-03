@@ -2,6 +2,9 @@
 #include <math.h>
 #include "synth.h"
 
+// Constructor with 
+Synth::Synth(int adsrParameter): m_adsr(ENVELOPE_DAC_SIZE) {}
+
 void Synth::init(device_mode default_mode) {
     
     // MIDI init
@@ -16,11 +19,15 @@ void Synth::init(device_mode default_mode) {
         pwm_set_wrap(m_amp_pwm_slices[i], DIV_COUNTER);
         pwm_set_enabled(m_amp_pwm_slices[i], true);
 
-        // Gate(s)
-        gpio_init(GP_GATE);
-        gpio_set_dir(GP_GATE, GPIO_OUT);
-        gpio_put(GP_GATE, 1);
     }
+    
+    // Gate(s)
+    gpio_init(GP_GATE);
+    gpio_set_dir(GP_GATE, GPIO_OUT);
+    gpio_put(GP_GATE, 1);
+
+    // DAC init
+    m_dac.init(DAC_SPI_PORT, GP_DAC_CS, GP_DAC_SCK, GP_DAC_MOSI);
 
     set_mode(default_mode);
 
@@ -174,4 +181,14 @@ void Synth::m_update_dcos(void) {
 
 void Synth::m_update_gate() {
     gpio_put(GP_GATE, !m_converter->get_gate());
+}
+
+void Synth::m_update_envelope() {
+    if (m_converter->get_gate()) {
+        m_adsr.note_on();
+    } else {
+        m_adsr.note_off();
+    }
+
+    m_dac.write(m_adsr.envelope());
 }

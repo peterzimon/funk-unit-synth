@@ -68,11 +68,10 @@
 */
 Settings settings;
 UI &ui = UI::get_instance();
-Synth &synth = Synth::get_instance();
+Synth &synth = Synth::get_instance(4096);
 
 PIO pio = pio0;
 uint sm = pio_claim_unused_sm(pio, true);
-// uint offset = pio_add_program(pio, &frequency_program);
 
 int main() {
     stdio_init_all();

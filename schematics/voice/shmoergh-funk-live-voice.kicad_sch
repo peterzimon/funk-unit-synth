@@ -178,11 +178,11 @@
         )
       )
     )
-    (symbol "Connector_Generic:Conn_01x10" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "J" (at 0 12.7 0)
+    (symbol "Connector_Generic:Conn_01x06" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 0 7.62 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "Conn_01x10" (at 0 -15.24 0)
+      (property "Value" "Conn_01x06" (at 0 -10.16 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -194,21 +194,13 @@
       (property "ki_keywords" "connector" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
+      (property "ki_description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "Conn_01x10_1_1"
-        (rectangle (start -1.27 -12.573) (end 0 -12.827)
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (rectangle (start -1.27 -10.033) (end 0 -10.287)
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
+      (symbol "Conn_01x06_1_1"
         (rectangle (start -1.27 -7.493) (end 0 -7.747)
           (stroke (width 0.1524) (type default))
           (fill (type none))
@@ -233,57 +225,110 @@
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (rectangle (start -1.27 7.747) (end 0 7.493)
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (rectangle (start -1.27 10.287) (end 0 10.033)
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (rectangle (start -1.27 11.43) (end 1.27 -13.97)
+        (rectangle (start -1.27 6.35) (end 1.27 -8.89)
           (stroke (width 0.254) (type default))
           (fill (type background))
         )
-        (pin passive line (at -5.08 10.16 0) (length 3.81)
+        (pin passive line (at -5.08 5.08 0) (length 3.81)
           (name "Pin_1" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at -5.08 -12.7 0) (length 3.81)
-          (name "Pin_10" (effects (font (size 1.27 1.27))))
-          (number "10" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at -5.08 7.62 0) (length 3.81)
+        (pin passive line (at -5.08 2.54 0) (length 3.81)
           (name "Pin_2" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at -5.08 5.08 0) (length 3.81)
+        (pin passive line (at -5.08 0 0) (length 3.81)
           (name "Pin_3" (effects (font (size 1.27 1.27))))
           (number "3" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at -5.08 2.54 0) (length 3.81)
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
           (name "Pin_4" (effects (font (size 1.27 1.27))))
           (number "4" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at -5.08 0 0) (length 3.81)
+        (pin passive line (at -5.08 -5.08 0) (length 3.81)
           (name "Pin_5" (effects (font (size 1.27 1.27))))
           (number "5" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+        (pin passive line (at -5.08 -7.62 0) (length 3.81)
           (name "Pin_6" (effects (font (size 1.27 1.27))))
           (number "6" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at -5.08 -5.08 0) (length 3.81)
-          (name "Pin_7" (effects (font (size 1.27 1.27))))
-          (number "7" (effects (font (size 1.27 1.27))))
+      )
+    )
+    (symbol "Connector_Generic:Conn_02x03_Odd_Even" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 1.27 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "Conn_02x03_Odd_Even" (at 1.27 -5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "connector" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "Connector*:*_2x??_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Conn_02x03_Odd_Even_1_1"
+        (rectangle (start -1.27 -2.413) (end 0 -2.667)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
         )
-        (pin passive line (at -5.08 -7.62 0) (length 3.81)
-          (name "Pin_8" (effects (font (size 1.27 1.27))))
-          (number "8" (effects (font (size 1.27 1.27))))
+        (rectangle (start -1.27 0.127) (end 0 -0.127)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
         )
-        (pin passive line (at -5.08 -10.16 0) (length 3.81)
-          (name "Pin_9" (effects (font (size 1.27 1.27))))
-          (number "9" (effects (font (size 1.27 1.27))))
+        (rectangle (start -1.27 2.667) (end 0 2.413)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 3.81) (end 3.81 -3.81)
+          (stroke (width 0.254) (type default))
+          (fill (type background))
+        )
+        (rectangle (start 3.81 -2.413) (end 2.54 -2.667)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start 3.81 0.127) (end 2.54 -0.127)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start 3.81 2.667) (end 2.54 2.413)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (pin passive line (at -5.08 2.54 0) (length 3.81)
+          (name "Pin_1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 7.62 2.54 180) (length 3.81)
+          (name "Pin_2" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 0 0) (length 3.81)
+          (name "Pin_3" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 7.62 0 180) (length 3.81)
+          (name "Pin_4" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+          (name "Pin_5" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 7.62 -2.54 180) (length 3.81)
+          (name "Pin_6" (effects (font (size 1.27 1.27))))
+          (number "6" (effects (font (size 1.27 1.27))))
         )
       )
     )
@@ -433,35 +478,6 @@
         (pin passive line (at 0 -3.81 90) (length 1.27)
           (name "3" (effects (font (size 1.27 1.27))))
           (number "3" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "Mechanical:MountingHole" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-      (property "Reference" "H" (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "MountingHole" (at 0 3.175 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "mounting hole" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Mounting Hole without connection" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "MountingHole*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "MountingHole_0_1"
-        (circle (center 0 0) (radius 1.27)
-          (stroke (width 1.27) (type default))
-          (fill (type none))
         )
       )
     )
@@ -725,9 +741,7 @@
     (uuid e1dff618-2954-4fb8-ab73-0f2428fc9614)
   )
 
-  (no_connect (at 251.46 34.29) (uuid 0aba2233-f649-4404-bd7d-f1c18530adc3))
-
-  (wire (pts (xy 246.38 46.99) (xy 251.46 46.99))
+  (wire (pts (xy 247.65 54.61) (xy 252.73 54.61))
     (stroke (width 0) (type default))
     (uuid 02c3c11a-8740-4095-af73-37ced334c20a)
   )
@@ -779,6 +793,10 @@
     (stroke (width 0) (type default))
     (uuid 22c70400-9483-473c-b79a-ecd56db7cade)
   )
+  (wire (pts (xy 243.84 33.02) (xy 243.84 31.75))
+    (stroke (width 0) (type default))
+    (uuid 274da412-5755-490b-bd2a-9e9bcff84b3a)
+  )
   (wire (pts (xy 120.65 95.25) (xy 120.65 104.14))
     (stroke (width 0) (type default))
     (uuid 274edbe5-01da-4be0-b5be-5b3759444e95)
@@ -786,6 +804,10 @@
   (wire (pts (xy 44.45 82.55) (xy 44.45 85.09))
     (stroke (width 0) (type default))
     (uuid 2d8ac8fb-a31d-4b16-9e18-c5ff45261636)
+  )
+  (wire (pts (xy 243.84 31.75) (xy 250.19 31.75))
+    (stroke (width 0) (type default))
+    (uuid 2e5a57a2-7db5-4ed4-9ded-4b609bfe2ea5)
   )
   (wire (pts (xy 115.57 104.14) (xy 120.65 104.14))
     (stroke (width 0) (type default))
@@ -824,13 +846,9 @@
     (stroke (width 0) (type default))
     (uuid 42cd61f4-b8d6-42cf-9634-098efc896cc1)
   )
-  (wire (pts (xy 246.38 39.37) (xy 251.46 39.37))
+  (wire (pts (xy 247.65 46.99) (xy 252.73 46.99))
     (stroke (width 0) (type default))
     (uuid 44eb5c85-21b0-4caf-8a77-5d799c30b8fa)
-  )
-  (wire (pts (xy 224.79 29.21) (xy 251.46 29.21))
-    (stroke (width 0) (type default))
-    (uuid 473602b3-6346-4fd2-b9f3-5235d0bae550)
   )
   (wire (pts (xy 90.17 45.72) (xy 99.06 45.72))
     (stroke (width 0) (type default))
@@ -861,13 +879,17 @@
     (stroke (width 0) (type default))
     (uuid 66ce2a63-3342-40b2-8a0a-c561378cfb0c)
   )
-  (wire (pts (xy 248.92 26.67) (xy 251.46 26.67))
+  (wire (pts (xy 269.24 33.02) (xy 269.24 31.75))
     (stroke (width 0) (type default))
-    (uuid 70d7fc13-6f5a-4deb-95ff-e84dcba51371)
+    (uuid 6b1746df-5e33-42a7-a8d4-28bfee082a35)
   )
   (wire (pts (xy 135.89 81.28) (xy 142.24 81.28))
     (stroke (width 0) (type default))
     (uuid 72c664ed-d0fb-456b-aa6f-7e491a56152a)
+  )
+  (wire (pts (xy 269.24 31.75) (xy 262.89 31.75))
+    (stroke (width 0) (type default))
+    (uuid 73cb20de-62ad-4f46-998b-d10c8601d5ad)
   )
   (wire (pts (xy 90.17 74.93) (xy 90.17 87.63))
     (stroke (width 0) (type default))
@@ -881,7 +903,7 @@
     (stroke (width 0) (type default))
     (uuid 79ab0771-0c1e-48f7-b280-c26e5679977d)
   )
-  (wire (pts (xy 246.38 36.83) (xy 251.46 36.83))
+  (wire (pts (xy 247.65 44.45) (xy 252.73 44.45))
     (stroke (width 0) (type default))
     (uuid 819f1552-e13b-4a29-a415-0a6bb6504d15)
   )
@@ -896,14 +918,6 @@
   (wire (pts (xy 99.06 45.72) (xy 99.06 49.53))
     (stroke (width 0) (type default))
     (uuid 84cdd101-49bf-405a-a5c0-0b0247474a3a)
-  )
-  (wire (pts (xy 248.92 25.4) (xy 248.92 26.67))
-    (stroke (width 0) (type default))
-    (uuid 850d3775-74c4-4274-bc6d-a00dbb05b287)
-  )
-  (wire (pts (xy 229.87 31.75) (xy 251.46 31.75))
-    (stroke (width 0) (type default))
-    (uuid 85cd1dd7-c0dc-4fa7-a2e2-3758ca57a04c)
   )
   (wire (pts (xy 189.23 88.9) (xy 189.23 92.71))
     (stroke (width 0) (type default))
@@ -921,7 +935,7 @@
     (stroke (width 0) (type default))
     (uuid 8c46bcc8-90cf-4ecc-aaec-93527b8ee98f)
   )
-  (wire (pts (xy 246.38 41.91) (xy 251.46 41.91))
+  (wire (pts (xy 247.65 49.53) (xy 252.73 49.53))
     (stroke (width 0) (type default))
     (uuid 8d697799-0b70-4166-b7aa-7cd72cbf72bc)
   )
@@ -941,10 +955,6 @@
     (stroke (width 0) (type default))
     (uuid 95ebd433-553c-4b38-9d4e-6b3c5de25584)
   )
-  (wire (pts (xy 229.87 33.02) (xy 229.87 31.75))
-    (stroke (width 0) (type default))
-    (uuid 981c888d-68c0-4f87-80b5-f210a3c13747)
-  )
   (wire (pts (xy 224.79 134.62) (xy 227.33 134.62))
     (stroke (width 0) (type default))
     (uuid 9c7fb212-8bc4-4925-a30b-485480c451db)
@@ -952,10 +962,6 @@
   (wire (pts (xy 57.15 45.72) (xy 64.77 45.72))
     (stroke (width 0) (type default))
     (uuid 9dd2bf98-909c-459d-b346-f668a5838692)
-  )
-  (wire (pts (xy 224.79 33.02) (xy 224.79 29.21))
-    (stroke (width 0) (type default))
-    (uuid a1027ede-8c0a-4a0b-bbee-232836216698)
   )
   (wire (pts (xy 93.98 57.15) (xy 90.17 57.15))
     (stroke (width 0) (type default))
@@ -994,7 +1000,7 @@
     (stroke (width 0) (type default))
     (uuid b75c6f3f-3a49-4332-bb08-aa5ef294a029)
   )
-  (wire (pts (xy 246.38 49.53) (xy 251.46 49.53))
+  (wire (pts (xy 247.65 57.15) (xy 252.73 57.15))
     (stroke (width 0) (type default))
     (uuid b8d171b8-3d71-432e-91fe-bf0b13e956d5)
   )
@@ -1006,7 +1012,7 @@
     (stroke (width 0) (type default))
     (uuid bd1a6546-56c0-45b1-9782-ad8f21c1d493)
   )
-  (wire (pts (xy 246.38 44.45) (xy 251.46 44.45))
+  (wire (pts (xy 247.65 52.07) (xy 252.73 52.07))
     (stroke (width 0) (type default))
     (uuid c20bc418-c5a9-4f28-8ac8-9ed113b5bf56)
   )
@@ -1149,10 +1155,10 @@
     (uuid f5fff4d2-acb3-4272-a6c7-d108721bd05f)
   )
 
-  (global_label "PULSE_WIDTH" (shape input) (at 246.38 41.91 180)
+  (global_label "PULSE_WIDTH" (shape input) (at 247.65 49.53 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 011a83f6-e39f-4fa2-9c71-515ec4ea825d)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 246.38 41.91 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 247.65 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
   )
@@ -1163,17 +1169,17 @@
       (effects (font (size 1.27 1.27)) hide)
     )
   )
-  (global_label "PWM" (shape input) (at 246.38 44.45 180)
+  (global_label "PWM" (shape input) (at 247.65 52.07 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 1172cbec-c452-4f61-82b2-04f2f7950657)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 246.38 44.45 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 247.65 52.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
   )
-  (global_label "AMP" (shape input) (at 246.38 49.53 180)
+  (global_label "AMP" (shape input) (at 247.65 46.99 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 38b5d6ae-9538-40fa-a3c2-914d14618432)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 246.38 49.53 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 247.65 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
   )
@@ -1198,10 +1204,10 @@
       (effects (font (size 1.27 1.27)) hide)
     )
   )
-  (global_label "RESET" (shape input) (at 246.38 46.99 180)
+  (global_label "RESET" (shape input) (at 247.65 44.45 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid b96c5595-91f7-47b7-b7b8-f136b7ef46c2)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 246.38 46.99 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 247.65 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
   )
@@ -1212,10 +1218,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "SAW_OUT" (shape output) (at 246.38 39.37 180) (fields_autoplaced)
+  (global_label "SAW_OUT" (shape output) (at 247.65 54.61 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid d863586f-58ff-4539-8c15-b3eb738a0771)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 235.1285 39.37 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 236.3985 54.61 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
@@ -1226,10 +1232,10 @@
       (effects (font (size 1.27 1.27)) hide)
     )
   )
-  (global_label "SQR_OUT" (shape output) (at 246.38 36.83 180) (fields_autoplaced)
+  (global_label "SQR_OUT" (shape output) (at 247.65 57.15 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid f113c3fe-9901-40d1-8c2b-8fa04e1baf75)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 235.068 36.83 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 236.338 57.15 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
@@ -1237,7 +1243,7 @@
   (symbol (lib_id "power:-12V") (at 114.3 111.76 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 07121c92-fd0a-47e8-af02-3791b5b4fc0c)
-    (property "Reference" "#PWR06" (at 114.3 114.3 0)
+    (property "Reference" "#PWR07" (at 114.3 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "-12V" (at 114.3 116.84 0)
@@ -1253,61 +1259,7 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR06") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Connector_Generic:Conn_01x10") (at 256.54 36.83 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 08007dd9-d7de-4269-8db3-e954a057627c)
-    (property "Reference" "J_VOICE_INTERFACE_1" (at 259.08 37.465 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Conn_01x10" (at 259.08 40.005 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" (at 256.54 36.83 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 256.54 36.83 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid b15c80bb-f960-433e-bb2a-4fd506f43f45))
-    (pin "10" (uuid b6b55081-85d1-4e66-8d29-fbcba836b22a))
-    (pin "2" (uuid 53f4e0c2-ab5b-411f-b60a-589af6202056))
-    (pin "3" (uuid 3740de90-ebfd-4c48-a4d1-e37b00f5f04e))
-    (pin "4" (uuid fedbdfe2-1e1d-47b9-908b-12769126f267))
-    (pin "5" (uuid 012601a7-a4d6-49cd-8bb0-9ae530bbc6fc))
-    (pin "6" (uuid e0a5a6e2-df0d-4238-a933-c64cb3bd18fe))
-    (pin "7" (uuid b3bd6513-d1d8-496e-a059-e924f9b7fd08))
-    (pin "8" (uuid 3fd96316-d68d-4010-abec-3789b4d95136))
-    (pin "9" (uuid 44dde851-fef4-4ae9-9a87-87e54961c943))
-    (instances
-      (project "shmoergh-funk-live-voice"
-        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "J_VOICE_INTERFACE_1") (unit 1)
-        )
-      )
-      (project "brow-control"
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "J1") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "J3") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "J_VOICE_INTERFACE_1") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
-          (reference "J5") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "J6") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "J4") (unit 1)
+          (reference "#PWR07") (unit 1)
         )
       )
     )
@@ -1316,7 +1268,7 @@
   (symbol (lib_id "Device:C") (at 68.58 45.72 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0ab1c1ba-01bc-4806-854b-76448f9c9f0c)
-    (property "Reference" "C2" (at 68.58 39.3192 90)
+    (property "Reference" "C?" (at 68.58 39.3192 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "560" (at 68.58 41.6306 90)
@@ -1333,19 +1285,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "C2") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "C12") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "C17") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "C27") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "C?") (unit 1)
@@ -1354,21 +1306,21 @@
           (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "C22") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "C12") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "C32") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "C12") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "C2") (unit 1)
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -1377,7 +1329,7 @@
   (symbol (lib_id "Device:R") (at 132.08 81.28 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 10b917b1-356a-45db-ba91-da81b7fba6f2)
-    (property "Reference" "R16" (at 133.35 83.82 90)
+    (property "Reference" "R7" (at 133.35 83.82 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "200k" (at 132.08 78.74 90)
@@ -1394,7 +1346,52 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R16") (unit 1)
+          (reference "R7") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:-12V") (at 262.89 34.29 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 22bc5936-9fce-422f-be88-83fd2fbdfc21)
+    (property "Reference" "#PWR015" (at 262.89 36.83 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "-12V" (at 262.89 39.37 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 262.89 34.29 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 262.89 34.29 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid e392a8a8-cee3-41a3-bf28-50cb8062174c))
+    (instances
+      (project "shmoergh-funk-live-voice"
+        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
+          (reference "#PWR015") (unit 1)
+        )
+      )
+      (project "brow-control"
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -1403,7 +1400,7 @@
   (symbol (lib_id "Device:R") (at 167.64 125.73 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 24e8fa0c-0d3f-45a1-85a6-8bea39caad8a)
-    (property "Reference" "R8" (at 167.64 120.4722 90)
+    (property "Reference" "R?" (at 167.64 120.4722 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "470k" (at 167.64 122.7836 90)
@@ -1420,19 +1417,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R8") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R24") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R38") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R66") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -1441,21 +1438,21 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R52") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R24") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R80") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R24") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R7") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
     )
@@ -1470,7 +1467,7 @@
     (property "Value" "TestPoint" (at 80.01 40.64 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 82.55 41.91 0)
+    (property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork" (at 82.55 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 82.55 41.91 0)
@@ -1495,7 +1492,7 @@
     (property "Value" "TestPoint" (at 191.77 87.503 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 194.31 88.9 0)
+    (property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork" (at 194.31 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 194.31 88.9 0)
@@ -1514,7 +1511,7 @@
   (symbol (lib_id "power:GND") (at 227.33 148.59 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 373e7660-40f5-402b-9ec8-193fef6228f3)
-    (property "Reference" "#PWR0110" (at 227.33 154.94 0)
+    (property "Reference" "#PWR?" (at 227.33 154.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 227.457 152.9842 0)
@@ -1530,19 +1527,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "#PWR0110") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "#PWR0134") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "#PWR0143") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "#PWR0161") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "#PWR?") (unit 1)
@@ -1551,66 +1548,21 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "#PWR0152") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "#PWR0134") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "#PWR0170") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "#PWR0134") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR07") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 229.87 33.02 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 3745e3af-53e6-4e42-a4be-e85aaa8342be)
-    (property "Reference" "#PWR010" (at 229.87 39.37 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 229.87 38.1 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 229.87 33.02 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 229.87 33.02 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid db5f7cdb-61d3-4f80-8c5d-15e316d28bbd))
-    (instances
-      (project "shmoergh-funk-live-voice"
-        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR010") (unit 1)
-        )
-      )
-      (project "brow-control"
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "#PWR07") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "#PWR09") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "#PWR08") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
           (reference "#PWR011") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "#PWR012") (unit 1)
-        )
-        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "#PWR010") (unit 1)
         )
       )
     )
@@ -1619,7 +1571,7 @@
   (symbol (lib_id "Device:C") (at 99.06 74.93 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3968ba7e-2a6f-43af-8401-19c3b22dd4ff)
-    (property "Reference" "C3" (at 99.06 68.5292 90)
+    (property "Reference" "C?" (at 99.06 68.5292 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1n (foil)" (at 99.06 70.8406 90)
@@ -1636,19 +1588,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "C3") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "C13") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "C18") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "C28") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "C?") (unit 1)
@@ -1657,21 +1609,21 @@
           (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "C23") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "C13") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "C33") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "C13") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "C3") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -1680,7 +1632,7 @@
   (symbol (lib_id "Device:R") (at 167.64 137.16 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 40f8a61a-9822-4edf-863e-0988d812e355)
-    (property "Reference" "R9" (at 167.64 131.9022 90)
+    (property "Reference" "R?" (at 167.64 131.9022 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "about 150k-200k" (at 167.64 134.2136 90)
@@ -1697,19 +1649,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R9") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R25") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R39") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R67") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -1718,21 +1670,21 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R53") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R25") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R81") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R25") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R8") (unit 1)
+          (reference "R9") (unit 1)
         )
       )
     )
@@ -1741,7 +1693,7 @@
   (symbol (lib_id "power:GND") (at 77.47 58.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 42c7e57b-d93c-4a3d-b787-c93350173f38)
-    (property "Reference" "#PWR0106" (at 77.47 64.77 0)
+    (property "Reference" "#PWR?" (at 77.47 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 77.597 62.8142 0)
@@ -1757,19 +1709,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "#PWR0106") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "#PWR0132") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "#PWR0141") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "#PWR0159") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "#PWR?") (unit 1)
@@ -1778,21 +1730,21 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "#PWR0150") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "#PWR0132") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "#PWR0168") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "#PWR0132") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR03") (unit 1)
+          (reference "#PWR05") (unit 1)
         )
       )
     )
@@ -1801,7 +1753,7 @@
   (symbol (lib_id "power:GND") (at 87.63 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4a646b0c-8875-46a0-bb15-2b28822fc6f4)
-    (property "Reference" "#PWR0105" (at 87.63 105.41 0)
+    (property "Reference" "#PWR?" (at 87.63 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 87.757 103.4542 0)
@@ -1817,19 +1769,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "#PWR0105") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "#PWR0131") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "#PWR0140") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "#PWR0158") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "#PWR?") (unit 1)
@@ -1838,21 +1790,21 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "#PWR0149") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "#PWR0131") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "#PWR0167") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "#PWR0131") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR04") (unit 1)
+          (reference "#PWR06") (unit 1)
         )
       )
     )
@@ -1861,7 +1813,7 @@
   (symbol (lib_id "power:+12V") (at 127 111.76 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4f9996d9-cbe0-45dc-97d6-98e689c947d1)
-    (property "Reference" "#PWR02" (at 127 115.57 0)
+    (property "Reference" "#PWR08" (at 127 115.57 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 127 107.95 0)
@@ -1877,7 +1829,7 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR08") (unit 1)
         )
       )
     )
@@ -1886,7 +1838,7 @@
   (symbol (lib_id "power:-12V") (at 26.67 184.15 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5064f54d-ada7-4fb0-bb7b-498a492ac290)
-    (property "Reference" "#PWR0137" (at 26.67 186.69 0)
+    (property "Reference" "#PWR?" (at 26.67 186.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "-12V" (at 26.289 188.5442 0)
@@ -1902,39 +1854,39 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "#PWR0137") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a67127"
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "#PWR0137") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "#PWR0155") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "#PWR0173") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "#PWR0146") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "#PWR0113") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "#PWR0164") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "#PWR0137") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR03") (unit 1)
         )
       )
     )
@@ -1943,7 +1895,7 @@
   (symbol (lib_id "Device:R") (at 116.84 90.17 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 57509d92-b57d-4ba1-84c2-cfb6a6a0a39f)
-    (property "Reference" "R12" (at 118.11 92.71 90)
+    (property "Reference" "R6" (at 118.11 92.71 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100k" (at 116.84 87.63 90)
@@ -1960,31 +1912,7 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R12") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 267.97 149.86 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 59ce3675-578b-408d-b609-5119cb5d12a4)
-    (property "Reference" "H1" (at 270.51 149.225 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (at 270.51 151.765 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_3mm_Pad" (at 267.97 149.86 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 267.97 149.86 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "shmoergh-funk-live-voice"
-        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "H1") (unit 1)
+          (reference "R6") (unit 1)
         )
       )
     )
@@ -1993,7 +1921,7 @@
   (symbol (lib_id "Device:R") (at 86.36 45.72 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 619e05c7-3a8c-4f32-9c99-be5741b0a3b7)
-    (property "Reference" "R7" (at 87.63 48.26 90)
+    (property "Reference" "R?" (at 87.63 48.26 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k" (at 87.63 50.8 90)
@@ -2010,19 +1938,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R7") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R23") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R37") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R65") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -2031,21 +1959,21 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R51") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R23") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R79") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R23") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R6") (unit 1)
+          (reference "R4") (unit 1)
         )
       )
     )
@@ -2054,7 +1982,7 @@
   (symbol (lib_id "Device:R") (at 220.98 134.62 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 62b976a0-b36f-4b33-87c4-1ff329b35ce7)
-    (property "Reference" "R14" (at 220.98 129.3622 90)
+    (property "Reference" "R?" (at 220.98 129.3622 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "15k" (at 220.98 131.6736 90)
@@ -2071,19 +1999,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R14") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R30") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R44") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R72") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -2092,21 +2020,21 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R58") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R30") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R86") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R30") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R13") (unit 1)
+          (reference "R12") (unit 1)
         )
       )
     )
@@ -2115,7 +2043,7 @@
   (symbol (lib_id "Device:R") (at 189.23 124.46 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6ce6b313-4d54-4e94-b059-7e9ad96d5e25)
-    (property "Reference" "R12" (at 191.008 123.2916 0)
+    (property "Reference" "R?" (at 191.008 123.2916 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10k" (at 191.008 125.603 0)
@@ -2132,19 +2060,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R12") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R28") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R42") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R70") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -2153,16 +2081,16 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R56") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R28") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R84") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R28") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
@@ -2176,7 +2104,7 @@
   (symbol (lib_id "Amplifier_Operational:TL074") (at 99.06 90.17 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 736ca4ad-edf6-4ffd-aed8-4c34b3766264)
-    (property "Reference" "U2" (at 99.06 99.4918 0)
+    (property "Reference" "U?" (at 99.06 99.4918 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TL074" (at 99.06 97.1804 0)
@@ -2205,19 +2133,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "U2") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "U?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "U4") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "U5") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "U7") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "U?") (unit 1)
@@ -2226,16 +2154,16 @@
           (reference "U?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "U6") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "U4") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "U8") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "U4") (unit 1)
+          (reference "U?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
@@ -2255,7 +2183,7 @@
     (property "Value" "TestPoint" (at 112.268 101.6 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 115.57 99.06 0)
+    (property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork" (at 115.57 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 115.57 99.06 0)
@@ -2274,7 +2202,7 @@
   (symbol (lib_id "Amplifier_Operational:TL074") (at 203.2 134.62 0) (mirror x) (unit 4)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 784ebead-2ba1-4b9c-9344-aeecf486f8d6)
-    (property "Reference" "U2" (at 203.2 143.9418 0)
+    (property "Reference" "U?" (at 203.2 143.9418 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TL074" (at 203.2 141.6304 0)
@@ -2303,19 +2231,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "U2") (unit 4)
+          (reference "U?") (unit 4)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "U?") (unit 4)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "U4") (unit 4)
+          (reference "U?") (unit 4)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "U5") (unit 4)
+          (reference "U?") (unit 4)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "U7") (unit 4)
+          (reference "U?") (unit 4)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "U?") (unit 4)
@@ -2324,16 +2252,16 @@
           (reference "U?") (unit 4)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "U6") (unit 4)
+          (reference "U?") (unit 4)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "U4") (unit 4)
+          (reference "U?") (unit 4)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "U8") (unit 4)
+          (reference "U?") (unit 4)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "U4") (unit 4)
+          (reference "U?") (unit 4)
         )
       )
       (project "shmoergh-funk-live-voice"
@@ -2347,7 +2275,7 @@
   (symbol (lib_id "power:GND") (at 20.32 176.53 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 78ddea71-e38b-4b0c-87c1-b3e08ec92ffd)
-    (property "Reference" "#PWR013" (at 20.32 182.88 0)
+    (property "Reference" "#PWR01" (at 20.32 182.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 20.32 181.61 0)
@@ -2363,7 +2291,82 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR01") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector_Generic:Conn_01x06") (at 257.81 49.53 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 7b1d5375-c959-47c3-89a3-978b24b6dfaa)
+    (property "Reference" "J_VOICE_INTERFACE_1" (at 260.35 50.165 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "Conn_01x06" (at 260.35 52.705 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" (at 257.81 49.53 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 257.81 49.53 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 80e04132-eff5-4cab-904d-df03f0e762e5))
+    (pin "2" (uuid a1320c60-86b9-459a-9297-0a7e1b3ca0e5))
+    (pin "3" (uuid 9c07b470-63e1-455d-a283-58e7a3324433))
+    (pin "4" (uuid 8631e9f6-31aa-4837-9ec1-f019a50070b3))
+    (pin "5" (uuid 67f5cdf9-bf8d-4c80-8239-b8f8c8570d30))
+    (pin "6" (uuid 3171b486-f780-405c-a4de-29487165d224))
+    (instances
+      (project "shmoergh-funk-live-voice"
+        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
+          (reference "J_VOICE_INTERFACE_1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 243.84 33.02 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 7b8e73d5-30e9-435b-ba4f-3065bbae11a9)
+    (property "Reference" "#PWR014" (at 243.84 39.37 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 243.84 38.1 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 243.84 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 243.84 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 1284167a-60f1-4c86-b1de-df4bae53db07))
+    (instances
+      (project "shmoergh-funk-live-voice"
+        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
+          (reference "#PWR014") (unit 1)
+        )
+      )
+      (project "brow-control"
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -2378,7 +2381,7 @@
     (property "Value" "10k fine" (at 124.46 118.11 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 120.65 111.76 0)
+    (property "Footprint" "PCM_Potentiometer_THT_AKL:Potentiometer_ACP_CA6-H2,5_Horizontal" (at 120.65 111.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 120.65 111.76 0)
@@ -2399,7 +2402,7 @@
   (symbol (lib_id "power:GND") (at 44.45 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 84bc5da8-5c25-4040-9584-b199e7d43d25)
-    (property "Reference" "#PWR0111" (at 44.45 105.41 0)
+    (property "Reference" "#PWR?" (at 44.45 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 44.577 103.4542 0)
@@ -2415,19 +2418,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "#PWR0111") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "#PWR0135") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "#PWR0144") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "#PWR0162") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "#PWR?") (unit 1)
@@ -2436,21 +2439,21 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "#PWR0153") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "#PWR0135") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "#PWR0171") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "#PWR0135") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR01") (unit 1)
+          (reference "#PWR04") (unit 1)
         )
       )
     )
@@ -2459,7 +2462,7 @@
   (symbol (lib_id "Device:R") (at 227.33 140.97 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 85102ea2-97d8-4e76-84dc-898ec8725942)
-    (property "Reference" "R15" (at 229.108 139.8016 0)
+    (property "Reference" "R?" (at 229.108 139.8016 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10k" (at 229.108 142.113 0)
@@ -2476,19 +2479,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R15") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R31") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R45") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R73") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -2497,21 +2500,21 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R59") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R31") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R87") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R31") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R14") (unit 1)
+          (reference "R13") (unit 1)
         )
       )
     )
@@ -2520,7 +2523,7 @@
   (symbol (lib_id "Device:R") (at 180.34 146.05 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 85509944-3aa0-43d8-8815-d594f7a95dd2)
-    (property "Reference" "R10" (at 182.118 144.8816 0)
+    (property "Reference" "R?" (at 182.118 144.8816 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "470k" (at 182.118 147.193 0)
@@ -2537,19 +2540,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R10") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R26") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R40") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R68") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -2558,45 +2561,21 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R54") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R26") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R82") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R26") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R9") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 267.97 156.21 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 89f2da0b-12ec-4662-840b-2cb89c93b20e)
-    (property "Reference" "H2" (at 270.51 155.575 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (at 270.51 158.115 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_3mm_Pad" (at 267.97 156.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 267.97 156.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "shmoergh-funk-live-voice"
-        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "H2") (unit 1)
+          (reference "R10") (unit 1)
         )
       )
     )
@@ -2605,7 +2584,7 @@
   (symbol (lib_id "Amplifier_Operational:TL074") (at 63.5 87.63 0) (unit 2)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 98d36b1f-88ff-4da9-a1e5-0e0e42a6d86a)
-    (property "Reference" "U2" (at 63.5 78.3082 0)
+    (property "Reference" "U?" (at 63.5 78.3082 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TL074" (at 63.5 80.6196 0)
@@ -2634,19 +2613,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "U2") (unit 2)
+          (reference "U?") (unit 2)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "U?") (unit 2)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "U4") (unit 2)
+          (reference "U?") (unit 2)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "U5") (unit 2)
+          (reference "U?") (unit 2)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "U7") (unit 2)
+          (reference "U?") (unit 2)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "U?") (unit 2)
@@ -2655,16 +2634,16 @@
           (reference "U?") (unit 2)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "U6") (unit 2)
+          (reference "U?") (unit 2)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "U4") (unit 2)
+          (reference "U?") (unit 2)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "U8") (unit 2)
+          (reference "U?") (unit 2)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "U4") (unit 2)
+          (reference "U?") (unit 2)
         )
       )
       (project "shmoergh-funk-live-voice"
@@ -2675,46 +2654,46 @@
     )
   )
 
-  (symbol (lib_id "power:-12V") (at 224.79 33.02 180) (unit 1)
+  (symbol (lib_id "power:-12V") (at 250.19 34.29 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a0222eeb-2340-4efe-986b-c37676c43130)
-    (property "Reference" "#PWR011" (at 224.79 35.56 0)
+    (property "Reference" "#PWR010" (at 250.19 36.83 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "-12V" (at 224.79 38.1 0)
+    (property "Value" "-12V" (at 250.19 39.37 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 224.79 33.02 0)
+    (property "Footprint" "" (at 250.19 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 224.79 33.02 0)
+    (property "Datasheet" "" (at 250.19 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 783a7662-b55d-46ca-b76e-583b9e18bbc8))
+    (pin "1" (uuid dac483f8-d9ad-4362-90ed-72b1bb034c93))
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR010") (unit 1)
         )
       )
       (project "brow-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "#PWR01") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "#PWR03") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
-          (reference "#PWR05") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "#PWR04") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -2723,7 +2702,7 @@
   (symbol (lib_id "power:+12V") (at 26.67 168.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a3caaa4c-5b53-4e66-95fc-41e98a0590c9)
-    (property "Reference" "#PWR0136" (at 26.67 172.72 0)
+    (property "Reference" "#PWR?" (at 26.67 172.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 27.051 164.5158 0)
@@ -2739,39 +2718,39 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "#PWR0136") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a67127"
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "#PWR0136") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "#PWR0154") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "#PWR0172") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "#PWR0145") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "#PWR0112") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "#PWR0163") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "#PWR0136") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR02") (unit 1)
         )
       )
     )
@@ -2780,7 +2759,7 @@
   (symbol (lib_id "Device:R") (at 36.83 85.09 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a3e5e7ee-ab01-495b-8979-eb36476f72d5)
-    (property "Reference" "R1" (at 36.83 79.8322 90)
+    (property "Reference" "R?" (at 36.83 79.8322 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7k" (at 36.83 82.1436 90)
@@ -2797,19 +2776,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R1") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R18") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R32") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R60") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -2818,16 +2797,16 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R46") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R18") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R74") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R18") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
@@ -2841,7 +2820,7 @@
   (symbol (lib_id "Device:C") (at 35.56 172.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a629a3b1-68a0-4c6d-bd5f-91992503a2d0)
-    (property "Reference" "C5" (at 39.37 172.085 0)
+    (property "Reference" "C1" (at 39.37 172.085 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 39.37 174.625 0)
@@ -2858,7 +2837,97 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "C5") (unit 1)
+          (reference "C1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+12V") (at 262.89 29.21 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid a9b19c46-855f-428f-bdfe-a9c3d33cd392)
+    (property "Reference" "#PWR016" (at 262.89 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+12V" (at 262.89 25.4 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 262.89 29.21 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 262.89 29.21 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 01f7fe3f-a52f-42f7-957e-21d7afce4440))
+    (instances
+      (project "shmoergh-funk-live-voice"
+        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
+          (reference "#PWR016") (unit 1)
+        )
+      )
+      (project "brow-control"
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 269.24 33.02 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid b89e7a19-aed7-4c10-8e67-5e4ec20d3535)
+    (property "Reference" "#PWR017" (at 269.24 39.37 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 269.24 38.1 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 269.24 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 269.24 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4f036960-21c1-471a-a7a7-43a027799370))
+    (instances
+      (project "shmoergh-funk-live-voice"
+        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
+          (reference "#PWR017") (unit 1)
+        )
+      )
+      (project "brow-control"
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -2867,7 +2936,7 @@
   (symbol (lib_id "power:GND") (at 180.34 152.4 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b9b8feb3-ea45-420c-9236-e18bea8f980a)
-    (property "Reference" "#PWR0107" (at 180.34 158.75 0)
+    (property "Reference" "#PWR?" (at 180.34 158.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 180.467 156.7942 0)
@@ -2883,19 +2952,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "#PWR0107") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "#PWR0133") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "#PWR0142") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "#PWR0160") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "#PWR?") (unit 1)
@@ -2904,66 +2973,66 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "#PWR0151") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "#PWR0133") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "#PWR0169") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "#PWR0133") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR05") (unit 1)
+          (reference "#PWR09") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "power:+12V") (at 248.92 25.4 0) (unit 1)
+  (symbol (lib_id "power:+12V") (at 250.19 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bfe1bb6b-1be7-4b92-9b79-c2f630593993)
-    (property "Reference" "#PWR012" (at 248.92 29.21 0)
+    (property "Reference" "#PWR013" (at 250.19 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+12V" (at 248.92 21.59 0)
+    (property "Value" "+12V" (at 250.19 25.4 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 248.92 25.4 0)
+    (property "Footprint" "" (at 250.19 29.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 248.92 25.4 0)
+    (property "Datasheet" "" (at 250.19 29.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f2f6c93e-1257-4978-8b3a-b312e6ee17d4))
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR012") (unit 1)
+          (reference "#PWR013") (unit 1)
         )
       )
       (project "brow-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "#PWR018") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "#PWR016") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
     )
@@ -2972,7 +3041,7 @@
   (symbol (lib_id "Device:R") (at 77.47 52.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cc716745-04d6-4c73-b2e7-31728a46f543)
-    (property "Reference" "R5" (at 79.248 50.9016 0)
+    (property "Reference" "R?" (at 79.248 50.9016 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10k" (at 79.248 53.213 0)
@@ -2989,19 +3058,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R5") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R21") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R35") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R63") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -3010,21 +3079,21 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R49") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R21") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R77") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R21") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R4") (unit 1)
+          (reference "R2") (unit 1)
         )
       )
     )
@@ -3033,13 +3102,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 227.33 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cde57a12-629a-48f1-b31d-f16443e6dae1)
-    (property "Reference" "TP_SQR_OUT2" (at 229.87 125.603 0)
+    (property "Reference" "TP_SQR_OUT1" (at 229.87 125.603 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (at 229.87 128.143 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 232.41 129.54 0)
+    (property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork" (at 232.41 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 232.41 129.54 0)
@@ -3049,7 +3118,7 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "TP_SQR_OUT2") (unit 1)
+          (reference "TP_SQR_OUT1") (unit 1)
         )
       )
     )
@@ -3058,7 +3127,7 @@
   (symbol (lib_id "Device:R") (at 80.01 87.63 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d064ee8d-e7b5-40fd-b999-ec0d20965e99)
-    (property "Reference" "R6" (at 80.01 82.3722 90)
+    (property "Reference" "R?" (at 80.01 82.3722 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "200k" (at 80.01 84.6836 90)
@@ -3075,19 +3144,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R6") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R22") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R36") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R64") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -3096,21 +3165,21 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R50") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R22") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R78") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R22") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R5") (unit 1)
+          (reference "R3") (unit 1)
         )
       )
     )
@@ -3119,7 +3188,7 @@
   (symbol (lib_id "Device:C") (at 35.56 180.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d621150d-8cb1-4eb0-a5e8-845722fff9b5)
-    (property "Reference" "C6" (at 39.37 179.705 0)
+    (property "Reference" "C2" (at 39.37 179.705 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 39.37 182.245 0)
@@ -3136,7 +3205,7 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "C6") (unit 1)
+          (reference "C2") (unit 1)
         )
       )
     )
@@ -3145,7 +3214,7 @@
   (symbol (lib_id "Amplifier_Operational:TL074") (at 29.21 176.53 0) (unit 5)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dfc5a1b7-68ed-43d3-9dbf-eab5c3b0a412)
-    (property "Reference" "U4" (at 28.1432 175.3616 0)
+    (property "Reference" "U?" (at 28.1432 175.3616 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TL074" (at 28.1432 177.673 0)
@@ -3174,34 +3243,34 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "U4") (unit 5)
+          (reference "U?") (unit 5)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a67127"
           (reference "U?") (unit 5)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "U4") (unit 5)
+          (reference "U?") (unit 5)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "U6") (unit 5)
+          (reference "U?") (unit 5)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "U8") (unit 5)
+          (reference "U?") (unit 5)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "U?") (unit 5)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "U5") (unit 5)
+          (reference "U?") (unit 5)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "U2") (unit 5)
+          (reference "U?") (unit 5)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "U7") (unit 5)
+          (reference "U?") (unit 5)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "U4") (unit 5)
+          (reference "U?") (unit 5)
         )
       )
       (project "shmoergh-funk-live-voice"
@@ -3215,13 +3284,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 44.45 82.55 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e890f53b-a5f4-41f5-a970-35ae71e82679)
-    (property "Reference" "TP_AMP_COMP2" (at 46.99 78.613 0)
+    (property "Reference" "TP_AMP_COMP1" (at 46.99 78.613 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TestPoint" (at 46.99 81.153 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 49.53 82.55 0)
+    (property "Footprint" "Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork" (at 49.53 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 49.53 82.55 0)
@@ -3231,7 +3300,37 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "TP_AMP_COMP2") (unit 1)
+          (reference "TP_AMP_COMP1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector_Generic:Conn_02x03_Odd_Even") (at 255.27 31.75 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid e8ccfa99-3149-412b-ad38-fbbc0443b929)
+    (property "Reference" "J1" (at 256.54 24.13 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Power" (at 256.54 26.67 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" (at 255.27 31.75 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 255.27 31.75 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 7c7a4bfe-7b8f-474f-bf04-d379b62e8bfa))
+    (pin "2" (uuid 2f4c602a-68fd-4cea-ae32-f847c7841877))
+    (pin "3" (uuid ba51b360-62d2-4f24-a593-f58bcec77582))
+    (pin "4" (uuid d711e5e9-1aed-4695-935e-f03a5c9adee5))
+    (pin "5" (uuid 6da5654e-1d1a-4460-bfd1-bcbf6287d2ce))
+    (pin "6" (uuid e5aaef3c-61a9-48e1-a56a-73a6b3dbb0e0))
+    (instances
+      (project "shmoergh-funk-live-voice"
+        (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
+          (reference "J1") (unit 1)
         )
       )
     )
@@ -3246,7 +3345,7 @@
     (property "Value" "2N3906" (at 99.06 63.5 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Package_TO_SOT_THT_AKL:TO-92_Inline_Wide_EBC" (at 96.52 59.69 0)
+    (property "Footprint" "PCM_Package_TO_SOT_THT_AKL:TO-92L_Inline_Wide" (at 96.52 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.tme.eu/Document/1d69ece8147fa5a64114d103f531c790/2N3906BU.pdf" (at 99.06 54.61 0)
@@ -3267,7 +3366,7 @@
   (symbol (lib_id "Device:C") (at 44.45 92.71 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid edd032ba-3373-48b7-9f84-13abda226b62)
-    (property "Reference" "C1" (at 38.0492 92.71 0)
+    (property "Reference" "C?" (at 38.0492 92.71 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100n" (at 38.1 95.25 0)
@@ -3284,19 +3383,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "C1") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "C11") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "C16") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "C26") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "C?") (unit 1)
@@ -3305,21 +3404,21 @@
           (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "C21") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "C11") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "C31") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "C11") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "C1") (unit 1)
+          (reference "C3") (unit 1)
         )
       )
     )
@@ -3328,7 +3427,7 @@
   (symbol (lib_id "Amplifier_Operational:TL074") (at 132.08 92.71 0) (mirror x) (unit 3)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fa21e772-b6c0-4ea6-b632-d550efc69b25)
-    (property "Reference" "U2" (at 134.62 99.06 0)
+    (property "Reference" "U?" (at 134.62 99.06 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TL074" (at 135.89 96.52 0)
@@ -3357,19 +3456,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "U2") (unit 3)
+          (reference "U?") (unit 3)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "U?") (unit 3)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "U4") (unit 3)
+          (reference "U?") (unit 3)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "U5") (unit 3)
+          (reference "U?") (unit 3)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "U7") (unit 3)
+          (reference "U?") (unit 3)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "U?") (unit 3)
@@ -3378,16 +3477,16 @@
           (reference "U?") (unit 3)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "U6") (unit 3)
+          (reference "U?") (unit 3)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "U4") (unit 3)
+          (reference "U?") (unit 3)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "U8") (unit 3)
+          (reference "U?") (unit 3)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "U4") (unit 3)
+          (reference "U?") (unit 3)
         )
       )
       (project "shmoergh-funk-live-voice"
@@ -3401,7 +3500,7 @@
   (symbol (lib_id "Device:R") (at 107.95 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fc574da9-3f82-415d-9d9c-ed0653e60da2)
-    (property "Reference" "R11" (at 109.728 64.8716 0)
+    (property "Reference" "R?" (at 109.728 64.8716 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "2.2k" (at 109.728 67.183 0)
@@ -3418,19 +3517,19 @@
     (instances
       (project "pico-dco"
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060864f99"
-          (reference "R11") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a5ec98"
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a89c21"
-          (reference "R27") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ade329"
-          (reference "R41") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae15a4"
-          (reference "R69") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818"
           (reference "R?") (unit 1)
@@ -3439,21 +3538,21 @@
           (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060adfcbc"
-          (reference "R55") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060a567be"
-          (reference "R27") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ae2da8"
-          (reference "R83") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/4571664a-b213-49ff-a3dc-80d8b4c80818/00000000-0000-0000-0000-000060ac3f2c"
-          (reference "R27") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "R10") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
     )
