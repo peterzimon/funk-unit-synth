@@ -6,6 +6,10 @@
 Synth::Synth(int adsrParameter): m_adsr(ENVELOPE_DAC_SIZE) {}
 
 void Synth::init(device_mode default_mode) {
+
+    // DAC init
+    sleep_ms(1000);
+    m_dac.init(DAC_SPI_PORT, GP_DAC_CS, GP_DAC_SCK, GP_DAC_MOSI);
     
     // MIDI init
     uart_init(MIDI_UART_INSTANCE, MIDI_BAUDRATE);
@@ -26,13 +30,15 @@ void Synth::init(device_mode default_mode) {
     gpio_set_dir(GP_GATE, GPIO_OUT);
     gpio_put(GP_GATE, 1);
 
-    // DAC init
-    m_dac.init(DAC_SPI_PORT, GP_DAC_CS, GP_DAC_SCK, GP_DAC_MOSI);
-
     set_mode(default_mode);
 
     // Testing solo/chord modes
-    settings.solo = true;
+    settings.solo = false;
+
+    m_adsr.set_attack(1000);
+    m_adsr.set_decay(100);
+    m_adsr.set_sustain(3000);
+    m_adsr.set_release(1000);
 }
 
 void Synth::init_dcos() {
@@ -66,6 +72,7 @@ void Synth::set_mode(device_mode mode) {
 */
 void Synth::process() {
     m_read_midi();
+    m_update_envelope();
 }
 
 /**
@@ -184,9 +191,11 @@ void Synth::m_update_gate() {
 }
 
 void Synth::m_update_envelope() {
-    if (m_converter->get_gate()) {
+
+    // Trigger ADSR only if the gate is on and it's not already on
+    if (m_converter->get_gate() && !m_adsr.is_on()) {
         m_adsr.note_on();
-    } else {
+    } else if (!m_converter->get_gate() && m_adsr.is_on()) {
         m_adsr.note_off();
     }
 
