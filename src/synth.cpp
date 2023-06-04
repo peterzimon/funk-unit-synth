@@ -31,8 +31,8 @@ void Synth::init(device_mode default_mode) {
     gpio_set_dir(GP_GATE, GPIO_OUT);
     gpio_put(GP_GATE, 1);
 
-    // Set default ADSR
-    set_adsr(false, false, false);
+    // Set default ADSR (soft, hold, ring)
+    set_adsr(false, false, true);
 
     // Testing solo/chord modes
     settings.solo = false;
@@ -154,7 +154,7 @@ void Synth::set_adsr(bool soft, bool hold, bool ring) {
         break;
     default:
         m_attack = ATTACK_SHORT;
-        m_decay = DECAY_SHORT;
+        m_decay = DECAY_MID;
         m_sustain = SUSTAIN_OFF;
         m_release = RELEASE_SHORT;
         break;

@@ -20,6 +20,17 @@
 #define GP_GATE             2           // Temporary, until I test if envelope
                                         // is going to be digital or analog
 
+// ADSR (all time values are in us)
+#define ATTACK_SHORT        1000
+#define ATTACK_LONG         210000
+#define DECAY_SHORT         500000
+#define DECAY_MID           1500000
+#define DECAY_LONG          23000000
+#define SUSTAIN_ON          3600           // mV, between 0 and 4095
+#define SUSTAIN_OFF         0              // mV, between 0 and 4095
+#define RELEASE_SHORT       500000
+#define RELEASE_LONG        28000000
+
 // DAC
 #define DAC_SPI_PORT        spi0
 #define GP_DAC_SCK          6
