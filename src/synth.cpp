@@ -8,8 +8,9 @@ Synth::Synth(int adsrParameter): m_adsr(ENVELOPE_DAC_SIZE) {}
 void Synth::init(device_mode default_mode) {
 
     // DAC init
-    sleep_ms(1000);
+    sleep_ms(500);
     m_dac.init(DAC_SPI_PORT, GP_DAC_CS, GP_DAC_SCK, GP_DAC_MOSI);
+    set_mode(default_mode);
     
     // MIDI init
     uart_init(MIDI_UART_INSTANCE, MIDI_BAUDRATE);
@@ -30,15 +31,11 @@ void Synth::init(device_mode default_mode) {
     gpio_set_dir(GP_GATE, GPIO_OUT);
     gpio_put(GP_GATE, 1);
 
-    set_mode(default_mode);
+    // Set default ADSR
+    set_adsr(false, false, false);
 
     // Testing solo/chord modes
     settings.solo = false;
-
-    m_adsr.set_attack(10000);
-    m_adsr.set_decay(1000000);
-    m_adsr.set_sustain(3200);
-    m_adsr.set_release(15000000);
 }
 
 void Synth::init_dcos() {
@@ -103,6 +100,70 @@ void Synth::pitch_bend(uint8_t channel, uint16_t bend) {
     m_converter->update_pitch_bend(bend);
     m_update_dcos();
     m_update_gate();
+}
+
+/**
+ * Handling all the states that the ADSR can get to based on the Soft, Hold and 
+ * Ring switches.
+*/
+void Synth::set_adsr(bool soft, bool hold, bool ring) {
+    int shr = (soft << 2) | (hold << 1) | ring;
+
+    switch (shr) {
+    case 0b001:
+        m_attack = ATTACK_SHORT;
+        m_decay = DECAY_LONG;
+        m_sustain = SUSTAIN_OFF;
+        m_release = RELEASE_SHORT;
+        break;
+    case 0b010:
+        m_attack = ATTACK_SHORT;
+        m_decay = DECAY_SHORT;
+        m_sustain = SUSTAIN_ON;
+        m_release = RELEASE_SHORT;
+        break;
+    case 0b011:
+        m_attack = ATTACK_SHORT;
+        m_decay = DECAY_SHORT;
+        m_sustain = SUSTAIN_ON;
+        m_release = RELEASE_LONG;
+        break;
+    case 0b100:
+        m_attack = ATTACK_LONG;
+        m_decay = DECAY_SHORT;
+        m_sustain = SUSTAIN_OFF;
+        m_release = RELEASE_SHORT;
+        break;
+    case 0b101:
+        m_attack = ATTACK_LONG;
+        m_decay = DECAY_LONG;
+        m_sustain = SUSTAIN_OFF;
+        m_release = RELEASE_SHORT;
+        break;
+    case 0b110:
+        m_attack = ATTACK_LONG;
+        m_decay = DECAY_SHORT;
+        m_sustain = SUSTAIN_ON;
+        m_release = RELEASE_SHORT;
+        break;
+    case 0b111:
+        m_attack = ATTACK_LONG;
+        m_decay = DECAY_SHORT;
+        m_sustain = SUSTAIN_ON;
+        m_release = RELEASE_LONG;
+        break;
+    default:
+        m_attack = ATTACK_SHORT;
+        m_decay = DECAY_SHORT;
+        m_sustain = SUSTAIN_OFF;
+        m_release = RELEASE_SHORT;
+        break;
+    }
+
+    m_adsr.set_attack(m_attack);
+    m_adsr.set_decay(m_decay);
+    m_adsr.set_sustain(m_sustain);
+    m_adsr.set_release(m_release);
 }
 
 /** ----------------------------------------------------------------------------

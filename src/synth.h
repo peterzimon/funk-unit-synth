@@ -22,6 +22,15 @@
 #define MIDI_BUFFER_SIZE 32
 #define ENVELOPE_DAC_SIZE 4096
 
+#define ATTACK_SHORT            10000          // us
+#define ATTACK_LONG             1000000        // us
+#define DECAY_SHORT             10000          // us
+#define DECAY_LONG              15000000       // us
+#define SUSTAIN_ON              3200           // mV, between 0 and 4095
+#define SUSTAIN_OFF             0              // mV, between 0 and 4095
+#define RELEASE_SHORT           10000          // us
+#define RELEASE_LONG            15000000       // us
+
 const uint16_t DIV_COUNTER = 1250;
 
 class Synth: public MidiParser {
@@ -42,6 +51,8 @@ public:
     void note_on(uint8_t channel, uint8_t note, uint8_t velocity);
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
     void pitch_bend(uint8_t channel, uint16_t bend);
+    
+    void set_adsr(bool soft, bool hold, bool ring);
 
 
 protected:
@@ -52,6 +63,12 @@ private:
     IConverter *m_converter;
     Mono m_mono;
     Para m_para;
+
+    uint64_t m_attack;
+    uint64_t m_decay;
+    int m_sustain;
+    uint64_t m_release;
+
     ADSR m_adsr;
     MCP48X2 m_dac;
 
@@ -70,6 +87,7 @@ private:
     void m_update_dcos(void);
     void m_update_gate();
     void m_update_envelope();
+
 };
 
 #endif
