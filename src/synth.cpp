@@ -35,10 +35,10 @@ void Synth::init(device_mode default_mode) {
     // Testing solo/chord modes
     settings.solo = false;
 
-    m_adsr.set_attack(1000);
-    m_adsr.set_decay(100);
-    m_adsr.set_sustain(3000);
-    m_adsr.set_release(1000);
+    m_adsr.set_attack(10000);
+    m_adsr.set_decay(1000000);
+    m_adsr.set_sustain(3200);
+    m_adsr.set_release(15000000);
 }
 
 void Synth::init_dcos() {
