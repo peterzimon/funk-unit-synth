@@ -54,7 +54,6 @@ public:
     
     void set_adsr(bool soft, bool hold, bool ring);
 
-
 protected:
     Synth(int adsrDacSize);
 //     Synth(int adsrDacSize) = default;
@@ -87,7 +86,6 @@ private:
     void m_update_dcos(void);
     void m_update_gate();
     void m_update_envelope();
-
 };
 
 #endif
