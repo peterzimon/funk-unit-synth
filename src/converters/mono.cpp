@@ -10,6 +10,8 @@ void Mono::reset() {
     // know when all notes are released.
     m_note_stack[0] = -1;
 
+    m_portamento = false;
+
     m_debug();
 }
 
@@ -41,6 +43,33 @@ void Mono::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
 
 float Mono::get_freq(uint8_t voice) {
     if (m_note == -1) return 0;
+
+    if (m_portamento && m_portamento_start != 0 && m_portamento_stop != 0) {
+        float freq1 = pow(2, (m_portamento_start - 69) / 12.0f) * BASE_NOTE;
+        float freq2 = pow(2, (m_portamento_stop - 69) / 12.0f) * BASE_NOTE;
+
+        if (m_portamento_current_freq == 0) {
+            m_portamento_current_freq = freq1;
+        } else {
+
+            // Next note is higher than current
+            if (freq1 < freq2) {
+                m_portamento_current_freq += 1.0f / (m_portamento_time + 1);
+                if (m_portamento_current_freq > freq2) {
+                    m_portamento_current_freq = freq2;
+                }
+
+            // Next note is lower than current
+            } else {
+                m_portamento_current_freq -= 1.0f / (m_portamento_time + 1);
+                if (m_portamento_current_freq < freq2) {
+                    m_portamento_current_freq = freq2;
+                }
+            }
+        }
+        return m_portamento_current_freq;
+    }
+
     return frequency_from_midi_note(m_note);
 }
 
@@ -50,7 +79,7 @@ bool Mono::get_gate() {
 
 void Mono::m_push_note(uint8_t note) {
 
-    // Check if note exists in the stack. If it does, do nothing unless the last 
+    // Check if note exists in the stack. If it does, do nothing unless the last
     // note is -1 (gate is off)
     if (m_find_note(note)) {
         return;
@@ -61,7 +90,7 @@ void Mono::m_push_note(uint8_t note) {
     int i = 0;
     int temp = m_note_stack[0], temp2;
 
-    // We have to keep a 0 in the last stack position to be able to zero out 
+    // We have to keep a 0 in the last stack position to be able to zero out
     // all notes when popping them out of the stack on note off events. That's
     // the reason we loop only until NOTE_STACK_SIZE - 1.
     while (temp && (i < NOTE_STACK_SIZE - 1)) {

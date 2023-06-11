@@ -19,6 +19,8 @@ public:
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
     float get_freq(uint8_t voice);
     bool get_gate();
+
+
 private:
     int m_note_stack[NOTE_STACK_SIZE];
     bool m_note_playing;
@@ -26,6 +28,10 @@ private:
     int m_note;
     int m_keys_pressed;
     bool m_gate;
+
+    bool m_portamento;
+    uint8_t m_portamento_time, m_portamento_start, m_portamento_stop;
+    float m_portamento_current_freq = 0.0f;
 
     void m_push_note(uint8_t note);
     void m_pop_note(uint8_t note);
