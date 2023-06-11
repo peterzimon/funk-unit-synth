@@ -9,6 +9,7 @@
 
 // GLOBAL
 #define VOICES              6
+#define FAT_VOICES          3
 #define PARA_STACK_VOICES   false
 #define DEFAULT_FREQ        220.0
 #define MAX_FREQ            5000.0      // This depends on the integrator's RC constant.
@@ -26,10 +27,19 @@
 #define DECAY_SHORT         500000
 #define DECAY_MID           1500000
 #define DECAY_LONG          23000000
-#define SUSTAIN_ON          3600           // mV, between 0 and 4095
-#define SUSTAIN_OFF         0              // mV, between 0 and 4095
+#define SUSTAIN_ON          3600            // mV, between 0 and 4095
+#define SUSTAIN_OFF         0               // mV, between 0 and 4095
 #define RELEASE_SHORT       500000
 #define RELEASE_LONG        28000000
+
+// Keyboard tracking
+#define KB_TRACKING_DAMP    90      // Simple multiplier to set the voltage of
+                                    // the DAC based on the incoming MIDI note's
+                                    // frequency:
+                                    // V = MIDI_NOTE_FREQ - KB_TRACKING_DAMP
+                                    // Given the maximum frequency is 4186Hz and
+                                    // the max output of the DAC is 4096mV, the
+                                    // ideal value for KB_TRACKING_DAMP is 90.
 
 // DAC
 #define DAC_SPI_PORT        spi0
@@ -56,6 +66,7 @@
 
 enum device_mode {
     MONO,
+    FAT,
     PARA
 };
 
@@ -68,7 +79,7 @@ struct Settings
     // voice controls the gate to the envelope). When solo is _on_ then non-
     // first voices will turn off when their respective key is released.
     bool solo = false;
-    
+
     const uint8_t midi_channel = 0;
     const uint8_t voices = 6;
 

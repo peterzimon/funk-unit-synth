@@ -38,11 +38,11 @@ public:
     void process();
 
     void set_mode(device_mode mode);
-    
+
     void note_on(uint8_t channel, uint8_t note, uint8_t velocity);
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
     void pitch_bend(uint8_t channel, uint16_t bend);
-    
+
     void set_adsr(bool soft, bool hold, bool ring);
 
 protected:
@@ -53,6 +53,7 @@ private:
     IConverter *m_converter;
     Mono m_mono;
     Para m_para;
+    bool m_kb_tracking;
 
     uint64_t m_attack;
     uint64_t m_decay;
@@ -77,6 +78,8 @@ private:
     void m_update_dcos(void);
     void m_update_gate();
     void m_update_envelope();
+
+    void m_update_kb_tracking();
 };
 
 #endif

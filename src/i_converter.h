@@ -28,6 +28,7 @@ class IConverter {
         void update_pitch_bend(uint16_t bend);
 
     private:
+
 };
 
 #endif

@@ -2,7 +2,7 @@
 #include <math.h>
 #include "synth.h"
 
-// Constructor with 
+// Constructor with
 Synth::Synth(int adsrParameter): m_adsr(ENVELOPE_DAC_SIZE) {}
 
 void Synth::init(device_mode default_mode) {
@@ -11,7 +11,7 @@ void Synth::init(device_mode default_mode) {
     sleep_ms(500);
     m_dac.init(DAC_SPI_PORT, GP_DAC_CS, GP_DAC_SCK, GP_DAC_MOSI);
     set_mode(default_mode);
-    
+
     // MIDI init
     uart_init(MIDI_UART_INSTANCE, MIDI_BAUDRATE);
     gpio_set_function(GP_MIDI_RX, GPIO_FUNC_UART);
@@ -25,7 +25,7 @@ void Synth::init(device_mode default_mode) {
         pwm_set_enabled(m_amp_pwm_slices[i], true);
 
     }
-    
+
     // Gate(s)
     gpio_init(GP_GATE);
     gpio_set_dir(GP_GATE, GPIO_OUT);
@@ -36,6 +36,9 @@ void Synth::init(device_mode default_mode) {
 
     // Testing solo/chord modes
     settings.solo = false;
+
+    // Keyboard tracking
+    m_kb_tracking = true;
 }
 
 void Synth::init_dcos() {
@@ -51,9 +54,19 @@ void Synth::init_dcos() {
 */
 void Synth::set_mode(device_mode mode) {
     switch (mode) {
+
+        // Mono and fat mode uses the same converter, the diff is only the
+        // number of voices played
         case MONO:
+        case FAT:
             m_converter = &m_mono;
+
+            // Reset all voices to 0V
+            for (int voice = 0; voice < VOICES; voice++) {
+                pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), 0);
+            }
             break;
+
         case PARA:
             m_converter = &m_para;
             break;
@@ -73,17 +86,18 @@ void Synth::process() {
 }
 
 /**
- * Callback function that the MidiParser (parent) class calls if a NOTE ON event 
+ * Callback function that the MidiParser (parent) class calls if a NOTE ON event
  * was fired.
 */
 void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_on(channel, note, velocity);
     m_update_dcos();
     m_update_gate();
+    m_update_kb_tracking();  // Only update KB tracking output on note on
 }
 
 /**
- * Callback function that the MidiParser (parent) class calls if a NOTE OFF 
+ * Callback function that the MidiParser (parent) class calls if a NOTE OFF
  * event was fired.
 */
 void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
@@ -103,7 +117,7 @@ void Synth::pitch_bend(uint8_t channel, uint16_t bend) {
 }
 
 /**
- * Handling all the states that the ADSR can get to based on the Soft, Hold and 
+ * Handling all the states that the ADSR can get to based on the Soft, Hold and
  * Ring switches.
 */
 void Synth::set_adsr(bool soft, bool hold, bool ring) {
@@ -171,20 +185,20 @@ void Synth::set_adsr(bool soft, bool hold, bool ring) {
 */
 
 /**
- * Reads incoming MIDI messages via MidiParser parent class. This function is 
+ * Reads incoming MIDI messages via MidiParser parent class. This function is
  * called for infinity from the main loop.
 */
 void Synth::m_read_midi() {
     if (!uart_is_readable(MIDI_UART_INSTANCE)) return;
-    
+
     uint8_t data = uart_getc(MIDI_UART_INSTANCE);
     m_input_buffer.write_byte(data);
 
     while (!m_input_buffer.is_empty()) {
         uint8_t byte = 0;
         m_input_buffer.read_byte(byte);
-        
-        // Parent class call which will eventually call this class's midi 
+
+        // Parent class call which will eventually call this class's midi
         // message methods such as note_on, note_off etc.
         this->parse_byte(byte);
     }
@@ -202,7 +216,7 @@ void Synth::m_set_frequency(PIO pio, uint sm, float freq) {
  * Updates DCOs
 */
 void Synth::m_update_dcos(void) {
-    // Sometimes the delay in setting the frequency of the PIOs can cause them 
+    // Sometimes the delay in setting the frequency of the PIOs can cause them
     // to be out of phase by 180deg. This causes phase cancellation with voices
     // playing the same note (e.g. in mono mode). To minimise the chances of
     // this, first calculate the frequencies and amplitudes (which require time)
@@ -216,23 +230,31 @@ void Synth::m_update_dcos(void) {
     switch (settings.mode)
     {
     case MONO:
+        freqs[0] = m_converter->get_freq(0);
+        amps[0] = (int)(DIV_COUNTER * freq / MAX_FREQ);
+        break;
+
+    case FAT:
         freq = m_converter->get_freq(0);
         amp = (int)(DIV_COUNTER * freq / MAX_FREQ);
-        for (int voice = 0; voice < VOICES; voice++) {
+        for (int voice = 0; voice < FAT_VOICES; voice++) {
             freqs[voice] = freq;
             amps[voice] = amp;
         }
         break;
 
+    // TODO: why do I set the frequency to the previous one when the key is
+    // released? Is it to minimise AC coupling error? Maybe this could be
+    // simplified.
     case PARA:
         for (int voice = 0; voice < VOICES; voice++) {
             freq = m_converter->get_freq(voice);
             if (freq != 0) {
-                prevFreq = freq;
+                prevFreq = freq; // TODO: is this needed
                 freqs[voice] = freq;
                 amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
             } else {
-                freqs[voice] = prevFreq;
+                freqs[voice] = prevFreq; // TODO: is this needed
                 amps[voice] = 0;
             }
         }
@@ -240,7 +262,7 @@ void Synth::m_update_dcos(void) {
     }
 
     for (int voice = 0; voice < VOICES; voice++) {
-        if (freqs[voice]) {
+        if (freqs[voice]) { // TODO: is this needed?
             m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
         }
         pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amps[voice]);
@@ -260,5 +282,17 @@ void Synth::m_update_envelope() {
         m_adsr.note_off();
     }
 
+    // Set DAC channel A. TODO: update MCP48X2 library to be able to set
+    // channel with its own method
+    m_dac.config(MCP48X2_CHANNEL_A, MCP48X2_GAIN_X2, 1);
     m_dac.write(m_adsr.envelope());
+}
+
+void Synth::m_update_kb_tracking() {
+    // Set DAC channel B
+    int raw_value = (int)m_converter->get_freq(0) - KB_TRACKING_DAMP;
+    uint16_t kb_mv = raw_value < 0 ? 0 : raw_value;
+
+    m_dac.config(MCP48X2_CHANNEL_B, MCP48X2_GAIN_X2, 1);
+    m_dac.write(kb_mv);
 }
