@@ -12,17 +12,14 @@ void Mono::reset() {
 }
 
 void Mono::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
-    // Do nothing if it's the same note that's already been playing
-    if (m_note == note && m_note_stack[0] != -1) {
-        return;
-    }
-
+    set_dirty(true);
     m_push_note(note);
+
     m_note = note;
     m_gate = true;
 
     if (settings.portamento) {
-        if (m_portamento_start == 0) {
+        if (m_portamento_start == -1) {
             m_portamento_start = note;
             m_portamento_current_freq = 0.0f;
         } else {
@@ -34,6 +31,8 @@ void Mono::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 }
 
 void Mono::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
+    set_dirty(true);
+
     bool last_note = false;
     if (m_note_stack[1] == -1) {
         m_note = m_note_stack[0];
@@ -43,10 +42,10 @@ void Mono::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     if (!last_note && m_note_stack[0] != -1) m_note = m_note_stack[0];
     m_gate = (m_note_stack[0] != -1);
 
-    if (m_portamento_stop == note) {
-        m_portamento_start = m_portamento_stop;
-        m_portamento_stop = 0;
-        m_portamento_current_freq = 0.0f;
+    if (m_note_stack[0] == -1) {
+        m_portamento_start = note;
+    } else {
+        m_portamento_stop = m_note;
     }
 
     m_debug();
@@ -55,7 +54,7 @@ void Mono::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
 float Mono::get_freq(uint8_t voice) {
     if (m_note == -1) return 0;
 
-    if (settings.portamento && m_portamento_start != 0 && m_portamento_stop != 0) {
+    if (settings.portamento && m_portamento_start != -1 && m_portamento_stop != -1) {
         float freq1 = pow(2, (m_portamento_start - 69) / 12.0f) * BASE_NOTE;
         float freq2 = pow(2, (m_portamento_stop - 69) / 12.0f) * BASE_NOTE;
 
@@ -68,6 +67,7 @@ float Mono::get_freq(uint8_t voice) {
                 m_portamento_current_freq += 1.0f / (m_portamento_time + 1);
                 if (m_portamento_current_freq > freq2) {
                     m_portamento_current_freq = freq2;
+                    set_dirty(false);
                 }
 
             // Next note is lower than current
@@ -75,9 +75,11 @@ float Mono::get_freq(uint8_t voice) {
                 m_portamento_current_freq -= 1.0f / (m_portamento_time + 1);
                 if (m_portamento_current_freq < freq2) {
                     m_portamento_current_freq = freq2;
+                    set_dirty(false);
                 }
             }
         }
+
         return m_portamento_current_freq;
     }
 
@@ -142,6 +144,7 @@ int Mono::m_find_note(uint8_t note) {
 }
 
 void Mono::m_debug() {
+    // return;
     printf("Note: %d\n", m_note);
     printf("Note stack:\n");
     for (int i = 0; i < VOICES; i++) {

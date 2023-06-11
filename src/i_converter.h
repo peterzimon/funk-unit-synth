@@ -32,7 +32,7 @@ class IConverter {
         void update_pitch_bend(uint16_t bend);
 
     private:
-        bool m_dirty = true;
+        bool m_dirty = false;
 };
 
 #endif

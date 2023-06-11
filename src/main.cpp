@@ -93,11 +93,12 @@ int main() {
 
     ui.init();
 
-    synth.init(FAT_MONO);
+    synth.init(PARA);
+    synth.set_adsr(false, true, false);
     synth.init_dcos();
     synth.set_solo(false);
     synth.set_detune(false);
-    synth.set_portamento(false);
+    synth.set_portamento(true);
 
     while (1) {
         ui.update();

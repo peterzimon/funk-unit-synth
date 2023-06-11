@@ -69,6 +69,7 @@ void Synth::set_mode(device_mode mode) {
         case PARA:
             m_converter = &m_para;
             m_voices = VOICES;
+            m_converter->set_dirty(true);
             break;
     }
 
@@ -83,6 +84,7 @@ void Synth::set_mode(device_mode mode) {
 void Synth::process() {
     m_read_midi();
     m_update_envelope();
+    m_apply_mods();
 }
 
 /**
@@ -223,7 +225,6 @@ void Synth::m_update_dcos(void) {
         int amp;
         float freqs[VOICES];
         uint16_t amps[VOICES];
-        float prevFreq = 0.0;
 
         switch (settings.mode)
         {
@@ -257,6 +258,24 @@ void Synth::m_update_dcos(void) {
             m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
             pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amps[voice]);
         }
+    }
+}
+
+void Synth::m_apply_mods() {
+    switch (settings.mode)
+    {
+    case MONO:
+        if (settings.portamento && m_converter->is_dirty()) {
+            float freq = m_converter->get_freq(0);
+            int amp = (int)(DIV_COUNTER * freq / MAX_FREQ);
+
+            m_set_frequency(settings.pio[settings.voice_to_pio[0]], settings.voice_to_sm[0], freq);
+            pwm_set_chan_level(m_amp_pwm_slices[0], pwm_gpio_to_channel(settings.amp_pins[0]), amp);
+        }
+        break;
+
+    default:
+        break;
     }
 }
 

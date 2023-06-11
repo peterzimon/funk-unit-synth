@@ -81,6 +81,7 @@ private:
     void m_update_envelope();
 
     void m_update_kb_tracking();
+    void m_apply_mods();
 };
 
 #endif

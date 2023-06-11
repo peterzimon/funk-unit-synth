@@ -70,7 +70,6 @@ void Para::reset() {
  * a new note claims its place. Needs to be tested!
  */
 void Para::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
-
     if (m_reset) {
         if (PARA_STACK_VOICES) {
             for (int i = 0; i < VOICES; i++) {

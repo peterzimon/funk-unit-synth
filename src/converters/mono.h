@@ -26,7 +26,8 @@ private:
     int m_keys_pressed;
     bool m_gate;
 
-    uint8_t m_portamento_time, m_portamento_start, m_portamento_stop;
+    uint8_t m_portamento_time = PORTAMENTO_TIME;
+    int m_portamento_start = -1, m_portamento_stop = -1;
     float m_portamento_current_freq = 0.0f;
 
     void m_push_note(uint8_t note);
