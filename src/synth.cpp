@@ -239,10 +239,14 @@ void Synth::m_update_dcos(void) {
 
         case FAT_MONO:
             freq = m_converter->get_freq(0);
-            amp = (int)(DIV_COUNTER * freq / MAX_FREQ);
+
+            freqs[0] = freqs[1] = freqs[2] = freq;
+            if (settings.detune) {
+                freqs[1] = freq * DETUNE_FACTOR;
+                freqs[2] = freq * (1.0 - (DETUNE_FACTOR - 1.0));
+            }
             for (int voice = 0; voice < FAT_MONO_VOICES; voice++) {
-                freqs[voice] = freq;
-                amps[voice] = amp;
+                amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
             }
             break;
 
@@ -277,12 +281,17 @@ void Synth::m_apply_mods() {
     case FAT_MONO:
         if (settings.portamento && m_converter->is_dirty()) {
             float freq = m_converter->get_freq(0);
-            int amp = (int)(DIV_COUNTER * freq / MAX_FREQ);
+            float freqs[VOICES];
+            freqs[0] = freqs[1] = freqs[2] = freq;
+            if (settings.detune) {
+                freqs[1] = freq * DETUNE_FACTOR;
+                freqs[2] = freq * (1.0 - (DETUNE_FACTOR - 1.0));
+            }
 
             for (int voice = 0; voice < FAT_MONO_VOICES; voice++)
             {
-                m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freq);
-                pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amp);
+                m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
+                pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ));
             }
         }
         break;

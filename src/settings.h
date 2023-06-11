@@ -21,7 +21,7 @@
 #define GP_GATE             2           // Temporary, until I test if envelope
                                         // is going to be digital or analog
 #define PORTAMENTO_TIME     10
-#define DETUNE_FACTOR       1.1f        // Only available in FAT mode
+#define DETUNE_FACTOR       1.02f      // Only available in FAT mode, should be > 1
 
 // ADSR (all time values are in us)
 #define ATTACK_SHORT        1000
