@@ -393,10 +393,10 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
-      "simulation_model_issue": "error",
+      "simulation_model_issue": "ignore",
       "unannotated": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
@@ -535,6 +535,10 @@
     [
       "6b0f1c86-305d-46a4-9f99-ea8eed307ff5",
       "VCA (Internal)"
+    ],
+    [
+      "6fc25f0e-fad8-40a0-a83e-9226997ef918",
+      "Digital UI"
     ],
     [
       "b522819c-7318-464a-82c8-e9514cdb3472",
