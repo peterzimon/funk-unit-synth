@@ -102,6 +102,7 @@ void Synth::process() {
  * was fired.
 */
 void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
+    if (note < LOWEST_MIDI_NOTE) return;
     m_converter->note_on(channel, note, velocity);
     m_update_dcos();
     m_update_filter_mod(m_converter->get_main_velocity());     // Only update KB tracking output on note on
@@ -112,6 +113,7 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
  * event was fired.
 */
 void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
+    if (note < LOWEST_MIDI_NOTE) return;
     m_converter->note_off(channel, note, velocity);
     m_update_dcos();
 }

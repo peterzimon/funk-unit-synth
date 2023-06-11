@@ -17,6 +17,9 @@
                                         // fmax = 1/RC = 5kHz
                                         // Change this value if you change any of
                                         // the above components in the circuit.
+#define LOWEST_MIDI_NOTE    21          // A0. This is needed otherwise the DCO can
+                                        // get in a stuck state when a too low note
+                                        // is played.
 
 #define GP_GATE             2           // Temporary, until I test if envelope
                                         // is going to be digital or analog
@@ -65,7 +68,6 @@
 #define GP_DAC_CS           5
 
 // MIDI
-#define LOWEST_MIDI_NOTE    0x00
 #define OCTAVES             10
 #define MAX_PITCH_BEND      0x3fff
 #define PITCH_BEND_CENTER   0x2000

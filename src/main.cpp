@@ -91,10 +91,12 @@ int main() {
         pio_sm_set_enabled(settings.pio[settings.voice_to_pio[i]], settings.voice_to_sm[i], true);
     }
 
+    // Initialise UI
     ui.init();
 
+    // Initialise synth
     synth.init(PARA);
-    synth.set_adsr(false, false, true);
+    synth.set_adsr(false, true, false);
     synth.init_dcos();
     synth.set_solo(false);
     synth.set_detune(true);
@@ -102,6 +104,7 @@ int main() {
     synth.set_kb_tracking(true);
     synth.set_velo_tracking(true);
 
+    // Main update loop
     while (1) {
         ui.update();
         synth.process();
