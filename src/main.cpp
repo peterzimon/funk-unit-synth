@@ -93,7 +93,7 @@ int main() {
 
     ui.init();
 
-    synth.init(PARA);
+    synth.init(FAT_MONO);
     synth.set_adsr(false, true, false);
     synth.init_dcos();
     synth.set_solo(false);
