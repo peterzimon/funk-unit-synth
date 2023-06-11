@@ -78,6 +78,16 @@ void Synth::set_mode(device_mode mode) {
     m_update_dcos();
 }
 
+void Synth::set_kb_tracking(bool kb_tracking) {
+    settings.kb_tracking = kb_tracking;
+    m_reset_filter_mod();
+}
+
+void Synth::set_velo_tracking(bool velo_tracking) {
+    settings.velo_tracking = velo_tracking;
+    m_reset_filter_mod();
+}
+
 /**
  * The process function that's called in the main loop
 */
@@ -94,7 +104,7 @@ void Synth::process() {
 void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_on(channel, note, velocity);
     m_update_dcos();
-    m_update_kb_tracking();     // Only update KB tracking output on note on
+    m_update_filter_mod(m_converter->get_main_velocity());     // Only update KB tracking output on note on
 }
 
 /**
@@ -316,16 +326,32 @@ void Synth::m_update_envelope() {
     m_dac.write(m_adsr.envelope());
 }
 
-void Synth::m_update_kb_tracking() {
-    // Set DAC channel B
-    int freq = (int)m_converter->get_freq(0);
-    if (freq < KB_TRACK_MIN_FREQ) {
-        freq = KB_TRACK_MIN_FREQ;
-    } else if (freq > KB_TRACK_MAX_FREQ) {
-        freq = KB_TRACK_MAX_FREQ;
+void Synth::m_update_filter_mod(uint8_t velocity) {
+    if (!settings.kb_tracking && !settings.velo_tracking) return;
+
+    int kb_mv = 0;
+
+    if (settings.kb_tracking) {
+        int freq = (int)m_converter->get_freq(0);
+        if (freq < KB_TRACK_MIN_FREQ) {
+            freq = KB_TRACK_MIN_FREQ;
+        } else if (freq > KB_TRACK_MAX_FREQ) {
+            freq = KB_TRACK_MAX_FREQ;
+        }
+        kb_mv = Utils::map(freq, KB_TRACK_MIN_FREQ, KB_TRACK_MAX_FREQ, 0, FILTER_MOD_DAC_SIZE);
     }
-    int kb_mv = Utils::map(freq, KB_TRACK_MIN_FREQ, KB_TRACK_MAX_FREQ, 0, KB_TRACK_DAC_SIZE);
+
+    if (settings.velo_tracking) {
+        kb_mv += velocity * VELO_FACTOR;
+    }
 
     m_dac.config(MCP48X2_CHANNEL_B, MCP48X2_GAIN_X2, 1);
     m_dac.write(kb_mv);
+}
+
+void Synth::m_reset_filter_mod() {
+    if (!settings.kb_tracking && !settings.velo_tracking) {
+        m_dac.config(MCP48X2_CHANNEL_B, MCP48X2_GAIN_X2, 1);
+        m_dac.write(0);
+    }
 }

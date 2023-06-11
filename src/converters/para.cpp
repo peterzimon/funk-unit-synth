@@ -81,6 +81,7 @@ void Para::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
                 m_notes[i] = -1;
             }
         }
+        set_main_velocity(velocity);
         m_voice_millis[0] = Utils::millis();
         m_reset = false;
         m_debug();

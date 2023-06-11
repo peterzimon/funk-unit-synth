@@ -36,15 +36,18 @@ public:
     void init_dcos();
     void process();
 
-    void set_mode(device_mode mode);
-    void set_solo(bool solo) { settings.solo = solo; }
-    void set_detune(bool detune) { settings.detune = detune; }
-    void set_portamento(bool portamento) { settings.portamento = portamento; }
 
     void note_on(uint8_t channel, uint8_t note, uint8_t velocity);
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
     void pitch_bend(uint8_t channel, uint16_t bend);
 
+    // Settings
+    void set_mode(device_mode mode);
+    void set_solo(bool solo) { settings.solo = solo; }
+    void set_detune(bool detune) { settings.detune = detune; }
+    void set_portamento(bool portamento) { settings.portamento = portamento; }
+    void set_kb_tracking(bool kb_tracking);
+    void set_velo_tracking(bool velo_tracking);
     void set_adsr(bool soft, bool hold, bool ring);
 
 protected:
@@ -77,10 +80,11 @@ private:
     void m_read_midi();
     void m_set_frequency(PIO pio, uint sm, float freq);
     void m_update_dcos(void);
-    void m_update_envelope();
-
-    void m_update_kb_tracking();
     void m_apply_mods();
+
+    void m_update_envelope();
+    void m_update_filter_mod(uint8_t velocity);
+    void m_reset_filter_mod();
 };
 
 #endif

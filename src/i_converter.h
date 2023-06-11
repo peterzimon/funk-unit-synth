@@ -28,11 +28,16 @@ class IConverter {
         virtual bool is_dirty() { return m_dirty; }
         virtual void set_dirty(bool dirty) { m_dirty = dirty; }
 
+        virtual void set_main_velocity(uint8_t main_velocity) { m_main_velocity = main_velocity; }
+        virtual uint8_t get_main_velocity() { return m_main_velocity; }
+
         float frequency_from_midi_note(int note);
         void update_pitch_bend(uint16_t bend);
 
+
     private:
         bool m_dirty = false;
+        uint8_t m_main_velocity = 0;
 };
 
 #endif

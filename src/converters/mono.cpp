@@ -16,6 +16,7 @@ void Mono::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_push_note(note);
 
     m_note = note;
+    set_main_velocity(velocity);
     m_gate = true;
 
     if (settings.portamento) {

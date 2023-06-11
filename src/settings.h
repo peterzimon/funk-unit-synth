@@ -21,10 +21,18 @@
 #define GP_GATE             2           // Temporary, until I test if envelope
                                         // is going to be digital or analog
 #define PORTAMENTO_TIME     10
-#define DETUNE_FACTOR       1.02f      // Only available in FAT mode, should be > 1
+#define DETUNE_FACTOR       1.02f       // Only available in FAT mode, should be > 1
 
 #define ENVELOPE_DAC_SIZE   4096
-#define KB_TRACK_DAC_SIZE   4096
+#define FILTER_MOD_DAC_SIZE 4096
+
+#define VELO_FACTOR         16          // Velocity is used to mod the filter (if it's
+                                        // turned on), with the formula:
+                                        // Vmod = VELOCITY * VELO_FACTOR [mV]
+                                        // (0 < VELOCITY < 127)
+                                        // Since the max output is 4096mV and there
+                                        // should be some space for other mod sources
+                                        // it's maximised in about 2V (when velo = 127)
 
 // ADSR (all time values are in us)
 #define ATTACK_SHORT        1000
@@ -91,6 +99,7 @@ struct Settings
     bool portamento = false;
     bool detune = false;
     bool kb_tracking = false;
+    bool velo_tracking = false;
 
     const uint8_t midi_channel = 0;
     const uint8_t voices = 6;
