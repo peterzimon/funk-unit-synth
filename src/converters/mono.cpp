@@ -9,21 +9,26 @@ void Mono::reset() {
     // is reached. This way -1 never gets deleted from the stack so we always
     // know when all notes are released.
     m_note_stack[0] = -1;
-
-    m_portamento = false;
-
-    m_debug();
 }
 
 void Mono::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     // Do nothing if it's the same note that's already been playing
-    if (m_note == note) {
+    if (m_note == note && m_note_stack[0] != -1) {
         return;
     }
 
     m_push_note(note);
     m_note = note;
-    m_note_playing = (m_note_stack[0] != -1);
+    m_gate = true;
+
+    if (settings.portamento) {
+        if (m_portamento_start == 0) {
+            m_portamento_start = note;
+            m_portamento_current_freq = 0.0f;
+        } else {
+            m_portamento_stop = note;
+        }
+    }
 
     m_debug();
 }
@@ -36,7 +41,13 @@ void Mono::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     }
     m_pop_note(note);
     if (!last_note && m_note_stack[0] != -1) m_note = m_note_stack[0];
-    m_note_playing = (m_note_stack[0] != -1);
+    m_gate = (m_note_stack[0] != -1);
+
+    if (m_portamento_stop == note) {
+        m_portamento_start = m_portamento_stop;
+        m_portamento_stop = 0;
+        m_portamento_current_freq = 0.0f;
+    }
 
     m_debug();
 }
@@ -44,7 +55,7 @@ void Mono::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
 float Mono::get_freq(uint8_t voice) {
     if (m_note == -1) return 0;
 
-    if (m_portamento && m_portamento_start != 0 && m_portamento_stop != 0) {
+    if (settings.portamento && m_portamento_start != 0 && m_portamento_stop != 0) {
         float freq1 = pow(2, (m_portamento_start - 69) / 12.0f) * BASE_NOTE;
         float freq2 = pow(2, (m_portamento_stop - 69) / 12.0f) * BASE_NOTE;
 
@@ -131,9 +142,10 @@ int Mono::m_find_note(uint8_t note) {
 }
 
 void Mono::m_debug() {
-    printf("Notes / voices:\n");
+    printf("Note: %d\n", m_note);
+    printf("Note stack:\n");
     for (int i = 0; i < VOICES; i++) {
-        printf("%d: %d %d \n", i, m_note, m_note_stack[i]);
+        printf("%d: %d \n", i, m_note_stack[i]);
     }
     printf("Gate: %d\n", m_gate);
     printf("---\r\n\n");

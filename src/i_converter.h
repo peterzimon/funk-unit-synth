@@ -24,11 +24,15 @@ class IConverter {
         virtual float get_freq(uint8_t voice) { return 0; }
         virtual bool get_gate() { return false; }
 
+        // TODO: implement this. Should return true if it should update the output
+        virtual bool is_dirty() { return m_dirty; }
+        virtual void set_dirty(bool dirty) { m_dirty = dirty; }
+
         float frequency_from_midi_note(int note);
         void update_pitch_bend(uint16_t bend);
 
     private:
-
+        bool m_dirty = true;
 };
 
 #endif

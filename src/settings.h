@@ -20,6 +20,7 @@
 
 #define GP_GATE             2           // Temporary, until I test if envelope
                                         // is going to be digital or analog
+#define DETUNE_FACTOR       1.1f        // Only available in FAT mode
 
 // ADSR (all time values are in us)
 #define ATTACK_SHORT        1000
@@ -80,6 +81,8 @@ struct Settings
     // voice controls the gate to the envelope). When solo is _on_ then non-
     // first voices will turn off when their respective key is released.
     bool solo = false;
+    bool portamento = false;
+    bool detune = false;
 
     const uint8_t midi_channel = 0;
     const uint8_t voices = 6;

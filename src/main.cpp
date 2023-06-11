@@ -5,26 +5,26 @@
  * @author      Peter Zimon — peter.zimon@gmail.com
  * @copyright   2023
  * @licence     MIT
- * 
+ *
  *          ---------------------------------------------------
  *          |       USE ONLY USB POWER WHEN FLASHING!!!!      |
  *          ---------------------------------------------------
- * 
+ *
  * Classes
  * -------
- *      Synth: MidiParser 
+ *      Synth: MidiParser
  *          - parses incoming MIDI data
  *          - updates DCO frequencies and amp levels
- * 
+ *
  *      IConverter
  *          - interface for different converters (modes). Converter
  *            implementations are in ./converters
- * 
+ *
  *      UI
  *          - handles the interface, LEDs and stuff
  *
  * @TODO:
- * 
+ *
  * - paraphonic logic works!! YAY! clean up debug/printf calls once all done
  * - test DCOs
  */
@@ -51,7 +51,7 @@
 #include "hardware/clocks.h"
 #include "frequency.pio.h"
 
-/* 
+/*
  * Custom libraries
  */
 #include <utils.h>
@@ -59,16 +59,16 @@
 /*
  * Project headers
  */
-#include "settings.h"
 #include "ui.h"
 #include "synth.h"
+#include "settings.h"
 
 /**
  * Classes
 */
 Settings settings;
+Synth &synth = Synth::get_instance();
 UI &ui = UI::get_instance();
-Synth &synth = Synth::get_instance(4096);
 
 PIO pio = pio0;
 uint sm = pio_claim_unused_sm(pio, true);
@@ -81,7 +81,7 @@ int main() {
     // sleep_ms(1000);
     ui.init();
 
-    synth.init(PARA);
+    synth.init(MONO);
 
     // Init PIOs: they must be initialised here in main.cpp
     uint offset[2];
@@ -89,16 +89,18 @@ int main() {
     offset[1] = pio_add_program(settings.pio[1], &frequency_program);
 
     for (int i = 0; i < VOICES; i++) {
-        init_sm_pin(settings.pio[settings.voice_to_pio[i]], 
-                    settings.voice_to_sm[i], 
-                    offset[settings.voice_to_pio[i]], 
+        init_sm_pin(settings.pio[settings.voice_to_pio[i]],
+                    settings.voice_to_sm[i],
+                    offset[settings.voice_to_pio[i]],
                     settings.reset_pins[i]);
         pio_sm_set_enabled(settings.pio[settings.voice_to_pio[i]], settings.voice_to_sm[i], true);
     }
 
     // sleep_ms(500);
     synth.init_dcos();
-    
+    synth.set_detune(false);
+    synth.set_portamento(false);
+
     while (1) {
         ui.update();
         synth.process();
