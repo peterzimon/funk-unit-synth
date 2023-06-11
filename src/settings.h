@@ -32,7 +32,8 @@
 #define RELEASE_SHORT       500000
 #define RELEASE_LONG        28000000
 
-// Keyboard tracking
+// Keyboard tracking. Note that keyboard tracking is always on and an analog
+// switch turns it on/off. This saves some logic
 #define KB_TRACKING_DAMP    90      // Simple multiplier to set the voltage of
                                     // the DAC based on the incoming MIDI note's
                                     // frequency:

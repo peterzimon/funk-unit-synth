@@ -36,9 +36,6 @@ void Synth::init(device_mode default_mode) {
 
     // Testing solo/chord modes
     settings.solo = false;
-
-    // Keyboard tracking
-    m_kb_tracking = true;
 }
 
 void Synth::init_dcos() {
@@ -93,7 +90,7 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_on(channel, note, velocity);
     m_update_dcos();
     m_update_gate();
-    m_update_kb_tracking();  // Only update KB tracking output on note on
+    m_update_kb_tracking();     // Only update KB tracking output on note on
 }
 
 /**

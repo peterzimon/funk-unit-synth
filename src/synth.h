@@ -53,7 +53,6 @@ private:
     IConverter *m_converter;
     Mono m_mono;
     Para m_para;
-    bool m_kb_tracking;
 
     uint64_t m_attack;
     uint64_t m_decay;
