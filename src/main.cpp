@@ -81,7 +81,7 @@ int main() {
     // sleep_ms(1000);
     ui.init();
 
-    synth.init(MONO);
+    synth.init(PARA);
 
     // Init PIOs: they must be initialised here in main.cpp
     uint offset[2];

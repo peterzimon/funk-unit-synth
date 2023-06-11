@@ -55,6 +55,7 @@ private:
     IConverter *m_converter;
     Mono m_mono;
     Para m_para;
+    int m_voices = VOICES;
 
     uint64_t m_attack;
     uint64_t m_decay;

@@ -48,8 +48,17 @@ void Synth::set_mode(device_mode mode) {
         // Mono and fat mode uses the same converter, the diff is only the
         // number of voices played
         case MONO:
+            m_converter = &m_mono;
+
+            // Reset all voices to 0V
+            for (int voice = 0; voice < VOICES; voice++) {
+                pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), 0);
+            }
+            break;
+
         case FAT:
             m_converter = &m_mono;
+            m_voices = FAT_VOICES;
 
             // Reset all voices to 0V
             for (int voice = 0; voice < VOICES; voice++) {
@@ -59,6 +68,7 @@ void Synth::set_mode(device_mode mode) {
 
         case PARA:
             m_converter = &m_para;
+            m_voices = VOICES;
             break;
     }
 
@@ -215,8 +225,6 @@ void Synth::m_update_dcos(void) {
         uint16_t amps[VOICES];
         float prevFreq = 0.0;
 
-        int voices = VOICES;
-
         switch (settings.mode)
         {
         case MONO:
@@ -235,31 +243,18 @@ void Synth::m_update_dcos(void) {
                 freqs[voice] = freq;
                 amps[voice] = amp;
             }
-            voices = FAT_VOICES;
             break;
 
-        // TODO: why do I set the frequency to the previous one when the key is
-        // released? Is it to minimise AC coupling error? Maybe this could be
-        // simplified.
         case PARA:
             for (int voice = 0; voice < VOICES; voice++) {
-                freq = m_converter->get_freq(voice);
-                if (freq != 0) {
-                    prevFreq = freq; // TODO: is this needed
-                    freqs[voice] = freq;
-                    amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
-                } else {
-                    freqs[voice] = prevFreq; // TODO: is this needed
-                    amps[voice] = 0;
-                }
+                freqs[voice] = m_converter->get_freq(voice);
+                amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
             }
             break;
         }
 
-        for (int voice = 0; voice < voices; voice++) {
-            if (freqs[voice]) { // TODO: is this needed?
-                m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
-            }
+        for (int voice = 0; voice < m_voices; voice++) {
+            m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
             pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), amps[voice]);
         }
     }
