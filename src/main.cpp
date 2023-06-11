@@ -78,11 +78,6 @@ int main() {
 
     printf("\n\n--- SHMØERGH FUNK LIVE ONE ---\r\n\n");
 
-    // sleep_ms(1000);
-    ui.init();
-
-    synth.init(PARA);
-
     // Init PIOs: they must be initialised here in main.cpp
     uint offset[2];
     offset[0] = pio_add_program(settings.pio[0], &frequency_program);
@@ -96,8 +91,11 @@ int main() {
         pio_sm_set_enabled(settings.pio[settings.voice_to_pio[i]], settings.voice_to_sm[i], true);
     }
 
-    // sleep_ms(500);
+    ui.init();
+
+    synth.init(FAT_MONO);
     synth.init_dcos();
+    synth.set_solo(false);
     synth.set_detune(false);
     synth.set_portamento(false);
 

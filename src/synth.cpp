@@ -56,9 +56,9 @@ void Synth::set_mode(device_mode mode) {
             }
             break;
 
-        case FAT:
+        case FAT_MONO:
             m_converter = &m_mono;
-            m_voices = FAT_VOICES;
+            m_voices = FAT_MONO_VOICES;
 
             // Reset all voices to 0V
             for (int voice = 0; voice < VOICES; voice++) {
@@ -236,10 +236,10 @@ void Synth::m_update_dcos(void) {
             return;
             break;
 
-        case FAT:
+        case FAT_MONO:
             freq = m_converter->get_freq(0);
             amp = (int)(DIV_COUNTER * freq / MAX_FREQ);
-            for (int voice = 0; voice < FAT_VOICES; voice++) {
+            for (int voice = 0; voice < FAT_MONO_VOICES; voice++) {
                 freqs[voice] = freq;
                 amps[voice] = amp;
             }

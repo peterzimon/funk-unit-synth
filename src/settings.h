@@ -9,7 +9,7 @@
 
 // GLOBAL
 #define VOICES              6
-#define FAT_VOICES          3
+#define FAT_MONO_VOICES     3
 #define PARA_STACK_VOICES   false
 #define DEFAULT_FREQ        220.0
 #define MAX_FREQ            5000.0      // This depends on the integrator's RC constant.
@@ -68,7 +68,7 @@
 
 enum device_mode {
     MONO,
-    FAT,
+    FAT_MONO,
     PARA
 };
 
