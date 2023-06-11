@@ -20,7 +20,6 @@
 #include "./converters/mono.h"
 
 #define MIDI_BUFFER_SIZE 32
-#define ENVELOPE_DAC_SIZE 4096
 
 const uint16_t DIV_COUNTER = 1250;
 

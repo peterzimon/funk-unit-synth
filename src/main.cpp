@@ -98,7 +98,7 @@ int main() {
     synth.init_dcos();
     synth.set_solo(false);
     synth.set_detune(true);
-    synth.set_portamento(true);
+    synth.set_portamento(false);
 
     while (1) {
         ui.update();

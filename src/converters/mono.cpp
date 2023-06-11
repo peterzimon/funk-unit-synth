@@ -27,7 +27,7 @@ void Mono::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
         }
     }
 
-    m_debug();
+    // m_debug();
 }
 
 void Mono::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
@@ -48,7 +48,7 @@ void Mono::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
         m_portamento_stop = m_note;
     }
 
-    m_debug();
+    // m_debug();
 }
 
 float Mono::get_freq(uint8_t voice) {
@@ -144,7 +144,6 @@ int Mono::m_find_note(uint8_t note) {
 }
 
 void Mono::m_debug() {
-    // return;
     printf("Note: %d\n", m_note);
     printf("Note stack:\n");
     for (int i = 0; i < VOICES; i++) {

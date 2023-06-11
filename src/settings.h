@@ -23,6 +23,9 @@
 #define PORTAMENTO_TIME     10
 #define DETUNE_FACTOR       1.02f      // Only available in FAT mode, should be > 1
 
+#define ENVELOPE_DAC_SIZE   4096
+#define KB_TRACK_DAC_SIZE   4096
+
 // ADSR (all time values are in us)
 #define ATTACK_SHORT        1000
 #define ATTACK_LONG         210000
@@ -43,6 +46,9 @@
                                     // Given the maximum frequency is 4186Hz and
                                     // the max output of the DAC is 4096mV, the
                                     // ideal value for KB_TRACKING_DAMP is 90.
+
+#define KB_TRACK_MIN_FREQ   20
+#define KB_TRACK_MAX_FREQ   2000
 
 // DAC
 #define DAC_SPI_PORT        spi0
@@ -84,6 +90,7 @@ struct Settings
     bool solo = false;
     bool portamento = false;
     bool detune = false;
+    bool kb_tracking = false;
 
     const uint8_t midi_channel = 0;
     const uint8_t voices = 6;

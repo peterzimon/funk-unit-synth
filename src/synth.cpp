@@ -318,8 +318,13 @@ void Synth::m_update_envelope() {
 
 void Synth::m_update_kb_tracking() {
     // Set DAC channel B
-    int raw_value = (int)m_converter->get_freq(0) - KB_TRACKING_DAMP;
-    uint16_t kb_mv = raw_value < 0 ? 0 : raw_value;
+    int freq = (int)m_converter->get_freq(0);
+    if (freq < KB_TRACK_MIN_FREQ) {
+        freq = KB_TRACK_MIN_FREQ;
+    } else if (freq > KB_TRACK_MAX_FREQ) {
+        freq = KB_TRACK_MAX_FREQ;
+    }
+    int kb_mv = Utils::map(freq, KB_TRACK_MIN_FREQ, KB_TRACK_MAX_FREQ, 0, KB_TRACK_DAC_SIZE);
 
     m_dac.config(MCP48X2_CHANNEL_B, MCP48X2_GAIN_X2, 1);
     m_dac.write(kb_mv);
