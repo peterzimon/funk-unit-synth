@@ -43,6 +43,9 @@ void Synth::init_dcos() {
  * and gates.
 */
 void Synth::set_mode(device_mode mode) {
+
+    printf("NEW MODE! %d\n", static_cast<int>(mode));
+
     switch (mode) {
 
         // Mono and fat mode uses the same converter, the diff is only the
@@ -92,12 +95,18 @@ void Synth::set_velo_tracking(bool velo_tracking) {
  * Called in the main loop
 */
 void Synth::process() {
-    // Update settings
-    set_adsr(m_ui.switches[mux_switch::SOFT], m_ui.switches[mux_switch::HOLD], m_ui.switches[mux_switch::RING]);
-    set_portamento(m_ui.switches[mux_switch::PORTAMENTO]);
-    set_detune(m_ui.switches[mux_switch::DETUNE]);
-    set_solo(m_ui.switches[mux_switch::SOLO_CHORD]);
-    set_velo_tracking(m_ui.switches[mux_switch::WAH_VELOCITY]);
+    // Update settings from switches and pots
+    if (m_ui.updated) {
+        set_adsr(m_ui.switches[mux_switch::SOFT], m_ui.switches[mux_switch::HOLD], m_ui.switches[mux_switch::RING]);
+        set_portamento(m_ui.switches[mux_switch::PORTAMENTO]);
+        set_detune(m_ui.switches[mux_switch::DETUNE]);
+        set_solo(m_ui.switches[mux_switch::SOLO_CHORD]);
+        set_velo_tracking(m_ui.switches[mux_switch::WAH_VELOCITY]);
+
+        if (m_ui.synth_mode != settings.mode) {
+            set_mode(m_ui.synth_mode);
+        }
+    }
 
     // Process synth
     m_read_midi();

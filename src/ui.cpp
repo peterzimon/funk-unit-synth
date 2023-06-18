@@ -1,6 +1,11 @@
 #include "ui.h"
 
 void UI::init() {
+    adc_init();
+    adc_gpio_init(ADC_RING_LEN_PIN);
+    adc_gpio_init(ADC_SYNTH_MODE_PIN);
+    adc_select_input(ADC_RING_LEN_CHANNEL);
+
     // Binary MUX GPIO setup
     gpio_init(MUX_BINARY_PIN_A);
     gpio_init(MUX_BINARY_PIN_B);
@@ -14,25 +19,31 @@ void UI::init() {
 
     gpio_pull_up(MUX_BINARY_INPUT);
 
-    reset();
+    m_mux_step = 0;
 }
 
-void UI::reset() {
-    m_mux_step = 0;
+void UI::init_scan() {
     for (int i = 0; i < NO_OF_SWITCHES; i++) {
+        gpio_put(MUX_BINARY_PIN_A, i & (1 << 0));
+        gpio_put(MUX_BINARY_PIN_B, i & (1 << 1));
+        gpio_put(MUX_BINARY_PIN_C, i & (1 << 2));
+        bool sw_read = !gpio_get(MUX_BINARY_INPUT);
         switches[static_cast<mux_switch>(i)] = false;
     }
 
-    gpio_put(MUX_BINARY_PIN_A, 0);
-    gpio_put(MUX_BINARY_PIN_B, 0);
-    gpio_put(MUX_BINARY_PIN_C, 0);
+    adc_select_input(ADC_RING_LEN_CHANNEL);
+    ring_length = adc_read();
 
-    bool value = gpio_get(MUX_BINARY_INPUT);
+    adc_select_input(ADC_SYNTH_MODE_CHANNEL);
+    ring_length = adc_read();
 }
 
 void UI::scan() {
+
+    // Read switches (muxed)
     if (m_scan_cycle < SCAN_CYCLE) {
         m_scan_cycle++;
+        updated = false;
         return;
     }
 
@@ -49,6 +60,15 @@ void UI::scan() {
     m_mux_step &= 0x7; // Reset to 0 after 8 steps
 
     m_scan_cycle = 0;
+
+    // Read ADC
+    adc_select_input(ADC_RING_LEN_CHANNEL);
+    ring_length = Utils::map(adc_read(), 0, 4096, RELEASE_LONG_MIN, RELEASE_LONG_MAX);
+
+    adc_select_input(ADC_SYNTH_MODE_CHANNEL);
+    synth_mode = static_cast<device_mode>(Utils::map(adc_read(), 0, 4096, 0, NO_OF_MODES));
+
+    updated = true;
     // debug();
 }
 
@@ -57,5 +77,7 @@ void UI::debug() {
     for (int i = 0; i < NO_OF_SWITCHES; i++) {
         printf("%d: %d\n", i, (int)switches[static_cast<mux_switch>(i)]);
     }
+    printf("Ring length: %lu\n", ring_length);
+    printf("Synth mode: %d\n", synth_mode);
     printf("\n");
 }

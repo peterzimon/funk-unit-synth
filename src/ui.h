@@ -24,9 +24,12 @@ public:
     DISALLOW_COPY_AND_ASSIGN(UI);
 
     std::map<mux_switch, bool> switches;
+    device_mode synth_mode = device_mode::MONO;
+    long ring_length = 0;
+    bool updated = true;
 
     void init();
-    void reset();
+    void init_scan();
     void scan();
 
 protected:

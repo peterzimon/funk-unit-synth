@@ -94,6 +94,10 @@ int main() {
     // Initialise UI
     ui.init();
 
+    // We need to wait a bit before the first read because of the Pico's GPIO speed
+    sleep_ms(1000);
+    ui.init_scan();
+
     // Initialise synth
     synth.init(PARA);
     synth.init_dcos();

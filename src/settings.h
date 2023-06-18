@@ -45,6 +45,8 @@
 #define SUSTAIN_OFF         0               // mV, between 0 and 4095
 #define RELEASE_SHORT       500000
 #define RELEASE_LONG        28000000
+#define RELEASE_LONG_MIN    10000000
+#define RELEASE_LONG_MAX    30000000
 
 // Keyboard tracking. Note that keyboard tracking is always on and an analog
 // switch turns it on/off. This saves some logic
@@ -78,14 +80,17 @@
 #define MAX_NOTE_VOLTAGE    4095
 
 // UI
-#define MUX_BINARY_PIN_A    2
-#define MUX_BINARY_PIN_B    3
-#define MUX_BINARY_PIN_C    4
-#define MUX_BINARY_INPUT    8
-
-#define NO_OF_SWITCHES      8
+#define MUX_BINARY_PIN_A            2
+#define MUX_BINARY_PIN_B            3
+#define MUX_BINARY_PIN_C            4
+#define MUX_BINARY_INPUT            8
+#define ADC_RING_LEN_PIN            26
+#define ADC_RING_LEN_CHANNEL        0
+#define ADC_SYNTH_MODE_PIN          27
+#define ADC_SYNTH_MODE_CHANNEL      1
 
 // Switches in the order how they're connected to the MUX
+#define NO_OF_SWITCHES              8
 enum mux_switch {
     SOFT,
     HOLD,
@@ -97,6 +102,7 @@ enum mux_switch {
     WAH_VELOCITY
 };
 
+#define NO_OF_MODES 3
 enum device_mode {
     MONO,
     FAT_MONO,
