@@ -96,17 +96,20 @@ int main() {
 
     // Initialise synth
     synth.init(PARA);
-    synth.set_adsr(false, true, false);
     synth.init_dcos();
-    synth.set_solo(false);
-    synth.set_detune(true);
-    synth.set_portamento(false);
-    synth.set_kb_tracking(true);
-    synth.set_velo_tracking(true);
+
+    // Test -------------------------------
+    // synth.set_adsr(false, true, false);
+    // synth.set_solo(false);
+    // synth.set_detune(true);
+    // synth.set_portamento(false);
+    // synth.set_kb_tracking(true);
+    // synth.set_velo_tracking(true);
+    // ------------------------------------
 
     // Main update loop
     while (1) {
-        ui.update();
+        ui.scan();
         synth.process();
     }
 

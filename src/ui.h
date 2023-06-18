@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <utils.h>
+#include <map>
 #include <pico/stdio.h>
 #include "hardware/adc.h"
 #include "hardware/gpio.h"
@@ -11,7 +12,7 @@
 
 // The UI doesn't have to be scanned in every processor cycle. To save processor
 // time define the number cycles for which the UI should not be scanned.
-#define SCAN_CYCLE 10000
+#define SCAN_CYCLE 10000 // UNUSED ATM
 
 class UI {
 public:
@@ -22,15 +23,17 @@ public:
 
     DISALLOW_COPY_AND_ASSIGN(UI);
 
+    std::map<mux_switch, bool> switches;
+
     void init();
-    void update();
+    void reset();
+    void scan();
 
 protected:
     UI() = default;
 
 private:
-    uint16_t m_scan_counter;
-    uint8_t m_prev_voices;
+    uint16_t m_mux_step = 0;
 };
 
 #endif

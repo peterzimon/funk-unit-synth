@@ -28,7 +28,7 @@ void Synth::init(device_mode default_mode) {
     set_mode(default_mode);
 
     // Set default ADSR (soft, hold, ring)
-    set_adsr(false, false, true);
+    set_adsr(false, true, false);
 }
 
 void Synth::init_dcos() {
@@ -89,9 +89,17 @@ void Synth::set_velo_tracking(bool velo_tracking) {
 }
 
 /**
- * The process function that's called in the main loop
+ * Called in the main loop
 */
 void Synth::process() {
+    // Update settings
+    set_adsr(m_ui.switches[mux_switch::SOFT], m_ui.switches[mux_switch::HOLD], m_ui.switches[mux_switch::RING]);
+    set_portamento(m_ui.switches[mux_switch::PORTAMENTO]);
+    set_detune(m_ui.switches[mux_switch::DETUNE]);
+    set_solo(m_ui.switches[mux_switch::SOLO_CHORD]);
+    set_velo_tracking(m_ui.switches[mux_switch::WAH_VELOCITY]);
+
+    // Process synth
     m_read_midi();
     m_update_envelope();
     m_apply_mods();

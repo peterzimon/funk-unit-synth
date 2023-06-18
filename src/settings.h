@@ -21,8 +21,6 @@
                                         // get in a stuck state when a too low note
                                         // is played.
 
-#define GP_GATE             2           // Temporary, until I test if envelope
-                                        // is going to be digital or analog
 #define PORTAMENTO_TIME     10
 #define DETUNE_FACTOR       1.02f       // Only available in FAT mode, should be > 1
 
@@ -57,7 +55,6 @@
                                     // Given the maximum frequency is 4186Hz and
                                     // the max output of the DAC is 4096mV, the
                                     // ideal value for KB_TRACKING_DAMP is 90.
-
 #define KB_TRACK_MIN_FREQ   20
 #define KB_TRACK_MAX_FREQ   2000
 
@@ -72,16 +69,33 @@
 #define MAX_PITCH_BEND      0x3fff
 #define PITCH_BEND_CENTER   0x2000
 #define MAX_PB_SEMINOTES    2
-
-#define MIDI_OCTAVE_SHIFT   0 // Not implemented
-
 #define MIDI_UART_INSTANCE  uart1
 #define GP_MIDI_RX          9
 #define MIDI_BAUDRATE       31250
+#define MIDI_OCTAVE_SHIFT   0 // Not implemented
 
 // CV
 #define MAX_NOTE_VOLTAGE    4095
 
+// UI
+#define MUX_BINARY_PIN_A    2
+#define MUX_BINARY_PIN_B    3
+#define MUX_BINARY_PIN_C    4
+#define MUX_BINARY_INPUT    8
+
+#define NO_OF_SWITCHES      8
+
+// Switches in the order how they're connected to the MUX
+enum mux_switch {
+    SOFT,
+    HOLD,
+    RING,
+    PORTAMENTO,
+    DETUNE,
+    SOLO_CHORD,
+    KB_TRACKING,
+    WAH_VELOCITY
+};
 
 enum device_mode {
     MONO,
