@@ -32,10 +32,10 @@ void UI::init_scan() {
     }
 
     adc_select_input(ADC_RING_LEN_CHANNEL);
-    ring_length = adc_read();
+    release_long = adc_read();
 
     adc_select_input(ADC_SYNTH_MODE_CHANNEL);
-    ring_length = adc_read();
+    release_long = adc_read();
 }
 
 void UI::scan() {
@@ -63,13 +63,13 @@ void UI::scan() {
 
     // Read ADC
     adc_select_input(ADC_RING_LEN_CHANNEL);
-    ring_length = Utils::map(adc_read(), 0, 4096, RELEASE_LONG_MIN, RELEASE_LONG_MAX);
+    release_long = Utils::map(adc_read(), 0, 4096, RELEASE_LONG_MIN, RELEASE_LONG_MAX);
 
     adc_select_input(ADC_SYNTH_MODE_CHANNEL);
     synth_mode = static_cast<device_mode>(Utils::map(adc_read(), 0, 4096, 0, NO_OF_MODES));
 
     updated = true;
-    // debug();
+    debug();
 }
 
 void UI::debug() {
@@ -77,7 +77,7 @@ void UI::debug() {
     for (int i = 0; i < NO_OF_SWITCHES; i++) {
         printf("%d: %d\n", i, (int)switches[static_cast<mux_switch>(i)]);
     }
-    printf("Ring length: %lu\n", ring_length);
+    printf("Ring length: %lu\n", release_long);
     printf("Synth mode: %d\n", synth_mode);
     printf("\n");
 }

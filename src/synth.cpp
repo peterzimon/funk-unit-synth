@@ -168,7 +168,8 @@ void Synth::set_adsr(bool soft, bool hold, bool ring) {
         m_attack = ATTACK_SHORT;
         m_decay = DECAY_SHORT;
         m_sustain = SUSTAIN_ON;
-        m_release = RELEASE_LONG;
+        // m_release = RELEASE_LONG;
+        m_release = m_ui.release_long * 100000;
         break;
     case 0b100:
         m_attack = ATTACK_LONG;
@@ -192,7 +193,8 @@ void Synth::set_adsr(bool soft, bool hold, bool ring) {
         m_attack = ATTACK_LONG;
         m_decay = DECAY_SHORT;
         m_sustain = SUSTAIN_ON;
-        m_release = RELEASE_LONG;
+        // m_release = RELEASE_LONG;
+        m_release = m_ui.release_long * 100000;
         break;
     default:
         m_attack = ATTACK_SHORT;
