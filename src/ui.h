@@ -12,7 +12,7 @@
 
 // The UI doesn't have to be scanned in every processor cycle. To save processor
 // time define the number cycles for which the UI should not be scanned.
-#define SCAN_CYCLE 10000 // UNUSED ATM
+#define SCAN_CYCLE 1000
 
 class UI {
 public:
@@ -34,6 +34,9 @@ protected:
 
 private:
     uint16_t m_mux_step = 0;
+    int m_scan_cycle = 0;
+
+    void debug();
 };
 
 #endif
