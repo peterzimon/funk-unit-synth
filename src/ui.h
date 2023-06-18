@@ -26,6 +26,7 @@ public:
     std::map<mux_switch, bool> switches;
     device_mode synth_mode = device_mode::MONO;
     uint16_t release_long = RELEASE_LONG_MIN;
+    uint16_t decay_long = DECAY_LONG_MIN;
     bool updated = true;
 
     void init();

@@ -41,6 +41,8 @@
 #define DECAY_SHORT         500000
 #define DECAY_MID           1500000
 #define DECAY_LONG          23000000
+#define DECAY_LONG_MIN      75          // * 100000 = min decay long
+#define DECAY_LONG_MAX      230         // * 100000 = max decay long
 #define SUSTAIN_ON          3600            // mV, between 0 and 4095
 #define SUSTAIN_OFF         0               // mV, between 0 and 4095
 #define RELEASE_SHORT       500000

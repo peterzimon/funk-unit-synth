@@ -158,7 +158,7 @@ void Synth::set_adsr(bool soft, bool hold, bool ring) {
     switch (shr) {
     case 0b001:
         m_attack = ATTACK_SHORT;
-        m_decay = DECAY_LONG;
+        m_decay = m_ui.decay_long * 100000;
         m_sustain = SUSTAIN_OFF;
         m_release = RELEASE_SHORT;
         break;
@@ -182,7 +182,7 @@ void Synth::set_adsr(bool soft, bool hold, bool ring) {
         break;
     case 0b101:
         m_attack = ATTACK_LONG;
-        m_decay = DECAY_LONG;
+        m_decay = m_ui.decay_long * 100000;
         m_sustain = SUSTAIN_OFF;
         m_release = RELEASE_SHORT;
         break;

@@ -47,9 +47,9 @@ void UI::scan() {
         return;
     }
 
-    bool value = !gpio_get(MUX_BINARY_INPUT);
+    bool switch_value = !gpio_get(MUX_BINARY_INPUT);
     mux_switch current_switch = static_cast<mux_switch>(m_mux_step);
-    switches[current_switch] = value;
+    switches[current_switch] = switch_value;
 
     m_mux_step++;
 
@@ -63,7 +63,9 @@ void UI::scan() {
 
     // Read ADC
     adc_select_input(ADC_RING_LEN_CHANNEL);
-    release_long = Utils::map(adc_read(), 0, 4096, RELEASE_LONG_MIN, RELEASE_LONG_MAX);
+    uint16_t adc_read_value = adc_read();
+    decay_long = Utils::map(adc_read_value, 0, 4096, DECAY_LONG_MIN, DECAY_LONG_MAX);
+    release_long = Utils::map(adc_read_value, 0, 4096, RELEASE_LONG_MIN, RELEASE_LONG_MAX);
 
     adc_select_input(ADC_SYNTH_MODE_CHANNEL);
     synth_mode = static_cast<device_mode>(Utils::map(adc_read(), 0, 4096, 0, NO_OF_MODES));
