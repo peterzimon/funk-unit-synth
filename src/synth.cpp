@@ -329,10 +329,21 @@ void Synth::m_apply_mods() {
                 freqs[2] = freq * (1.0 - (DETUNE_FACTOR - 1.0));
             }
 
-            for (int voice = 0; voice < FAT_MONO_VOICES; voice++)
-            {
+            for (int voice = 0; voice < FAT_MONO_VOICES; voice++) {
                 m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
                 pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ));
+            }
+        }
+        break;
+
+    case PARA:
+        if (m_pitch_bend_dirty) {
+            for (int voice = 0; voice < VOICES; voice++) {
+                float freq = m_converter->get_freq(voice);
+                m_last_midi_pitch_bend = m_midi_pitch_bend;
+                freq = m_pitch_bend_freq(freq, m_midi_pitch_bend);
+                m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freq);
+                pwm_set_chan_level(m_amp_pwm_slices[voice], pwm_gpio_to_channel(settings.amp_pins[voice]), (int)(DIV_COUNTER * freq / MAX_FREQ));
             }
         }
         break;
