@@ -44,7 +44,6 @@
 #define SUSTAIN_ON          3600            // mV, between 0 and 4095
 #define SUSTAIN_OFF         0               // mV, between 0 and 4095
 #define RELEASE_SHORT       500000
-// #define RELEASE_LONG        28000000        //  UNUSED
 #define RELEASE_LONG_MIN    50              // * 100000 = min release in us
 #define RELEASE_LONG_MAX    300             // * 100000 = max release in us
 
@@ -67,17 +66,12 @@
 #define GP_DAC_CS           5
 
 // MIDI
-#define OCTAVES             10
-#define MAX_PITCH_BEND      0x3fff
-#define PITCH_BEND_CENTER   0x2000
-#define MAX_PB_SEMINOTES    2
-#define MIDI_UART_INSTANCE  uart1
-#define GP_MIDI_RX          9
-#define MIDI_BAUDRATE       31250
-#define MIDI_OCTAVE_SHIFT   0 // Not implemented
-
-// CV
-#define MAX_NOTE_VOLTAGE    4095
+#define OCTAVES                     10
+#define MIDI_UART_INSTANCE          uart1
+#define GP_MIDI_RX                  9
+#define MIDI_BAUDRATE               31250
+#define MIDI_OCTAVE_SHIFT           0 // Not implemented
+#define PITCH_BEND_SEMITONES        3 // Min. 1
 
 // UI
 #define MUX_BINARY_PIN_A            2

@@ -70,7 +70,8 @@ private:
     uint8_t m_amp_pwm_slices[VOICES];
 
     bool m_pitch_bend_dirty;
-    int16_t m_pitch_bend_cv;
+    uint16_t m_midi_pitch_bend = 0x2000;
+    uint16_t m_last_midi_pitch_bend = 0x2000;
 
     uint8_t m_buffer_var[MIDI_BUFFER_SIZE];
     RingBuffer m_input_buffer;
@@ -85,6 +86,8 @@ private:
     void m_update_envelope();
     void m_update_filter_mod(uint8_t velocity);
     void m_reset_filter_mod();
+
+    float m_pitch_bend_freq(float freq, uint16_t pitch_bend);
 };
 
 #endif

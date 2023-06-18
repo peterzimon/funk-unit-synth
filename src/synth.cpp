@@ -123,6 +123,7 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_converter->note_on(channel, note, velocity);
     m_update_dcos();
     m_update_filter_mod(m_converter->get_main_velocity());     // Only update KB tracking output on note on
+    m_last_midi_pitch_bend = 0;
 }
 
 /**
@@ -140,8 +141,11 @@ void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
  * event was fired.
 */
 void Synth::pitch_bend(uint8_t channel, uint16_t bend) {
-    m_converter->update_pitch_bend(bend);
-    m_update_dcos();
+    // m_converter->update_pitch_bend(bend);
+    // m_update_dcos();
+
+    m_midi_pitch_bend = bend;
+    m_pitch_bend_dirty = (m_midi_pitch_bend != m_last_midi_pitch_bend);
 }
 
 /**
@@ -168,7 +172,6 @@ void Synth::set_adsr(bool soft, bool hold, bool ring) {
         m_attack = ATTACK_SHORT;
         m_decay = DECAY_SHORT;
         m_sustain = SUSTAIN_ON;
-        // m_release = RELEASE_LONG;
         m_release = m_ui.release_long * 100000;
         break;
     case 0b100:
@@ -193,7 +196,6 @@ void Synth::set_adsr(bool soft, bool hold, bool ring) {
         m_attack = ATTACK_LONG;
         m_decay = DECAY_SHORT;
         m_sustain = SUSTAIN_ON;
-        // m_release = RELEASE_LONG;
         m_release = m_ui.release_long * 100000;
         break;
     default:
@@ -300,8 +302,12 @@ void Synth::m_apply_mods() {
     switch (settings.mode)
     {
     case MONO:
-        if (settings.portamento && m_converter->is_dirty()) {
+        if (settings.portamento && m_converter->is_dirty() || m_pitch_bend_dirty) {
             float freq = m_converter->get_freq(0);
+
+            m_last_midi_pitch_bend = m_midi_pitch_bend;
+            freq = m_pitch_bend_freq(freq, m_midi_pitch_bend);
+
             int amp = (int)(DIV_COUNTER * freq / MAX_FREQ);
 
             m_set_frequency(settings.pio[settings.voice_to_pio[0]], settings.voice_to_sm[0], freq);
@@ -310,8 +316,12 @@ void Synth::m_apply_mods() {
         break;
 
     case FAT_MONO:
-        if (settings.portamento && m_converter->is_dirty()) {
+        if (settings.portamento && m_converter->is_dirty() || m_pitch_bend_dirty) {
             float freq = m_converter->get_freq(0);
+
+            m_last_midi_pitch_bend = m_midi_pitch_bend;
+            freq = m_pitch_bend_freq(freq, m_midi_pitch_bend);
+
             float freqs[VOICES];
             freqs[0] = freqs[1] = freqs[2] = freq;
             if (settings.detune) {
@@ -375,4 +385,8 @@ void Synth::m_reset_filter_mod() {
         m_dac.config(MCP48X2_CHANNEL_B, MCP48X2_GAIN_X2, 1);
         m_dac.write(0);
     }
+}
+
+float Synth::m_pitch_bend_freq(float freq, uint16_t pitch_bend) {
+    return freq - (freq * ((0x2000 - pitch_bend) / (67000.0f / PITCH_BEND_SEMITONES)));
 }
