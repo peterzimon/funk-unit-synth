@@ -69,7 +69,7 @@ void UI::scan() {
     synth_mode = static_cast<device_mode>(Utils::map(adc_read(), 0, 4096, 0, NO_OF_MODES));
 
     updated = true;
-    debug();
+    // debug();
 }
 
 void UI::debug() {

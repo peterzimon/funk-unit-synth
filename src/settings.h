@@ -45,7 +45,7 @@
 #define SUSTAIN_OFF         0               // mV, between 0 and 4095
 #define RELEASE_SHORT       500000
 // #define RELEASE_LONG        28000000        //  UNUSED
-#define RELEASE_LONG_MIN    75              // * 100000 = min release in us
+#define RELEASE_LONG_MIN    50              // * 100000 = min release in us
 #define RELEASE_LONG_MAX    300             // * 100000 = max release in us
 
 // Keyboard tracking. Note that keyboard tracking is always on and an analog
