@@ -40,7 +40,11 @@ void UI::init_scan() {
 
 void UI::scan() {
 
-    // Read switches (muxed)
+    // Read switches (muxed). The CD4051 needs some time to settle after setting
+    // the input address (X0...X7). This is a simple way to add a little delay
+    // to the whole scan cycle. Also note that it only works reliably if the
+    // delay is in between reading the input and setting the address. That's why
+    // here the address is only set after reading the input for the next cycle.
     if (m_scan_cycle < SCAN_CYCLE) {
         m_scan_cycle++;
         updated = false;
@@ -58,7 +62,6 @@ void UI::scan() {
     gpio_put(MUX_BINARY_PIN_C, m_mux_step & (1 << 2));
 
     m_mux_step &= 0x7; // Reset to 0 after 8 steps
-
     m_scan_cycle = 0;
 
     // Read ADC
