@@ -5,6 +5,51 @@
   (paper "A4")
 
   (lib_symbols
+    (symbol "Connector_Generic:Conn_01x02" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "Conn_01x02" (at 0 -5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "connector" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Conn_01x02_1_1"
+        (rectangle (start -1.27 -2.413) (end 0 -2.667)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 0.127) (end 0 -0.127)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 1.27) (end 1.27 -3.81)
+          (stroke (width 0.254) (type default))
+          (fill (type background))
+        )
+        (pin passive line (at -5.08 0 0) (length 3.81)
+          (name "Pin_1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+          (name "Pin_2" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "Connector_Generic:Conn_01x06" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (at 0 7.62 0)
         (effects (font (size 1.27 1.27)))
@@ -407,6 +452,8 @@
 
   (no_connect (at 132.08 45.72) (uuid 07f98472-4150-4de1-95c3-cb73d124f90f))
   (no_connect (at 77.47 45.72) (uuid 11f378ab-1301-47e4-abb9-258638dd793b))
+  (no_connect (at 167.64 45.72) (uuid 1b47a462-94dd-43bd-936b-142fe10a940c))
+  (no_connect (at 77.47 118.11) (uuid 2113a2e1-d90a-4c2b-b8ae-d41267a91ab9))
   (no_connect (at 41.91 82.55) (uuid 6b55ab08-0309-4c0f-9572-ce4c0e038ffb))
   (no_connect (at 132.08 82.55) (uuid 9eaad9e7-de45-4641-b6da-e94e735db555))
   (no_connect (at 77.47 82.55) (uuid c1929ea4-97ee-4330-945a-46fbc9fa9ad3))
@@ -549,6 +596,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid bec6b0de-9c77-44d1-ae56-b142dcdca742)
   )
+  (text "These could be NTF connectors, or ribbon\ncables too. Maybe it's better to add both?"
+    (at 222.25 115.57 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid d0f78d86-05fa-4f1b-b3a4-44f960e364e8)
+  )
 
   (global_label "1.5V" (shape input) (at 26.67 176.53 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
@@ -632,6 +684,10 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid d9775228-e872-49f6-8f4f-4e6db2240f16)
   )
+  (hierarchical_label "EXTRA_GPIO1" (shape output) (at 238.76 95.25 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid dd5d1499-30f7-498b-a98d-cb3bbdf34222)
+  )
   (hierarchical_label "SOLO_CHORD" (shape output) (at 238.76 52.07 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid dee273fe-7b8d-4dfc-a08c-15fe0d5c196f)
@@ -639,6 +695,10 @@
   (hierarchical_label "RING_TIME" (shape output) (at 181.61 80.01 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid e49e9e73-5637-4b8e-a10c-e49629aa3e42)
+  )
+  (hierarchical_label "EXTRA_GPIO2" (shape output) (at 238.76 97.79 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid eaa31a11-8ef0-4d66-9433-5bd6c27db895)
   )
   (hierarchical_label "DETUNE" (shape output) (at 238.76 54.61 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
@@ -648,7 +708,7 @@
   (symbol (lib_id "power:GND") (at 74.93 46.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 04b86a00-440c-4312-8a04-08d2435fc75a)
-    (property "Reference" "#PWR0106" (at 74.93 53.34 0)
+    (property "Reference" "#PWR0119" (at 74.93 53.34 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 74.93 52.07 0)
@@ -664,7 +724,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0106") (unit 1)
+          (reference "#PWR0119") (unit 1)
         )
       )
     )
@@ -679,7 +739,7 @@
     (property "Value" "100k" (at 25.4 183.515 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 21.082 181.61 90)
+    (property "Footprint" "Shmoergh_Custom_Footprints:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" (at 21.082 181.61 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 22.86 181.61 0)
@@ -705,7 +765,7 @@
     (property "Value" "Conn_01x06" (at 246.38 78.105 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 243.84 74.93 0)
+    (property "Footprint" "Shmoergh_Custom_Footprints:NSL25_01x06_Vertical" (at 243.84 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 243.84 74.93 0)
@@ -729,7 +789,7 @@
   (symbol (lib_id "power:+3.3V") (at 22.86 165.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1820096c-3759-4233-bda5-a8029a549a90)
-    (property "Reference" "#PWR099" (at 22.86 168.91 0)
+    (property "Reference" "#PWR0114" (at 22.86 168.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 22.86 161.29 0)
@@ -745,7 +805,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR099") (unit 1)
+          (reference "#PWR0114") (unit 1)
         )
       )
     )
@@ -808,7 +868,7 @@
   (symbol (lib_id "power:GND") (at 172.72 83.82 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1f358eb7-42db-4a1b-b6a9-ea5aca296dfb)
-    (property "Reference" "#PWR0118" (at 172.72 90.17 0)
+    (property "Reference" "#PWR0126" (at 172.72 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 172.72 88.9 0)
@@ -824,7 +884,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0118") (unit 1)
+          (reference "#PWR0126") (unit 1)
         )
       )
     )
@@ -833,7 +893,7 @@
   (symbol (lib_id "power:GND") (at 129.54 83.82 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 24b9ab3b-7dda-4caf-8439-502827b8349c)
-    (property "Reference" "#PWR0114" (at 129.54 90.17 0)
+    (property "Reference" "#PWR0123" (at 129.54 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 129.54 88.9 0)
@@ -849,7 +909,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0114") (unit 1)
+          (reference "#PWR0123") (unit 1)
         )
       )
     )
@@ -858,7 +918,7 @@
   (symbol (lib_id "power:GND") (at 74.93 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 27d6cb16-abd3-4899-b23e-18b2eed162e8)
-    (property "Reference" "#PWR0110" (at 74.93 125.73 0)
+    (property "Reference" "#PWR0121" (at 74.93 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 74.93 124.46 0)
@@ -874,7 +934,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0110") (unit 1)
+          (reference "#PWR0121") (unit 1)
         )
       )
     )
@@ -883,7 +943,7 @@
   (symbol (lib_id "power:GND") (at 236.22 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 32ee7e03-489f-4a41-997a-f20656c21c76)
-    (property "Reference" "#PWR020" (at 236.22 66.04 0)
+    (property "Reference" "#PWR0128" (at 236.22 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 236.22 64.77 0)
@@ -899,7 +959,33 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR0128") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector_Generic:Conn_01x02") (at 243.84 95.25 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 337397f9-7fce-471f-b231-be464e45da6c)
+    (property "Reference" "J_UI3" (at 246.38 95.885 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "Conn_01x02" (at 246.38 98.425 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Shmoergh_Custom_Footprints:NSL25_01x02_Vertical" (at 243.84 95.25 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 243.84 95.25 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 7aa52f5a-b1a1-47f1-8415-25e4c400f779))
+    (pin "2" (uuid b1a99ebc-59ee-4be4-9326-a58b132e19b6))
+    (instances
+      (project "shmoergh-funk-live-control"
+        (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
+          (reference "J_UI3") (unit 1)
         )
       )
     )
@@ -962,7 +1048,7 @@
   (symbol (lib_id "power:GND") (at 165.1 46.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4867f47a-2300-4d87-b3e5-75a409739d5c)
-    (property "Reference" "#PWR0116" (at 165.1 53.34 0)
+    (property "Reference" "#PWR0124" (at 165.1 53.34 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 165.1 52.07 0)
@@ -978,7 +1064,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0116") (unit 1)
+          (reference "#PWR0124") (unit 1)
         )
       )
     )
@@ -987,7 +1073,7 @@
   (symbol (lib_id "power:GND") (at 74.93 83.82 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4fdfb9c0-efea-4a81-a155-102f96d6eb11)
-    (property "Reference" "#PWR0108" (at 74.93 90.17 0)
+    (property "Reference" "#PWR0120" (at 74.93 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 74.93 88.9 0)
@@ -1003,7 +1089,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0108") (unit 1)
+          (reference "#PWR0120") (unit 1)
         )
       )
     )
@@ -1067,7 +1153,7 @@
   (symbol (lib_id "power:+3.3V") (at 172.72 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 850215ca-febb-43cf-bd64-692865ebcb18)
-    (property "Reference" "#PWR0117" (at 172.72 80.01 0)
+    (property "Reference" "#PWR0125" (at 172.72 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 172.72 72.39 0)
@@ -1083,7 +1169,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0117") (unit 1)
+          (reference "#PWR0125") (unit 1)
         )
       )
     )
@@ -1152,7 +1238,7 @@
     (property "Value" "100k" (at 25.4 173.355 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 21.082 171.45 90)
+    (property "Footprint" "Shmoergh_Custom_Footprints:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" (at 21.082 171.45 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 22.86 171.45 0)
@@ -1172,7 +1258,7 @@
   (symbol (lib_id "power:GND") (at 39.37 48.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b69da9ed-e486-4362-a647-0fad547482ed)
-    (property "Reference" "#PWR0102" (at 39.37 54.61 0)
+    (property "Reference" "#PWR0117" (at 39.37 54.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 39.37 53.34 0)
@@ -1188,7 +1274,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0102") (unit 1)
+          (reference "#PWR0117") (unit 1)
         )
       )
     )
@@ -1197,7 +1283,7 @@
   (symbol (lib_id "power:GND") (at 22.86 185.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c76df801-bb49-4a3c-91fc-57b9fa0b2923)
-    (property "Reference" "#PWR0100" (at 22.86 191.77 0)
+    (property "Reference" "#PWR0115" (at 22.86 191.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 22.86 190.5 0)
@@ -1213,7 +1299,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0100") (unit 1)
+          (reference "#PWR0115") (unit 1)
         )
       )
     )
@@ -1222,7 +1308,7 @@
   (symbol (lib_id "power:GND") (at 39.37 83.82 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cb00d43b-9c59-486d-9154-7f176bb988d6)
-    (property "Reference" "#PWR0104" (at 39.37 90.17 0)
+    (property "Reference" "#PWR0118" (at 39.37 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 39.37 88.9 0)
@@ -1238,7 +1324,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0104") (unit 1)
+          (reference "#PWR0118") (unit 1)
         )
       )
     )
@@ -1274,7 +1360,7 @@
   (symbol (lib_id "power:+3.3V") (at 236.22 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d946330c-4e7e-4fcc-b134-03638e511518)
-    (property "Reference" "#PWR019" (at 236.22 44.45 0)
+    (property "Reference" "#PWR0127" (at 236.22 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 236.22 36.83 0)
@@ -1290,7 +1376,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR0127") (unit 1)
         )
       )
     )
@@ -1299,7 +1385,7 @@
   (symbol (lib_id "power:+3.3V") (at 39.37 36.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e3e8418a-0090-4c31-827b-ec3daaada665)
-    (property "Reference" "#PWR0101" (at 39.37 40.64 0)
+    (property "Reference" "#PWR0116" (at 39.37 40.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 39.37 33.02 0)
@@ -1315,7 +1401,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0101") (unit 1)
+          (reference "#PWR0116") (unit 1)
         )
       )
     )
@@ -1324,7 +1410,7 @@
   (symbol (lib_id "power:GND") (at 129.54 46.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e40c4f34-040d-4701-bd16-86bcc3ff6d25)
-    (property "Reference" "#PWR0112" (at 129.54 53.34 0)
+    (property "Reference" "#PWR0122" (at 129.54 53.34 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 129.54 52.07 0)
@@ -1340,7 +1426,7 @@
     (instances
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/88d90181-522e-4756-bb1e-20cf1e1feb05/6fc25f0e-fad8-40a0-a83e-9226997ef918"
-          (reference "#PWR0112") (unit 1)
+          (reference "#PWR0122") (unit 1)
         )
       )
     )
@@ -1355,7 +1441,7 @@
     (property "Value" "Conn_01x06" (at 246.38 52.705 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 243.84 49.53 0)
+    (property "Footprint" "Shmoergh_Custom_Footprints:NSL25_01x06_Vertical" (at 243.84 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 243.84 49.53 0)

@@ -363,7 +363,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x06") (at 144.78 95.25 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1f68abfa-7121-47f4-aacf-933687bdfa35)
-    (property "Reference" "J_VOICE_INTERFACE_1" (at 147.32 95.885 0)
+    (property "Reference" "J_VOICE_INTERFACE_?" (at 147.32 95.885 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x06" (at 147.32 98.425 0)
@@ -384,7 +384,7 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "J_VOICE_INTERFACE_1") (unit 1)
+          (reference "J_VOICE_INTERFACE_?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-control"
@@ -413,7 +413,7 @@
   (symbol (lib_id "power:+12V") (at 149.86 74.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 24a31b4a-2ac7-4f26-8bd8-d60586e77977)
-    (property "Reference" "#PWR016" (at 149.86 78.74 0)
+    (property "Reference" "#PWR?" (at 149.86 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 149.86 71.12 0)
@@ -429,27 +429,27 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR016") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "#PWR0125") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "#PWR0137") (unit 1)
+          (reference "#PWR090") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "#PWR0131") (unit 1)
+          (reference "#PWR075") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
-          (reference "#PWR0149") (unit 1)
+          (reference "#PWR0102") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "#PWR0155") (unit 1)
+          (reference "#PWR0132") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "#PWR0143") (unit 1)
+          (reference "#PWR096") (unit 1)
         )
       )
     )
@@ -458,7 +458,7 @@
   (symbol (lib_id "Connector_Generic:Conn_02x03_Odd_Even") (at 142.24 77.47 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 57d2a3b6-bb4f-4dd5-93c1-a56bc4a52747)
-    (property "Reference" "J1" (at 143.51 69.85 0)
+    (property "Reference" "J?" (at 143.51 69.85 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Power" (at 143.51 72.39 0)
@@ -479,7 +479,7 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "J1") (unit 1)
+          (reference "J?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-control"
@@ -508,7 +508,7 @@
   (symbol (lib_id "power:GND") (at 130.81 78.74 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 855548df-0ce5-4cf4-9163-fa59b004a9df)
-    (property "Reference" "#PWR014" (at 130.81 85.09 0)
+    (property "Reference" "#PWR?" (at 130.81 85.09 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 130.81 83.82 0)
@@ -524,27 +524,27 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "#PWR0122") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "#PWR0134") (unit 1)
+          (reference "#PWR087") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "#PWR0128") (unit 1)
+          (reference "#PWR072") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
-          (reference "#PWR0146") (unit 1)
+          (reference "#PWR099") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "#PWR0152") (unit 1)
+          (reference "#PWR0129") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "#PWR0140") (unit 1)
+          (reference "#PWR093") (unit 1)
         )
       )
     )
@@ -553,7 +553,7 @@
   (symbol (lib_id "power:-12V") (at 149.86 80.01 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8e8723c6-ee55-4567-8b25-e7b45b3a3126)
-    (property "Reference" "#PWR015" (at 149.86 82.55 0)
+    (property "Reference" "#PWR?" (at 149.86 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "-12V" (at 149.86 85.09 0)
@@ -569,27 +569,27 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "#PWR0126") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "#PWR0138") (unit 1)
+          (reference "#PWR091") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "#PWR0132") (unit 1)
+          (reference "#PWR076") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
-          (reference "#PWR0150") (unit 1)
+          (reference "#PWR0103") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "#PWR0156") (unit 1)
+          (reference "#PWR0133") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "#PWR0144") (unit 1)
+          (reference "#PWR097") (unit 1)
         )
       )
     )
@@ -598,7 +598,7 @@
   (symbol (lib_id "power:GND") (at 156.21 78.74 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9246a1f6-db93-4e7f-adeb-c89e8c8b9279)
-    (property "Reference" "#PWR017" (at 156.21 85.09 0)
+    (property "Reference" "#PWR?" (at 156.21 85.09 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 156.21 83.82 0)
@@ -614,27 +614,27 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "#PWR0127") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "#PWR0139") (unit 1)
+          (reference "#PWR092") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "#PWR0133") (unit 1)
+          (reference "#PWR077") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
-          (reference "#PWR0151") (unit 1)
+          (reference "#PWR0104") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "#PWR0157") (unit 1)
+          (reference "#PWR0134") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "#PWR0145") (unit 1)
+          (reference "#PWR098") (unit 1)
         )
       )
     )
@@ -643,7 +643,7 @@
   (symbol (lib_id "power:+12V") (at 137.16 74.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a4ccfe03-0a25-4ed5-8a2b-4db880df9acc)
-    (property "Reference" "#PWR013" (at 137.16 78.74 0)
+    (property "Reference" "#PWR?" (at 137.16 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 137.16 71.12 0)
@@ -659,27 +659,27 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "#PWR0123") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "#PWR0135") (unit 1)
+          (reference "#PWR088") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "#PWR0129") (unit 1)
+          (reference "#PWR073") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
-          (reference "#PWR0147") (unit 1)
+          (reference "#PWR0100") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "#PWR0153") (unit 1)
+          (reference "#PWR0130") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "#PWR0141") (unit 1)
+          (reference "#PWR094") (unit 1)
         )
       )
     )
@@ -688,7 +688,7 @@
   (symbol (lib_id "power:-12V") (at 137.16 80.01 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ffef9574-79f3-476c-8905-84d81fee8a38)
-    (property "Reference" "#PWR010" (at 137.16 82.55 0)
+    (property "Reference" "#PWR?" (at 137.16 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "-12V" (at 137.16 85.09 0)
@@ -704,27 +704,27 @@
     (instances
       (project "shmoergh-funk-live-voice"
         (path "/5a9d7fcc-2f93-4fa9-a3de-a561cb7522b6"
-          (reference "#PWR010") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "shmoergh-funk-live-control"
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b7a699bc-9ede-4e43-9489-973cb040f68d"
-          (reference "#PWR0124") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/73026543-dc8b-456d-a908-7f59f5614f87"
-          (reference "#PWR0136") (unit 1)
+          (reference "#PWR089") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/fae2190e-fad4-442c-a22e-78ec22052747"
-          (reference "#PWR0130") (unit 1)
+          (reference "#PWR074") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/6fe26819-ddf5-49d3-9f61-5b33d8ddd23b"
-          (reference "#PWR0148") (unit 1)
+          (reference "#PWR0101") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/b522819c-7318-464a-82c8-e9514cdb3472"
-          (reference "#PWR0154") (unit 1)
+          (reference "#PWR0131") (unit 1)
         )
         (path "/6d7b782d-8b2e-4b40-a99f-4bf41187d978/353d5b2a-c681-4771-a3eb-42d12aea31d6"
-          (reference "#PWR0142") (unit 1)
+          (reference "#PWR095") (unit 1)
         )
       )
     )
