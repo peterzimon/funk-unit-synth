@@ -1151,6 +1151,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 089312e8-5831-4eab-b989-a5e73ab32893)
   )
+  (text "Send and return path can \nbe directly connected right\nbefore the main volumen pot."
+    (at 179.07 55.88 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 4859a0cc-9c8f-464f-b24b-37d4ea78a35b)
+  )
   (text "Max line out level\nSet to 2.8Vpp" (at 80.01 72.39 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 86fb0838-0246-40d3-9521-134a921130fb)
