@@ -76,9 +76,9 @@
 #define PITCH_BEND_SEMITONES        3 // Min. 1
 
 // UI
-#define MUX_BINARY_PIN_A            2
+#define MUX_BINARY_PIN_A            4
 #define MUX_BINARY_PIN_B            3
-#define MUX_BINARY_PIN_C            4
+#define MUX_BINARY_PIN_C            2
 #define MUX_BINARY_INPUT            8
 #define ADC_RING_LEN_PIN            26
 #define ADC_RING_LEN_CHANNEL        0
@@ -123,7 +123,7 @@ struct Settings
     const uint8_t voices = 6;
 
     const uint8_t reset_pins[VOICES] = {10, 11, 12, 13, 14, 15};
-    const uint8_t amp_pins[VOICES] = {16, 17, 18, 19, 20, 21};
+    const uint8_t amp_pins[VOICES] = {21, 20, 19, 18, 17, 16};
     const uint8_t voice_to_pio[VOICES] = {0, 0, 0, 0, 1, 1};
     const uint8_t voice_to_sm[VOICES] = {0, 1, 2, 3, 0, 1};
 
