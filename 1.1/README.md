@@ -1,17 +1,7 @@
-# Shmøergh Funk Live One — 6 voice paraphonic synthesizer
+# V1.1
 
-Shmøergh Funk Live One is a hybrid controlled (digital and analog) 6 voice 
-paraphonic analog synthesizer. It uses 6 DCOs which are controlled by a
-Raspberry Pi Pico.
-
-## Features
-
-- analog audio signal path
-- 6 digitally controlled oscillators (DCO)
-- digital ADSR using 12bit DAC
-- single VCA
-- paraphonic and monophonic modes
-- note release options for paraphonic mode
+- Added DC blocking to mixer inputs to avoid shifting waveforms by f=0Hz frequency DCOs
+- Decreased sawtooth and square mixer amplification to avoid distortion
 
 ## License & info
 
