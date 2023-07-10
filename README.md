@@ -16,7 +16,7 @@ started with synthesis.
 - 6 voices (DCOs) controlled by a Raspberry Pi Pico
 - Sawtooth, square, narrow pulse and fixed rate pulse with modulated square waveforms
 - Analog signal path
-- External filter connection with various modulation sources. Steiner-Parker
+- External filter connection with selectable various modulation sources (envelope, velocity, analog LFO, modwheel, keyboard tracking). Steiner-Parker
 filter schematics and PCB is included
 - 12bit digital ADSR with simplified envelope controls
 - Built-in analog VCA with optional external VCA connections
