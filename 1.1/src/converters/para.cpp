@@ -10,7 +10,7 @@ void Para::reset() {
     }
 
     m_reset = true;
-    m_debug();
+    //m_debug();
 }
 
 /**
@@ -84,7 +84,7 @@ void Para::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
         set_main_velocity(velocity);
         m_voice_millis[0] = Utils::millis();
         m_reset = false;
-        m_debug();
+        // m_debug();
         return;
     }
 
@@ -102,7 +102,7 @@ void Para::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
         m_distribute_notes();
     }
 
-    m_debug();
+    // m_debug();
 }
 
 /**
@@ -127,7 +127,7 @@ void Para::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
         }
     }
 
-    m_debug();
+    // m_debug();
 }
 
 /**
@@ -206,7 +206,7 @@ void Para::m_distribute_notes() {
         }
     }
 
-    m_debug();
+    // m_debug();
 }
 
 bool Para::m_last_note_playing(int note) {

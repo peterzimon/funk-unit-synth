@@ -36,7 +36,7 @@
                                         // it's maximised in about 2V (when velo = 127)
 
 // ADSR (all time values are in us)
-#define ATTACK_SHORT        1000
+#define ATTACK_SHORT        3500
 #define ATTACK_LONG         210000
 #define DECAY_SHORT         500000
 #define DECAY_MID           1500000

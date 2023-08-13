@@ -36,10 +36,10 @@ public:
     void init_dcos();
     void process();
 
-
     void note_on(uint8_t channel, uint8_t note, uint8_t velocity);
     void note_off(uint8_t channel, uint8_t note, uint8_t velocity);
     void pitch_bend(uint8_t channel, uint16_t bend);
+    void cc(uint8_t channel, uint8_t data1, uint8_t data2);
 
     // Settings
     void set_mode(device_mode mode);
@@ -75,6 +75,9 @@ private:
 
     uint8_t m_buffer_var[MIDI_BUFFER_SIZE];
     RingBuffer m_input_buffer;
+
+    uint8_t m_modwheel = 0;
+    uint8_t m_last_velocity = 0;
 
     UI &m_ui = UI::get_instance();
 
