@@ -102,6 +102,7 @@ void Synth::process() {
         set_detune(m_ui.switches[mux_switch::DETUNE]);
         set_solo(m_ui.switches[mux_switch::SOLO_CHORD]);
         set_velo_tracking(m_ui.switches[mux_switch::WAH_VELOCITY]);
+        set_kb_tracking(m_ui.switches[mux_switch::KB_TRACKING]);
 
         if (m_ui.synth_mode != settings.mode) {
             set_mode(m_ui.synth_mode);
@@ -122,7 +123,8 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     if (note < LOWEST_MIDI_NOTE) return;
     m_converter->note_on(channel, note, velocity);
     m_update_dcos();
-    m_update_filter_mod(m_converter->get_main_velocity());     // Only update KB tracking output on note on
+    m_last_velocity = m_converter->get_main_velocity();
+    m_update_filter_mod(m_last_velocity);     // Only update KB tracking output on note on
     m_last_midi_pitch_bend = 0;
 }
 
@@ -134,6 +136,13 @@ void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     if (note < LOWEST_MIDI_NOTE) return;
     m_converter->note_off(channel, note, velocity);
     m_update_dcos();
+}
+
+void Synth::cc(uint8_t channel, uint8_t data1, uint8_t data2) {
+    if (data1 == 1) { // CC value 1 = modwheel
+        m_modwheel = data2;
+    }
+    m_update_filter_mod(m_last_velocity);
 }
 
 /**
@@ -369,8 +378,6 @@ void Synth::m_update_envelope() {
 }
 
 void Synth::m_update_filter_mod(uint8_t velocity) {
-    if (!settings.kb_tracking && !settings.velo_tracking) return;
-
     int kb_mv = 0;
 
     if (settings.kb_tracking) {
@@ -380,11 +387,18 @@ void Synth::m_update_filter_mod(uint8_t velocity) {
         } else if (freq > KB_TRACK_MAX_FREQ) {
             freq = KB_TRACK_MAX_FREQ;
         }
-        kb_mv = Utils::map(freq, KB_TRACK_MIN_FREQ, KB_TRACK_MAX_FREQ, 0, FILTER_MOD_DAC_SIZE);
+        kb_mv = Utils::map(freq, KB_TRACK_MIN_FREQ, KB_TRACK_MAX_FREQ, 0, FILTER_MOD_DAC_SIZE - 1);
     }
 
     if (settings.velo_tracking) {
         kb_mv += velocity * VELO_FACTOR;
+    }
+
+    int modwheel_mv = Utils::map(m_modwheel, 0, 127, 0, FILTER_MOD_DAC_SIZE - 1);
+    kb_mv += modwheel_mv;
+
+    if (kb_mv >= FILTER_MOD_DAC_SIZE) {
+        kb_mv = FILTER_MOD_DAC_SIZE - 1;
     }
 
     m_dac.config(MCP48X2_CHANNEL_B, MCP48X2_GAIN_X2, 1);
