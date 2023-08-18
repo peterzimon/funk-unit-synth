@@ -141,6 +141,7 @@ void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
 void Synth::cc(uint8_t channel, uint8_t data1, uint8_t data2) {
     if (data1 == 1) { // CC value 1 = modwheel
         m_modwheel = data2;
+        printf("Modwheel: %d\n", data2);
     }
     m_update_filter_mod(m_last_velocity);
 }
@@ -401,6 +402,8 @@ void Synth::m_update_filter_mod(uint8_t velocity) {
         kb_mv = FILTER_MOD_DAC_SIZE - 1;
     }
 
+    printf("KB mv: %d\n", kb_mv);
+
     m_dac.config(MCP48X2_CHANNEL_B, MCP48X2_GAIN_X2, 1);
     m_dac.write(kb_mv);
 }
@@ -408,7 +411,7 @@ void Synth::m_update_filter_mod(uint8_t velocity) {
 void Synth::m_reset_filter_mod() {
     if (!settings.kb_tracking && !settings.velo_tracking) {
         m_dac.config(MCP48X2_CHANNEL_B, MCP48X2_GAIN_X2, 1);
-        m_dac.write(0);
+        m_dac.write(Utils::map(m_modwheel, 0, 127, 0, FILTER_MOD_DAC_SIZE - 1));
     }
 }
 

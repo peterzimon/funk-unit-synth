@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/peterzimon/Electronics/hog-f1-synth/schematics/kicad-6/boards/vcf/steiner-parker-vcf/steiner-parker-vcf.kicad_sch</source>
+    <date>2022 November 19, Saturday 06:35:18</date>
+    <tool>Eeschema (6.0.8-1)-1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Steiner-Parker LP VCF</title>
+        <company>Shmøergh</company>
+        <rev/>
+        <date>2022-04-01</date>
+        <source>steiner-parker-vcf.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>power.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/">
+      <title_block>
+        <title>Steiner-Parker VCF</title>
+        <company>Shmøergh</company>
+        <rev>1.0</rev>
+        <date>2022-04-02</date>
+        <source>vcf.kicad_sch</source>
+        <comment number="1" value="All resistors are 1% except when noted."/>
+        <comment number="2" value="Panel grounds to be star-linked on panel. See &quot;Power&quot; sheet for panel ground output."/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>100u</value>
+      <footprint>Shmoergh_Manual_PCB:CP_Radial_D5.0mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>12069d91-a754-4c0b-a51f-9a322f7230dc</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>100u</value>
+      <footprint>Shmoergh_Manual_PCB:CP_Radial_D5.0mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>68bbf040-29fb-4fd5-97f2-3308a0231163</tstamps>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3mm</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>00000000-0000-0000-0000-000062327253</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3mm</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>00000000-0000-0000-0000-00006232764a</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3mm</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>00000000-0000-0000-0000-000062327859</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3mm</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>00000000-0000-0000-0000-000062327a68</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Eurorack Power</value>
+      <footprint>Shmoergh_Manual_PCB:Eurorack_Power_Supply</footprint>
+      <libsource lib="Connector_Generic" part="Conn_02x05_Odd_Even" description="Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>00000000-0000-0000-0000-0000620580ed</tstamps>
+    </comp>
+    <comp ref="J_PANEL_GND2">
+      <value>Panel ground</value>
+      <footprint>Shmoergh_Manual_PCB:NSL25_01x02_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>00000000-0000-0000-0000-000062af7ebd</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>10</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>00000000-0000-0000-0000-000062744c64</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>10</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="File: sheets/power.kicad_sch"/>
+      <sheetpath names="/Power/" tstamps="/00000000-0000-0000-0000-0000627432e7/"/>
+      <tstamps>00000000-0000-0000-0000-000062745dcc</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>100n</value>
+      <footprint>Shmoergh_Manual_PCB:C_Disc_D5.0mm_W2.5mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769cfa</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>100n</value>
+      <footprint>Shmoergh_Manual_PCB:C_Disc_D5.0mm_W2.5mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769d02</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>470n (Foil)</value>
+      <footprint>Shmoergh_Manual_PCB:C_Foil_P5.48mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006302d26c</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>100n</value>
+      <footprint>Shmoergh_Manual_PCB:C_Disc_D5.0mm_W2.5mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769fca</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>100n</value>
+      <footprint>Shmoergh_Manual_PCB:C_Disc_D5.0mm_W2.5mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769fd2</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>10n</value>
+      <footprint>Shmoergh_Manual_PCB:C_Disc_D5.0mm_W2.5mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006276a02e</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>1n (Foil)</value>
+      <footprint>Shmoergh_Manual_PCB:C_Foil_P5.48mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769de8</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>2.2u</value>
+      <footprint>Shmoergh_Manual_PCB:CP_Radial_D5.0mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>76636591-5bf3-4ab6-8e83-9f39540c8156</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>1n (Foil)</value>
+      <footprint>Shmoergh_Manual_PCB:C_Foil_P5.48mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769df0</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>100u</value>
+      <footprint>Shmoergh_Manual_PCB:CP_Radial_D5.0mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>513c6040-32ed-4457-8b09-2446e2f79488</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>1n (Foil)</value>
+      <footprint>Shmoergh_Manual_PCB:C_Foil_P5.48mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769df6</tstamps>
+    </comp>
+    <comp ref="C14">
+      <value>100n</value>
+      <footprint>Shmoergh_Manual_PCB:C_Disc_D5.0mm_W2.5mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006276a003</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>100n</value>
+      <footprint>Shmoergh_Manual_PCB:C_Disc_D5.0mm_W2.5mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006276a011</tstamps>
+    </comp>
+    <comp ref="C16">
+      <value>100u</value>
+      <footprint>Shmoergh_Manual_PCB:CP_Radial_D5.0mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>013ca144-4e35-492c-b588-f886e4ac6f9c</tstamps>
+    </comp>
+    <comp ref="C17">
+      <value>470n</value>
+      <footprint>Shmoergh_Manual_PCB:C_Disc_D5.0mm_W2.5mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769ef1</tstamps>
+    </comp>
+    <comp ref="C18">
+      <value>1u (Foil)</value>
+      <footprint>Shmoergh_Manual_PCB:C_Foil_P5.48mm</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006302e1c8</tstamps>
+    </comp>
+    <comp ref="C19">
+      <value>10u</value>
+      <footprint>Shmoergh_Manual_PCB:CP_Radial_D5.0mm_P2.50mm</footprint>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>db42975e-8267-4403-a59a-8b04644db694</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e40</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e3a</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e33</tstamps>
+    </comp>
+    <comp ref="D4">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e2d</tstamps>
+    </comp>
+    <comp ref="D5">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006283bff6</tstamps>
+    </comp>
+    <comp ref="D6">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006283c5a6</tstamps>
+    </comp>
+    <comp ref="D7">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006283cc72</tstamps>
+    </comp>
+    <comp ref="D8">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006283d0ab</tstamps>
+    </comp>
+    <comp ref="D9">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006283d548</tstamps>
+    </comp>
+    <comp ref="D10">
+      <value>1N4148</value>
+      <footprint>Shmoergh_Manual_PCB:D_Axial-Vertical-NarrowPad</footprint>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-00006283daad</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x05_Male</value>
+      <footprint>Shmoergh_Manual_PCB:PinOut_01x05</footprint>
+      <libsource lib="Connector" part="Conn_01x05_Male" description="Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>2dae29bb-e478-4440-9aac-16a7305fb5f7</tstamps>
+    </comp>
+    <comp ref="JP_INT_EXT1">
+      <value>Internal/External CV</value>
+      <footprint>Shmoergh_Manual_PCB:PinOut_01x03</footprint>
+      <libsource lib="Jumper" part="Jumper_3_Open" description="Jumper, 3-pole, both open"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>55c735aa-6917-426f-af55-8c3f8e4c9042</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>BC547B</value>
+      <footprint>Shmoergh_Manual_PCB:TO-92_Inline_Wide</footprint>
+      <datasheet>https://www.onsemi.com/pub/Collateral/BC550-D.pdf</datasheet>
+      <libsource lib="Transistor_BJT" part="BC547" description="0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769da5</tstamps>
+    </comp>
+    <comp ref="Q2">
+      <value>BC547B</value>
+      <footprint>Shmoergh_Manual_PCB:TO-92_Inline_Wide</footprint>
+      <datasheet>https://www.onsemi.com/pub/Collateral/BC550-D.pdf</datasheet>
+      <libsource lib="Transistor_BJT" part="BC547" description="0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769dab</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>6.8k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769d21</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>15k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769d2a</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>10k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769ed1</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>180k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769ffa</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>100k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769d11</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>100k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769d49</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>10k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769ec4</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>47k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769ead</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>200k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769d54</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>180k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e9f</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>2.7k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769d5d</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>1.5k (1%)</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e46</tstamps>
+    </comp>
+    <comp ref="R17">
+      <value>2.2k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769d6a</tstamps>
+    </comp>
+    <comp ref="R18">
+      <value>100</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769dbb</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>390</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e7a</tstamps>
+    </comp>
+    <comp ref="R20">
+      <value>1k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e73</tstamps>
+    </comp>
+    <comp ref="R21">
+      <value>1k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e00</tstamps>
+    </comp>
+    <comp ref="R22">
+      <value>3.9k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769db5</tstamps>
+    </comp>
+    <comp ref="R23">
+      <value>200</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769dc1</tstamps>
+    </comp>
+    <comp ref="R24">
+      <value>1.5k (1%)</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769e4e</tstamps>
+    </comp>
+    <comp ref="R25">
+      <value>1k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769fb5</tstamps>
+    </comp>
+    <comp ref="R26">
+      <value>1M</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769ef7</tstamps>
+    </comp>
+    <comp ref="R27">
+      <value>22k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769f0b</tstamps>
+    </comp>
+    <comp ref="R28">
+      <value>47k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769f19</tstamps>
+    </comp>
+    <comp ref="R29">
+      <value>1M</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769fa1</tstamps>
+    </comp>
+    <comp ref="R30">
+      <value>10k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769f69</tstamps>
+    </comp>
+    <comp ref="R31">
+      <value>220k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769f99</tstamps>
+    </comp>
+    <comp ref="R32">
+      <value>10k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769f2d</tstamps>
+    </comp>
+    <comp ref="R33">
+      <value>100k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769f76</tstamps>
+    </comp>
+    <comp ref="R34">
+      <value>220k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769f43</tstamps>
+    </comp>
+    <comp ref="R35">
+      <value>1k</value>
+      <footprint>Shmoergh_Manual_PCB:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769f4d</tstamps>
+    </comp>
+    <comp ref="RV_BALANCE1">
+      <value>1k (precision)</value>
+      <footprint>Shmoergh_Manual_PCB:NSL25_01x03_Vertical</footprint>
+      <libsource lib="Device" part="R_Potentiometer_Trim" description="Trim-potentiometer"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>04939195-4847-41d7-8fc4-66fd5cca62b4</tstamps>
+    </comp>
+    <comp ref="RV_CUTOFF1">
+      <value>10k</value>
+      <footprint>Shmoergh_Manual_PCB:NSL25_01x03_Vertical</footprint>
+      <libsource lib="Device" part="R_Potentiometer" description="Potentiometer"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>57c3832d-56ab-4cf6-b1d9-5bc836a195e2</tstamps>
+    </comp>
+    <comp ref="RV_RESO_1">
+      <value>100k</value>
+      <footprint>Shmoergh_Manual_PCB:NSL25_01x03_Vertical</footprint>
+      <libsource lib="Device" part="R_Potentiometer" description="Potentiometer"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>61323471-04b9-4d7a-b980-afda42780fd6</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>TL072</value>
+      <footprint>Shmoergh_Manual_PCB:DIP-8_W7.62mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/tl071.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="TL072" description="Dual Low-Noise JFET-Input Operational Amplifiers, DIP-8/SOIC-8"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769ce8 00000000-0000-0000-0000-000062769ce2 00000000-0000-0000-0000-000062769cdc</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>TL074</value>
+      <footprint>Shmoergh_Manual_PCB:DIP-14_W7.62mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/tl071.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="TL074" description="Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"/>
+      <property name="Sheetname" value="VCF"/>
+      <property name="Sheetfile" value="File: sheets/vcf.kicad_sch"/>
+      <sheetpath names="/VCF/" tstamps="/00000000-0000-0000-0000-0000627485bb/"/>
+      <tstamps>00000000-0000-0000-0000-000062769fc0 00000000-0000-0000-0000-000062769f8b 00000000-0000-0000-0000-000062769f04 00000000-0000-0000-0000-000062769f34 00000000-0000-0000-0000-000062769eb5</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Amplifier_Operational" part="TL072">
+      <description>Dual Low-Noise JFET-Input Operational Amplifiers, DIP-8/SOIC-8</description>
+      <docs>http://www.ti.com/lit/ds/symlink/tl071.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>TO*99*</fp>
+        <fp>OnSemi*Micro8*</fp>
+        <fp>TSSOP*3x3mm*P0.65mm*</fp>
+        <fp>TSSOP*4.4x3mm*P0.65mm*</fp>
+        <fp>MSOP*3x3mm*P0.65mm*</fp>
+        <fp>SSOP*3.9x4.9mm*P0.635mm*</fp>
+        <fp>LFCSP*2x2mm*P0.5mm*</fp>
+        <fp>*SIP*</fp>
+        <fp>SOIC*5.3x6.2mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TL072</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/tl071.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="output"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="V-" type="power_in"/>
+        <pin num="5" name="+" type="input"/>
+        <pin num="6" name="-" type="input"/>
+        <pin num="7" name="" type="output"/>
+        <pin num="8" name="V+" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Amplifier_Operational" part="TL074">
+      <description>Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14</description>
+      <docs>http://www.ti.com/lit/ds/symlink/tl071.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x8.7mm*P1.27mm*</fp>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>TSSOP*4.4x5mm*P0.65mm*</fp>
+        <fp>SSOP*5.3x6.2mm*P0.65mm*</fp>
+        <fp>MSOP*3x3mm*P0.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TL074</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/tl071.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="output"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="V+" type="power_in"/>
+        <pin num="5" name="+" type="input"/>
+        <pin num="6" name="-" type="input"/>
+        <pin num="7" name="" type="output"/>
+        <pin num="8" name="" type="output"/>
+        <pin num="9" name="-" type="input"/>
+        <pin num="10" name="+" type="input"/>
+        <pin num="11" name="V-" type="power_in"/>
+        <pin num="12" name="+" type="input"/>
+        <pin num="13" name="-" type="input"/>
+        <pin num="14" name="" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x02_Male">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x05_Male">
+      <description>Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x05_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_02x05_Odd_Even">
+      <description>Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_2x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_02x05_Odd_Even</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Polarized">
+      <description>Polarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Polarized</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D">
+      <description>Diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Potentiometer">
+      <description>Potentiometer</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Potentiometer*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">RV</field>
+        <field name="Value">R_Potentiometer</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Potentiometer_Trim">
+      <description>Trim-potentiometer</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Potentiometer*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">RV</field>
+        <field name="Value">R_Potentiometer_Trim</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Jumper" part="Jumper_3_Open">
+      <description>Jumper, 3-pole, both open</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Jumper*</fp>
+        <fp>TestPoint*3Pads*</fp>
+        <fp>TestPoint*Bridge*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">Jumper_3_Open</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="C" type="passive"/>
+        <pin num="3" name="B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
+    <libpart lib="Transistor_BJT" part="BC547">
+      <description>0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92</description>
+      <docs>https://www.onsemi.com/pub/Collateral/BC550-D.pdf</docs>
+      <footprints>
+        <fp>TO?92*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">BC547</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-92_Inline</field>
+        <field name="Datasheet">https://www.onsemi.com/pub/Collateral/BC550-D.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C" type="passive"/>
+        <pin num="2" name="B" type="input"/>
+        <pin num="3" name="E" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Amplifier_Operational">
+      <uri>/Applications/KiCad 6/KiCad.app/Contents/SharedSupport/symbols//Amplifier_Operational.kicad_sym</uri>
+    </library>
+    <library logical="Connector">
+      <uri>/Applications/KiCad 6/KiCad.app/Contents/SharedSupport/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>/Applications/KiCad 6/KiCad.app/Contents/SharedSupport/symbols//Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Applications/KiCad 6/KiCad.app/Contents/SharedSupport/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="Jumper">
+      <uri>/Applications/KiCad 6/KiCad.app/Contents/SharedSupport/symbols//Jumper.kicad_sym</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>/Applications/KiCad 6/KiCad.app/Contents/SharedSupport/symbols//Mechanical.kicad_sym</uri>
+    </library>
+    <library logical="Transistor_BJT">
+      <uri>/Applications/KiCad 6/KiCad.app/Contents/SharedSupport/symbols//Transistor_BJT.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+12V">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="V+" pintype="power_in"/>
+      <node ref="U2" pin="4" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="2" name="-12V">
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="J1" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="J1" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R23" pin="2" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="V-" pintype="power_in"/>
+      <node ref="U2" pin="11" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="3" name="AUDIO_IN">
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="4" name="CV">
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="JP_INT_EXT1" pin="2" pinfunction="C" pintype="passive"/>
+    </net>
+    <net code="5" name="FEEDBACK_IN">
+      <node ref="C19" pin="2" pintype="passive"/>
+      <node ref="J2" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R33" pin="2" pintype="passive"/>
+      <node ref="RV_RESO_1" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="6" name="FEEDBACK_OUT">
+      <node ref="J2" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R30" pin="2" pintype="passive"/>
+      <node ref="R33" pin="1" pintype="passive"/>
+      <node ref="RV_RESO_1" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="7" name="GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J1" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="J1" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="J1" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="J1" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="J_PANEL_GND2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J_PANEL_GND2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="Q2" pin="2" pinfunction="B" pintype="input"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="R26" pin="2" pintype="passive"/>
+      <node ref="R27" pin="2" pintype="passive"/>
+      <node ref="R29" pin="2" pintype="passive"/>
+      <node ref="RV_RESO_1" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U1" pin="5" pinfunction="+" pintype="input"/>
+      <node ref="U2" pin="3" pinfunction="+" pintype="input"/>
+      <node ref="U2" pin="5" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="8" name="Net-(C1-Pad1)">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+    </net>
+    <net code="9" name="Net-(C2-Pad2)">
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(C5-Pad1)">
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+    </net>
+    <net code="11" name="Net-(C8-Pad1)">
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="U1" pin="1" pintype="output"/>
+    </net>
+    <net code="12" name="Net-(C8-Pad2)">
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="JP_INT_EXT1" pin="3" pinfunction="B" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="13" name="Net-(C9-Pad1)">
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="14" name="Net-(C10-Pad1)">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="RV_BALANCE1" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="15" name="Net-(C10-Pad2)">
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+    </net>
+    <net code="16" name="Net-(C11-Pad1)">
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="D5" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D6" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="17" name="Net-(C11-Pad2)">
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="R21" pin="1" pintype="passive"/>
+    </net>
+    <net code="18" name="Net-(C12-Pad1)">
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R20" pin="1" pintype="passive"/>
+    </net>
+    <net code="19" name="Net-(C13-Pad1)">
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="D7" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D8" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="20" name="Net-(C13-Pad2)">
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="R25" pin="2" pintype="passive"/>
+    </net>
+    <net code="21" name="Net-(C14-Pad1)">
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="R23" pin="1" pintype="passive"/>
+    </net>
+    <net code="22" name="Net-(C17-Pad1)">
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="R26" pin="1" pintype="passive"/>
+      <node ref="U2" pin="10" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="23" name="Net-(C18-Pad1)">
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="R32" pin="2" pintype="passive"/>
+    </net>
+    <net code="24" name="Net-(C18-Pad2)">
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="R28" pin="1" pintype="passive"/>
+      <node ref="R30" pin="1" pintype="passive"/>
+      <node ref="U2" pin="8" pintype="output"/>
+    </net>
+    <net code="25" name="Net-(C19-Pad1)">
+      <node ref="C19" pin="1" pintype="passive"/>
+      <node ref="R31" pin="1" pintype="passive"/>
+    </net>
+    <net code="26" name="Net-(D1-Pad1)">
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="Q1" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+    </net>
+    <net code="27" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="28" name="Net-(D2-Pad2)">
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="29" name="Net-(D4-Pad2)">
+      <node ref="D4" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D5" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="30" name="Net-(D6-Pad2)">
+      <node ref="D6" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D7" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="31" name="Net-(D8-Pad2)">
+      <node ref="D8" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D9" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="32" name="Net-(D10-Pad1)">
+      <node ref="D10" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D9" pin="2" pinfunction="A" pintype="passive"/>
+    </net>
+    <net code="33" name="Net-(D10-Pad2)">
+      <node ref="D10" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="Q2" pin="1" pinfunction="C" pintype="passive"/>
+      <node ref="R24" pin="2" pintype="passive"/>
+    </net>
+    <net code="34" name="Net-(JP_INT_EXT1-Pad1)">
+      <node ref="JP_INT_EXT1" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+    </net>
+    <net code="35" name="Net-(Q1-Pad2)">
+      <node ref="Q1" pin="2" pinfunction="B" pintype="input"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="U1" pin="7" pintype="output"/>
+    </net>
+    <net code="36" name="Net-(Q1-Pad3)">
+      <node ref="Q1" pin="3" pinfunction="E" pintype="passive"/>
+      <node ref="Q2" pin="3" pinfunction="E" pintype="passive"/>
+      <node ref="R22" pin="1" pintype="passive"/>
+    </net>
+    <net code="37" name="Net-(R3-Pad1)">
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="RV_CUTOFF1" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="38" name="Net-(R4-Pad1)">
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="RV_CUTOFF1" pin="3" pinfunction="3" pintype="passive"/>
+    </net>
+    <net code="39" name="Net-(R9-Pad2)">
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="RV_CUTOFF1" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="40" name="Net-(R11-Pad1)">
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="U2" pin="1" pintype="output"/>
+    </net>
+    <net code="41" name="Net-(R11-Pad2)">
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="42" name="Net-(R13-Pad1)">
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="43" name="Net-(R16-Pad1)">
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="RV_BALANCE1" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="44" name="Net-(R24-Pad1)">
+      <node ref="R24" pin="1" pintype="passive"/>
+      <node ref="RV_BALANCE1" pin="3" pinfunction="3" pintype="passive"/>
+    </net>
+    <net code="45" name="Net-(R25-Pad1)">
+      <node ref="R25" pin="1" pintype="passive"/>
+      <node ref="U2" pin="13" pinfunction="-" pintype="input"/>
+      <node ref="U2" pin="14" pintype="output"/>
+    </net>
+    <net code="46" name="Net-(R27-Pad1)">
+      <node ref="R27" pin="1" pintype="passive"/>
+      <node ref="R28" pin="2" pintype="passive"/>
+      <node ref="U2" pin="9" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="47" name="Net-(R29-Pad1)">
+      <node ref="R29" pin="1" pintype="passive"/>
+      <node ref="R31" pin="2" pintype="passive"/>
+      <node ref="U2" pin="12" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="48" name="Net-(R32-Pad1)">
+      <node ref="R32" pin="1" pintype="passive"/>
+      <node ref="R34" pin="2" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="49" name="Net-(R34-Pad1)">
+      <node ref="R34" pin="1" pintype="passive"/>
+      <node ref="R35" pin="2" pintype="passive"/>
+      <node ref="U2" pin="7" pintype="output"/>
+    </net>
+    <net code="50" name="OUTPUT">
+      <node ref="J2" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="R35" pin="1" pintype="passive"/>
+    </net>
+  </nets>
+</export>
