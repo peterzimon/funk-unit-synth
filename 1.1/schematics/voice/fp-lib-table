@@ -1,4 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "Shmoergh_Custom_Footprints")(type "KiCad")(uri "/Users/peterzimon/Shmoergh/brow/schematics/footprints/Shmoergh_Custom_Footprints.pretty")(options "")(descr ""))
-)

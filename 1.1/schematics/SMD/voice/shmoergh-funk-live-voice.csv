@@ -1,0 +1,11 @@
+Comment,Designator,Footprint,LCSC
+"100n","C1,C2,C3","Capacitor_SMD:C_0805_2012Metric","C49678"
+"4.7k","R1","PCM_Resistor_SMD_AKL:R_0805_2012Metric","C17673"
+"330k","R10","PCM_Resistor_SMD_AKL:R_0805_2012Metric","C17629"
+"15k","R12","PCM_Resistor_SMD_AKL:R_0805_2012Metric","C17475"
+"10k","R2,R13","PCM_Resistor_SMD_AKL:R_0805_2012Metric","C17414"
+"200k","R3,R7","PCM_Resistor_SMD_AKL:R_0805_2012Metric","C17539"
+"1k","R4","PCM_Resistor_SMD_AKL:R_0805_2012Metric","C17513"
+"2.2k","R5","PCM_Resistor_SMD_AKL:R_0805_2012Metric","C17520"
+"100k","R6,R11","PCM_Resistor_SMD_AKL:R_0805_2012Metric","C149504"
+"470k","R8,R9","PCM_Resistor_SMD_AKL:R_0805_2012Metric","C17709"
