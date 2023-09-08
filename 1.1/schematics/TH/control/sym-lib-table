@@ -1,5 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "MCU_RaspberryPi_and_Boards")(type "Legacy")(uri "/Users/peterzimon/Shmoergh/shmoergh-funk-live/1.1/schematics/_components/MCU_RaspberryPi_and_Boards.lib")(options "")(descr ""))
-  (lib (name "Shmoergh_Custom_Components")(type "Legacy")(uri "/Users/peterzimon/Shmoergh/shmoergh-funk-live/1.1/schematics/_components/Shmoergh_Custom_Components.lib")(options "")(descr ""))
-)
