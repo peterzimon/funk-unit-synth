@@ -389,6 +389,7 @@ void Synth::m_update_filter_mod(uint8_t velocity) {
             freq = KB_TRACK_MAX_FREQ;
         }
         kb_mv = Utils::map(freq, KB_TRACK_MIN_FREQ, KB_TRACK_MAX_FREQ, 0, FILTER_MOD_DAC_SIZE - 1);
+        kb_mv = (int)((float)kb_mv * KB_TRACK_FACTOR);
     }
 
     if (settings.velo_tracking) {

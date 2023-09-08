@@ -27,13 +27,13 @@
 #define ENVELOPE_DAC_SIZE   4096
 #define FILTER_MOD_DAC_SIZE 4096
 
-#define VELO_FACTOR         16          // Velocity is used to mod the filter (if it's
+#define VELO_FACTOR         24          // Velocity is used to mod the filter (if it's
                                         // turned on), with the formula:
                                         // Vmod = VELOCITY * VELO_FACTOR [mV]
                                         // (0 < VELOCITY < 127)
                                         // Since the max output is 4096mV and there
                                         // should be some space for other mod sources
-                                        // it's maximised in about 2V (when velo = 127)
+                                        // it's maximised in about 3V (when velo = 127)
 
 // ADSR (all time values are in us)
 #define ATTACK_SHORT        3500
@@ -49,17 +49,13 @@
 #define RELEASE_LONG_MIN    50              // * 100000 = min release in us
 #define RELEASE_LONG_MAX    300             // * 100000 = max release in us
 
-// Keyboard tracking. Note that keyboard tracking is always on and an analog
-// switch turns it on/off. This saves some logic
-#define KB_TRACKING_DAMP    90      // Simple multiplier to set the voltage of
-                                    // the DAC based on the incoming MIDI note's
-                                    // frequency:
-                                    // V = MIDI_NOTE_FREQ - KB_TRACKING_DAMP
-                                    // Given the maximum frequency is 4186Hz and
-                                    // the max output of the DAC is 4096mV, the
-                                    // ideal value for KB_TRACKING_DAMP is 90.
-#define KB_TRACK_MIN_FREQ   20
-#define KB_TRACK_MAX_FREQ   2000
+// Keyboard tracking. There's a min and max frequency in between keyboard is
+// tracked and changes the cutoff. Below it, tracking is off, above it it's
+// fully open. The factor sets how much tracking should open cutoff. This is
+// set so that at 1760Hz it sets the DAC to it's max value (4096/1760 = 2.32).
+#define KB_TRACK_MIN_FREQ   55
+#define KB_TRACK_MAX_FREQ   1760
+#define KB_TRACK_FACTOR     2.3
 
 // DAC
 #define DAC_SPI_PORT        spi0
@@ -73,7 +69,7 @@
 #define GP_MIDI_RX                  9
 #define MIDI_BAUDRATE               31250
 #define MIDI_OCTAVE_SHIFT           0 // Not implemented
-#define PITCH_BEND_SEMITONES        3 // Min. 1
+#define PITCH_BEND_SEMITONES        1 // Min. 1
 
 // UI
 #define MUX_BINARY_PIN_A            4
