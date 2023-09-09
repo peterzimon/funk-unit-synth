@@ -7,3 +7,6 @@
 [submodule "1.1/pico-lib"]
 	path = 1.1/pico-lib
 	url = git@github.com:peterzimon/pico-lib.git
+[submodule "1.1/schematics/kicad-libs"]
+	path = 1.1/schematics/kicad-libs
+	url = git@github.com:peterzimon/kicad-libs.git
