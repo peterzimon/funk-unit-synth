@@ -67,10 +67,12 @@ void UI::scan() {
     // Read ADC
     adc_select_input(ADC_RING_LEN_CHANNEL);
     uint16_t adc_read_value = adc_read();
+
     decay_long = Utils::map(adc_read_value >> 4, 0, 256, DECAY_LONG_MIN, DECAY_LONG_MAX);
     release_long = Utils::map(adc_read_value >> 4, 0, 256, RELEASE_LONG_MIN, RELEASE_LONG_MAX);
 
     adc_select_input(ADC_SYNTH_MODE_CHANNEL);
+
     synth_mode = static_cast<device_mode>(Utils::map(adc_read(), 0, 4096, 0, NO_OF_MODES));
 
     updated = true;
