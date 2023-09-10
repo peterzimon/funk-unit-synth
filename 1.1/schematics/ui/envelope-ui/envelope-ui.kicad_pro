@@ -179,6 +179,10 @@
         {
           "diameter": 0.0,
           "drill": 0.0
+        },
+        {
+          "diameter": 2.0,
+          "drill": 0.8
         }
       ],
       "zones_allow_external_fillets": false
@@ -406,7 +410,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "sound-source-ui.kicad_pro",
+    "filename": "envelope-ui.kicad_pro",
     "version": 1
   },
   "net_settings": {
