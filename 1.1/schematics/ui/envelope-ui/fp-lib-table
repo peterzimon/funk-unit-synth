@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Shmoergh_Custom_Footprints")(type "KiCad")(uri "/Users/peterzimon/Shmoergh/funk-unit-synth/1.1/schematics/kicad-libs/footprints/Shmoergh_Custom_Footprints.pretty")(options "")(descr ""))
+  (lib (name "Shmoergh_Manual_PCB_k6")(type "KiCad")(uri "/Users/peterzimon/Shmoergh/funk-unit-synth/1.1/schematics/kicad-libs/footprints/Shmoergh_Manual_PCB_k6.pretty")(options "")(descr ""))
+)
