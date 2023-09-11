@@ -1924,6 +1924,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 36094920-a28f-43be-9214-8d7f60284834)
   )
+  (text "The pins here are different than the one\non the first manufactured PCB. On the original\nthe reso in/out are duplicated instead of \nhaving +/-12V outputs. Check the kicad 6 version\nof this board in the Hog repo."
+    (at 290.83 157.48 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 45c0edec-36c0-4d7f-87f1-768100e5d7b0)
+  )
   (text "Usually around 10k" (at 261.62 78.74 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a7ebb645-f928-4a7b-89eb-f7bac14e53a4)
