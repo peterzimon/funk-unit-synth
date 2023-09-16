@@ -17,6 +17,9 @@ void UI::init() {
     gpio_set_dir(MUX_BINARY_PIN_C, GPIO_OUT);
     gpio_set_dir(MUX_BINARY_INPUT, GPIO_IN);
 
+    gpio_init(LED_CHORD);
+    gpio_set_dir(LED_CHORD, GPIO_OUT);
+
     gpio_pull_up(MUX_BINARY_INPUT);
 
     m_mux_step = 0;
@@ -36,6 +39,8 @@ void UI::init_scan() {
 
     adc_select_input(ADC_SYNTH_MODE_CHANNEL);
     release_long = adc_read();
+
+    m_btn_chord.init_gpio();
 }
 
 void UI::scan() {
@@ -81,6 +86,8 @@ void UI::scan() {
     if (m_btn_chord.is_released()) {
         chord_on = !chord_on;
     }
+
+    gpio_put(LED_CHORD, chord_on);
     // debug();
 }
 

@@ -129,29 +129,45 @@ void Synth::process() {
 */
 void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     if (note < LOWEST_MIDI_NOTE) return;
-    m_converter->note_on(channel, note, velocity);
-    m_update_dcos();
+
+    // When chord is ON, then fill the paraphonic player with the number of
+    // notes. If a new note is played, turn off the previous note.
+    if (m_ui.chord_on) {
+        chord_off();
+        m_converter->reset();
+
+        active_chord_base_note = note;
+        m_converter->note_on(channel, note, velocity);
+        for (int i = 1; i < m_no_of_chord_notes; i++) {
+            if (m_chord_notes[i] == -1) break;
+            int diff = m_chord_notes[i] - m_chord_notes[0];
+            uint8_t chord_note = note + diff;
+            m_converter->note_on(channel, chord_note, velocity);
+        }
+        m_update_dcos();
+    } else {
+        m_converter->note_on(channel, note, velocity);
+        m_update_dcos();
+
+        // Save played notes to history
+        if (!m_no_of_played_notes) {
+            m_reset_note_history();
+        }
+        if (m_history_records < VOICES) {
+            m_note_history[m_no_of_played_notes] = note;
+            m_history_records++;
+        }
+
+        m_notes_played[m_no_of_played_notes] = note;
+        m_increase_no_of_played_notes();
+    }
+
+    // Velocity
     m_last_velocity = m_converter->get_main_velocity();
     m_update_filter_mod(m_last_velocity);     // Only update KB tracking output on note on
+
+    // Pitch bend
     m_last_midi_pitch_bend = 0;
-
-    if (!m_no_of_played_notes) {
-        m_reset_note_history();
-    }
-    m_notes_played[m_no_of_played_notes] = note;
-
-    if (m_history_records < VOICES) {
-        m_note_history[m_no_of_played_notes] = note;
-        m_history_records++;
-    }
-    m_increase_no_of_played_notes();
-
-    printf("Notes played:\n");
-    for (int i = 0; i < VOICES; i++) {
-        printf("%d, ", m_notes_played[i]);
-    }
-    printf("\n---\n");
-
 }
 
 /**
@@ -160,22 +176,43 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 */
 void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     if (note < LOWEST_MIDI_NOTE) return;
-    m_converter->note_off(channel, note, velocity);
-    m_update_dcos();
-    m_remove_played_note(note);
-    m_decrease_no_of_played_notes();
+    if (m_ui.chord_on) {
+        m_converter->note_off(channel, note, velocity);
 
-    printf("Note history:\n");
-    for (int i = 0; i < VOICES; i++) {
-        printf("%d, ", m_note_history[i]);
+        for (int i = 1; i < m_no_of_chord_notes; i++) {
+            if (m_chord_notes[i] == -1) break;
+            int diff = m_chord_notes[i] - m_chord_notes[0];
+            uint8_t chord_note = note + diff;
+            m_converter->note_off(channel, chord_note, velocity);
+        }
+        m_update_dcos();
+    } else {
+        m_converter->note_off(channel, note, velocity);
+        m_update_dcos();
+        m_remove_played_note(note);
+        m_decrease_no_of_played_notes();
     }
-    printf("\n---\n");
+}
+
+void Synth::chord_off() {
+    if (active_chord_base_note != -1) {
+        m_converter->note_off(1, active_chord_base_note, 127);
+
+        for (int i = 1; i < m_no_of_chord_notes; i++) {
+            if (m_chord_notes[i] == -1) break;
+            int diff = m_chord_notes[i] - m_chord_notes[0];
+            uint8_t chord_note = active_chord_base_note + diff;
+            m_converter->note_off(1, chord_note, 127);
+        }
+
+        active_chord_base_note = -1;
+    }
 }
 
 void Synth::cc(uint8_t channel, uint8_t data1, uint8_t data2) {
     if (data1 == 1) { // CC value 1 = modwheel
         m_modwheel = data2;
-        printf("Modwheel: %d\n", data2);
+        // printf("Modwheel: %d\n", data2);
     }
     m_update_filter_mod(m_last_velocity);
 }
@@ -328,39 +365,14 @@ void Synth::m_update_dcos(void) {
             break;
 
         case PARA:
-            // Chordifier
-            // if (m_ui.chord_on) {
-            if (false) {
-                uint8_t used_voices = 0;
-                uint8_t voice = 0;
-                for (int played_note = 0; played_note < m_no_of_played_notes; played_note++) {
-                    for (int chord_note = 0; chord_note < m_no_of_chord_notes; chord_note++) {
-                        if (m_chord_notes[chord_note] != -1) {
-                            freq = 99; // @TODO: Get chord note
-                            voice = played_note * m_no_of_chord_notes + chord_note;
-                            // Test: played_note = 3  / chord_note = 2
-                            // 0 / 0 -> 0 * 2 + 0 -> 0
-                            // 0 / 1 -> 0 * 2 + 1 -> 1
-                            // 1 / 0 -> 1 * 2 + 0 -> 2
-                            // 1 / 1 -> 1 * 2 + 1 -> 3
-                            // 2 / 0 -> 2 * 2 + 0 -> 4
-                            // 2 / 1 -> 2 * 2 + 1 -> 5
-
-                            freqs[voice] = freq;
-                            amps[voice] = (int)(DIV_COUNTER * freq);
-                            used_voices++;
-                            if (used_voices >= VOICES) break;
-                        }
-                    }
-                }
-            } else {
-                for (int voice = 0; voice < VOICES; voice++) {
-                    freqs[voice] = m_converter->get_freq(voice);
-                    amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
-                }
+            for (int voice = 0; voice < VOICES; voice++) {
+                freqs[voice] = m_converter->get_freq(voice);
+                amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
             }
             break;
         }
+
+        // printf("m_voices: %d\n", m_voices);
 
         for (int voice = 0; voice < m_voices; voice++) {
             m_set_frequency(settings.pio[settings.voice_to_pio[voice]], settings.voice_to_sm[voice], freqs[voice]);
@@ -485,14 +497,12 @@ void Synth::m_increase_no_of_played_notes() {
     if (m_no_of_played_notes < VOICES) {
         m_no_of_played_notes++;
     }
-    printf("No of played notes (ON): %d\n", m_no_of_played_notes);
 }
 
 void Synth::m_decrease_no_of_played_notes() {
     if (m_no_of_played_notes > 0) {
         m_no_of_played_notes--;
     }
-    printf("No of played notes (OFF): %d\n", m_no_of_played_notes);
 }
 
 void Synth::m_remove_played_note(uint8_t note) {
@@ -537,14 +547,25 @@ void Synth::m_reset_chord_notes() {
 }
 
 void Synth::m_set_chord() {
+    if (settings.mode != PARA && m_ui.chord_on) {
+        m_ui.chord_on = false;
+        return;
+    }
+
     if (m_ui.chord_on) {
         if (!m_chord_set) {
+            m_no_of_chord_notes = 0;
             if (!m_no_of_played_notes) {
+
                 // Read notes from history
                 for (int i = 0; i < VOICES; i++) {
                     if (m_note_history[i] != -1) {
-                        m_chord_notes[i] = m_note_history[i];
+                        m_chord_notes[m_no_of_chord_notes] = m_note_history[i];
+                        m_no_of_chord_notes++;
                         m_chord_set = true;
+                        if (m_no_of_chord_notes >= VOICES) {
+                            break;
+                        }
                     }
                 }
 
@@ -553,17 +574,25 @@ void Synth::m_set_chord() {
                     m_ui.chord_on = false;
                 }
             } else {
-                m_no_of_chord_notes = 0;
-                for (int note = 0; note < NO_OF_MIDI_NOTES; note++) {
-                    if (m_notes_played[note]) {
-                        m_chord_notes[m_no_of_chord_notes] = note;
+                for (int i = 0; i < VOICES; i++) {
+                    if (m_notes_played[i] != -1) {
+                        m_chord_notes[m_no_of_chord_notes] = m_notes_played[i];
                         m_no_of_chord_notes++;
                         if (m_no_of_chord_notes >= VOICES) {
                             break;
                         }
                     }
                 }
+                active_chord_base_note = m_notes_played[0];
                 m_chord_set = true;
+            }
+
+            if (m_ui.chord_on) {
+                printf("Chord notes:\n");
+                for (int i = 0; i < m_no_of_chord_notes; i++) {
+                    printf("%d, ", m_chord_notes[i]);
+                }
+                printf("\n---\n");
             }
         }
     } else {

@@ -20,7 +20,8 @@
 #include "./converters/mono.h"
 
 #define MIDI_BUFFER_SIZE 32
-#define NO_OF_MIDI_NOTES 128
+#define MIDDLE_C 60
+#define TOP_NOTE 127
 
 const uint16_t DIV_COUNTER = 1250;
 
@@ -58,6 +59,7 @@ public:
     int m_history_records = 0;
     bool m_chord_set = false;
     int m_note_history[VOICES];
+    int active_chord_base_note = -1;
 
     void m_increase_no_of_played_notes();
     void m_decrease_no_of_played_notes();
@@ -65,6 +67,7 @@ public:
     void m_reset_chord_notes();
     void m_reset_note_history();
     void m_set_chord();
+    void chord_off();
 
 protected:
     Synth();
