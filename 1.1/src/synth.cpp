@@ -58,6 +58,7 @@ void Synth::set_mode(device_mode mode) {
         // Mono and fat mode uses the same converter, the diff is only the
         // number of voices played
         case MONO:
+            m_ui.chord_on = false;
             m_converter = &m_mono;
 
             // Reset all voices to 0V
@@ -67,6 +68,7 @@ void Synth::set_mode(device_mode mode) {
             break;
 
         case FAT_MONO:
+            m_ui.chord_on = false;
             m_converter = &m_mono;
             m_voices = FAT_MONO_VOICES;
 
@@ -77,6 +79,7 @@ void Synth::set_mode(device_mode mode) {
             break;
 
         case PARA:
+            m_ui.chord_on = false;
             m_converter = &m_para;
             m_voices = VOICES;
             m_converter->set_dirty(true);
@@ -177,6 +180,9 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     if (note < LOWEST_MIDI_NOTE) return;
     if (m_ui.chord_on) {
+        if (m_no_of_played_notes) {
+            m_no_of_played_notes = 0;
+        }
         m_converter->note_off(channel, note, velocity);
 
         for (int i = 1; i < m_no_of_chord_notes; i++) {
@@ -597,6 +603,7 @@ void Synth::m_set_chord() {
         }
     } else {
         if (m_chord_set) {
+            chord_off();
             m_reset_chord_notes();
         }
     }
