@@ -80,6 +80,8 @@
 #define ADC_RING_LEN_CHANNEL        0
 #define ADC_SYNTH_MODE_PIN          27
 #define ADC_SYNTH_MODE_CHANNEL      1
+#define BTN_CHORD                   22
+#define LED_CHORD                   28
 
 // Switches in the order how they're connected to the MUX
 #define NO_OF_SWITCHES              8

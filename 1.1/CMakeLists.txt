@@ -1,5 +1,5 @@
-file(GLOB FILES 
-        src/*.cpp src/*.h 
+file(GLOB FILES
+        src/*.cpp src/*.h
         src/converters/*.h src/converters/*.cpp)
 
 cmake_minimum_required(VERSION 3.22)
@@ -31,4 +31,5 @@ target_link_libraries(${PROJECT_NAME}
                         adsr
                         ringbuffer
                         midi_parser
-                        utils)
+                        utils
+                        ui_components)

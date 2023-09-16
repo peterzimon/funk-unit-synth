@@ -9,6 +9,7 @@
 #include "hardware/adc.h"
 #include "hardware/gpio.h"
 #include "settings.h"
+#include <button.h>
 
 // The UI doesn't have to be scanned in every processor cycle. To save processor
 // time define the number cycles for which the UI should not be scanned.
@@ -28,6 +29,7 @@ public:
     uint16_t release_long = RELEASE_LONG_MIN;
     uint16_t decay_long = DECAY_LONG_MIN;
     bool updated = true;
+    bool chord_on = false;
 
     void init();
     void init_scan();
@@ -39,6 +41,8 @@ protected:
 private:
     uint16_t m_mux_step = 0;
     int m_scan_cycle = 0;
+
+    Button m_btn_chord = Button(BTN_CHORD);
 
     void debug();
 };

@@ -25,6 +25,13 @@ void Synth::init(device_mode default_mode) {
 
     }
 
+    m_reset_note_history();
+    m_reset_chord_notes();
+
+    for (int i = 0; i < VOICES; i++) {
+        m_notes_played[i] = -1;
+    }
+
     set_mode(default_mode);
 
     // Set default ADSR (soft, hold, ring)
@@ -111,6 +118,7 @@ void Synth::process() {
 
     // Process synth
     m_read_midi();
+    m_set_chord();
     m_update_envelope();
     m_apply_mods();
 }
@@ -126,6 +134,13 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_last_velocity = m_converter->get_main_velocity();
     m_update_filter_mod(m_last_velocity);     // Only update KB tracking output on note on
     m_last_midi_pitch_bend = 0;
+
+    if (!m_no_of_played_notes) {
+        m_reset_note_history();
+    }
+    m_notes_played[m_no_of_played_notes] = note;
+    m_note_history[m_no_of_played_notes] = note;
+    m_increase_no_of_played_notes();
 }
 
 /**
@@ -136,6 +151,8 @@ void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     if (note < LOWEST_MIDI_NOTE) return;
     m_converter->note_off(channel, note, velocity);
     m_update_dcos();
+    m_remove_played_note(note);
+    m_decrease_no_of_played_notes();
 }
 
 void Synth::cc(uint8_t channel, uint8_t data1, uint8_t data2) {
@@ -294,9 +311,35 @@ void Synth::m_update_dcos(void) {
             break;
 
         case PARA:
-            for (int voice = 0; voice < VOICES; voice++) {
-                freqs[voice] = m_converter->get_freq(voice);
-                amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
+            // Chorder
+            if (m_ui.chord_on) {
+                uint8_t used_voices = 0;
+                uint8_t voice = 0;
+                for (int played_note = 0; played_note < m_no_of_played_notes; played_note++) {
+                    for (int chord_note = 0; chord_note < m_no_of_chord_notes; chord_note++) {
+                        if (m_chord_notes[chord_note] != -1) {
+                            freq = 99; // @TODO: Get chord note
+                            voice = played_note * m_no_of_chord_notes + chord_note;
+                            // Test: played_note = 3  / chord_note = 2
+                            // 0 / 0 -> 0 * 2 + 0 -> 0
+                            // 0 / 1 -> 0 * 2 + 1 -> 1
+                            // 1 / 0 -> 1 * 2 + 0 -> 2
+                            // 1 / 1 -> 1 * 2 + 1 -> 3
+                            // 2 / 0 -> 2 * 2 + 0 -> 4
+                            // 2 / 1 -> 2 * 2 + 1 -> 5
+
+                            freqs[voice] = freq;
+                            amps[voice] = (int)(DIV_COUNTER * freq);
+                            used_voices++;
+                            if (used_voices >= VOICES) break;
+                        }
+                    }
+                }
+            } else {
+                for (int voice = 0; voice < VOICES; voice++) {
+                    freqs[voice] = m_converter->get_freq(voice);
+                    amps[voice] = (int)(DIV_COUNTER * freqs[voice] / MAX_FREQ);
+                }
             }
             break;
         }
@@ -418,4 +461,93 @@ void Synth::m_reset_filter_mod() {
 
 float Synth::m_pitch_bend_freq(float freq, uint16_t pitch_bend) {
     return freq - (freq * ((0x2000 - pitch_bend) / (67000.0f / PITCH_BEND_SEMITONES)));
+}
+
+void Synth::m_increase_no_of_played_notes() {
+    if (m_no_of_played_notes < VOICES) {
+        m_no_of_played_notes++;
+    }
+}
+
+void Synth::m_decrease_no_of_played_notes() {
+    if (m_no_of_played_notes > 0) {
+        m_no_of_played_notes--;
+    }
+}
+
+void Synth::m_remove_played_note(uint8_t note) {
+    // Assume these notes are played: [4, 19, 7, 12, -1, -1]
+    int shift_from = 0;
+
+    // Let's remove note 7
+    for (int i = 0; i < VOICES; i++) {
+        if (m_notes_played[i] == note) {
+            m_notes_played[i] = -1;
+            shift_from = i; // 2
+            break;
+        }
+    }
+
+    // Shift all the notes with higher index in the notes array
+    if (shift_from) { // 2
+        for (int i = shift_from; i < VOICES - 1; i++) { // From 2 -> 6
+            m_notes_played[i + 1] = m_notes_played[i];
+
+            // 2: [4, 19, 7, 12, -1, -1]    -> [4, 19, 12, 12, -1, -1]
+            // 3: [4, 19, 12, 12, -1, -1]   -> [4, 19, 12, -1, -1, -1]
+            // 4: [4, 19, 12, -1, -1, -1]   -> [4, 19, 12, -1, -1, -1]
+            // 5: [4, 19, 12, -1, -1, -1]   -> [4, 19, 12, -1, -1, -1]
+        }
+        m_notes_played[VOICES] = -1; // Last note is always -1 if there was at least one shift
+    }
+}
+
+void Synth::m_reset_note_history() {
+    for (int i = 0; i < VOICES; i++) {
+        m_note_history[i] = -1;
+    }
+}
+
+void Synth::m_reset_chord_notes() {
+    for (int i = 0; i < VOICES; i++) {
+        m_chord_notes[i] = -1;
+    }
+    m_chord_set = false;
+}
+
+void Synth::m_set_chord() {
+    if (m_ui.chord_on) {
+        if (!m_chord_set) {
+            if (!m_no_of_played_notes) {
+                // Read notes from history
+                for (int i = 0; i < VOICES; i++) {
+                    if (m_note_history[i] != -1) {
+                        m_chord_notes[i] = m_note_history[i];
+                        m_chord_set = true;
+                    }
+                }
+
+                // Turn off chord if there's no notes to build a chord from
+                if (!m_chord_set) {
+                    m_ui.chord_on = false;
+                }
+            } else {
+                m_no_of_chord_notes = 0;
+                for (int note = 0; note < NO_OF_MIDI_NOTES; note++) {
+                    if (m_notes_played[note]) {
+                        m_chord_notes[m_no_of_chord_notes] = note;
+                        m_no_of_chord_notes++;
+                        if (m_no_of_chord_notes >= VOICES) {
+                            break;
+                        }
+                    }
+                }
+                m_chord_set = true;
+            }
+        }
+    } else {
+        if (m_chord_set) {
+            m_reset_chord_notes();
+        }
+    }
 }
