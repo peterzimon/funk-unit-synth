@@ -139,8 +139,19 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
         m_reset_note_history();
     }
     m_notes_played[m_no_of_played_notes] = note;
-    m_note_history[m_no_of_played_notes] = note;
+
+    if (m_history_records < VOICES) {
+        m_note_history[m_no_of_played_notes] = note;
+        m_history_records++;
+    }
     m_increase_no_of_played_notes();
+
+    printf("Notes played:\n");
+    for (int i = 0; i < VOICES; i++) {
+        printf("%d, ", m_notes_played[i]);
+    }
+    printf("\n---\n");
+
 }
 
 /**
@@ -153,6 +164,12 @@ void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     m_update_dcos();
     m_remove_played_note(note);
     m_decrease_no_of_played_notes();
+
+    printf("Note history:\n");
+    for (int i = 0; i < VOICES; i++) {
+        printf("%d, ", m_note_history[i]);
+    }
+    printf("\n---\n");
 }
 
 void Synth::cc(uint8_t channel, uint8_t data1, uint8_t data2) {
@@ -311,8 +328,9 @@ void Synth::m_update_dcos(void) {
             break;
 
         case PARA:
-            // Chorder
-            if (m_ui.chord_on) {
+            // Chordifier
+            // if (m_ui.chord_on) {
+            if (false) {
                 uint8_t used_voices = 0;
                 uint8_t voice = 0;
                 for (int played_note = 0; played_note < m_no_of_played_notes; played_note++) {
@@ -446,7 +464,7 @@ void Synth::m_update_filter_mod(uint8_t velocity) {
         kb_mv = FILTER_MOD_DAC_SIZE - 1;
     }
 
-    printf("KB mv: %d\n", kb_mv);
+    // printf("KB mv: %d\n", kb_mv);
 
     m_dac.config(MCP48X2_CHANNEL_B, MCP48X2_GAIN_X2, 1);
     m_dac.write(kb_mv);
@@ -467,12 +485,14 @@ void Synth::m_increase_no_of_played_notes() {
     if (m_no_of_played_notes < VOICES) {
         m_no_of_played_notes++;
     }
+    printf("No of played notes (ON): %d\n", m_no_of_played_notes);
 }
 
 void Synth::m_decrease_no_of_played_notes() {
     if (m_no_of_played_notes > 0) {
         m_no_of_played_notes--;
     }
+    printf("No of played notes (OFF): %d\n", m_no_of_played_notes);
 }
 
 void Synth::m_remove_played_note(uint8_t note) {
@@ -506,6 +526,7 @@ void Synth::m_reset_note_history() {
     for (int i = 0; i < VOICES; i++) {
         m_note_history[i] = -1;
     }
+    m_history_records = 0;
 }
 
 void Synth::m_reset_chord_notes() {

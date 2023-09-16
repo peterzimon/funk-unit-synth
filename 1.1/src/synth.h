@@ -51,6 +51,21 @@ public:
     void set_velo_tracking(bool velo_tracking);
     void set_adsr(bool soft, bool hold, bool ring);
 
+    int m_no_of_played_notes = 0;
+    int m_notes_played[VOICES];
+    int m_chord_notes[VOICES];
+    int m_no_of_chord_notes = 0;
+    int m_history_records = 0;
+    bool m_chord_set = false;
+    int m_note_history[VOICES];
+
+    void m_increase_no_of_played_notes();
+    void m_decrease_no_of_played_notes();
+    void m_remove_played_note(uint8_t note);
+    void m_reset_chord_notes();
+    void m_reset_note_history();
+    void m_set_chord();
+
 protected:
     Synth();
 
@@ -80,13 +95,6 @@ private:
     uint8_t m_modwheel = 0;
     uint8_t m_last_velocity = 0;
 
-    int m_notes_played[VOICES];
-    int m_no_of_played_notes = 0;
-    int m_chord_notes[VOICES];
-    int m_no_of_chord_notes = 0;
-    bool m_chord_set = false;
-    int m_note_history[VOICES];
-
     UI &m_ui = UI::get_instance();
 
     void m_read_midi();
@@ -99,13 +107,6 @@ private:
     void m_reset_filter_mod();
 
     float m_pitch_bend_freq(float freq, uint16_t pitch_bend);
-
-    void m_increase_no_of_played_notes();
-    void m_decrease_no_of_played_notes();
-    void m_remove_played_note(uint8_t note);
-    void m_reset_chord_notes();
-    void m_reset_note_history();
-    void m_set_chord();
 };
 
 #endif
