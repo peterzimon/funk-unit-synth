@@ -13,6 +13,8 @@
 #define PITCH_BEND_CENTER   0x2000
 #define BASE_NOTE           440.0f
 
+// const uint16_t DIV_COUNTER = 1250;
+
 class IConverter {
     public:
         IConverter();
@@ -32,6 +34,7 @@ class IConverter {
         virtual uint8_t get_main_velocity() { return m_main_velocity; }
 
         float frequency_from_midi_note(int note);
+        uint16_t amp_for_frequency(float freq);
         void update_pitch_bend(uint16_t bend);
 
 

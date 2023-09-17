@@ -19,3 +19,7 @@ void IConverter::update_pitch_bend(uint16_t bend) {
 float IConverter::frequency_from_midi_note(int note) {
     return pow(2, (note - 69) / 12.0f) * BASE_NOTE;
 }
+
+uint16_t IConverter::amp_for_frequency(float freq) {
+    return (int)(DIV_COUNTER * freq / MAX_FREQ);
+}

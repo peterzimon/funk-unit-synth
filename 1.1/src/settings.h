@@ -103,6 +103,9 @@ enum device_mode {
     PARA
 };
 
+// PWM division counter
+const uint16_t DIV_COUNTER = 1250;
+
 struct Settings
 {
     device_mode mode;

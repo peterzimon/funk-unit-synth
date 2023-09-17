@@ -17,6 +17,9 @@ void UI::init() {
     gpio_set_dir(MUX_BINARY_PIN_C, GPIO_OUT);
     gpio_set_dir(MUX_BINARY_INPUT, GPIO_IN);
 
+    gpio_init(BTN_CHORD);
+    gpio_set_dir(BTN_CHORD, GPIO_IN);
+    gpio_pull_up(BTN_CHORD);
     gpio_init(LED_CHORD);
     gpio_set_dir(LED_CHORD, GPIO_OUT);
 
@@ -39,11 +42,35 @@ void UI::init_scan() {
 
     adc_select_input(ADC_SYNTH_MODE_CHANNEL);
     release_long = adc_read();
-
-    m_btn_chord.init_gpio();
 }
 
 void UI::scan() {
+    // Read chord button
+    bool chord_is_pushed = !gpio_get(BTN_CHORD);
+
+    if (chord_is_pushed && !m_btn_chord_pushed) {
+        m_t_chord_pushed = Utils::millis();
+        m_btn_chord_pushed = true;
+    }
+
+    // Not a long press
+    if (m_btn_chord_pushed && !chord_is_pushed) {
+        uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
+        if (pushtime > 50 && pushtime < LONG_PRESS_MILLIS) {
+            chord_on = !chord_on;
+        }
+        m_btn_chord_pushed = false;
+
+    // Keep on pushing...
+    } else if (chord_is_pushed && chord_on) {
+        uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
+        if (pushtime >= LONG_PRESS_MILLIS) {
+            chord_on = false;
+            reset_chord = true;
+        }
+    }
+
+    gpio_put(LED_CHORD, chord_on);
 
     // Read switches (muxed). The CD4051 needs some time to settle after setting
     // the input address (X0...X7). This is a simple way to add a little delay
@@ -82,12 +109,6 @@ void UI::scan() {
 
     updated = true;
 
-    // Read chord button
-    if (m_btn_chord.is_released()) {
-        chord_on = !chord_on;
-    }
-
-    gpio_put(LED_CHORD, chord_on);
     // debug();
 }
 

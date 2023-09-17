@@ -23,7 +23,7 @@
 #define MIDDLE_C 60
 #define TOP_NOTE 127
 
-const uint16_t DIV_COUNTER = 1250;
+// const uint16_t DIV_COUNTER = 1250;
 
 class Synth: public MidiParser {
 public:
@@ -54,9 +54,10 @@ public:
 
     int m_no_of_played_notes = 0;
     int m_notes_played[VOICES];
-    int m_chord_notes[VOICES];
+    volatile int m_chord_notes[VOICES];
     int m_no_of_chord_notes = 0;
     int m_history_records = 0;
+    bool m_record_history = true;
     bool m_chord_set = false;
     int m_note_history[VOICES];
     int active_chord_base_note = -1;
