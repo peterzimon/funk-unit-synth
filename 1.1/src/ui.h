@@ -13,7 +13,7 @@
 
 // The UI doesn't have to be scanned in every processor cycle. To save processor
 // time define the number cycles for which the UI should not be scanned.
-#define SCAN_CYCLE 1000
+#define SCAN_CYCLE 100
 #define LONG_PRESS_MILLIS 1000
 
 class UI {

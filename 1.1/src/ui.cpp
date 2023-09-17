@@ -45,33 +45,6 @@ void UI::init_scan() {
 }
 
 void UI::scan() {
-    // Read chord button
-    bool chord_is_pushed = !gpio_get(BTN_CHORD);
-
-    if (chord_is_pushed && !m_btn_chord_pushed) {
-        m_t_chord_pushed = Utils::millis();
-        m_btn_chord_pushed = true;
-    }
-
-    // Not a long press
-    if (m_btn_chord_pushed && !chord_is_pushed) {
-        uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
-        if (pushtime > 50 && pushtime < LONG_PRESS_MILLIS) {
-            chord_on = !chord_on;
-        }
-        m_btn_chord_pushed = false;
-
-    // Keep on pushing...
-    } else if (chord_is_pushed && chord_on) {
-        uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
-        if (pushtime >= LONG_PRESS_MILLIS) {
-            chord_on = false;
-            reset_chord = true;
-        }
-    }
-
-    gpio_put(LED_CHORD, chord_on);
-
     // Read switches (muxed). The CD4051 needs some time to settle after setting
     // the input address (X0...X7). This is a simple way to add a little delay
     // to the whole scan cycle. Also note that it only works reliably if the
@@ -108,6 +81,33 @@ void UI::scan() {
     synth_mode = static_cast<device_mode>(Utils::map(adc_read(), 0, 4096, 0, NO_OF_MODES));
 
     updated = true;
+
+    // Read chord button
+    bool chord_is_pushed = !gpio_get(BTN_CHORD);
+
+    if (chord_is_pushed && !m_btn_chord_pushed) {
+        m_t_chord_pushed = Utils::millis();
+        m_btn_chord_pushed = true;
+    }
+
+    // Not a long press
+    if (m_btn_chord_pushed && !chord_is_pushed) {
+        uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
+        if (pushtime > 50 && pushtime < LONG_PRESS_MILLIS) {
+            chord_on = !chord_on;
+        }
+        m_btn_chord_pushed = false;
+
+    // Keep on pushing...
+    } else if (chord_is_pushed && chord_on) {
+        uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
+        if (pushtime >= LONG_PRESS_MILLIS) {
+            chord_on = false;
+            reset_chord = true;
+        }
+    }
+
+    gpio_put(LED_CHORD, chord_on);
 
     // debug();
 }
