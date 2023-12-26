@@ -64,6 +64,7 @@
 #define GP_DAC_CS           5
 
 // MIDI
+#define MIDI_CHANNEL                4
 #define OCTAVES                     10
 #define MIDI_UART_INSTANCE          uart1
 #define GP_MIDI_RX                  9
@@ -80,6 +81,7 @@
 #define ADC_RING_LEN_CHANNEL        0
 #define ADC_SYNTH_MODE_PIN          27
 #define ADC_SYNTH_MODE_CHANNEL      1
+#define ENABLE_CHORD_MEMORY         false
 #define BTN_CHORD                   22
 #define LED_CHORD                   28
 

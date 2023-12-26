@@ -119,7 +119,11 @@ void Synth::process() {
 
     // Process synth
     m_read_midi();
-    m_set_chord();
+
+    if (ENABLE_CHORD_MEMORY) {
+        m_set_chord();
+    }
+
     m_update_envelope();
     m_apply_mods();
 }
@@ -133,7 +137,7 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 
     // When chord is ON, then fill the paraphonic player with the number of
     // notes. If a new note is played, turn off the previous note.
-    if (m_ui.chord_on) {
+    if (ENABLE_CHORD_MEMORY && m_ui.chord_on) {
         chord_off();
         m_converter->reset();
         active_chord_base_note = note;
@@ -175,7 +179,7 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
 */
 void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
     if (note < LOWEST_MIDI_NOTE) return;
-    if (m_ui.chord_on) {
+    if (ENABLE_CHORD_MEMORY && m_ui.chord_on) {
         if (m_no_of_played_notes) {
             m_no_of_played_notes = 0;
         }

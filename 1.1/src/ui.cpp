@@ -17,11 +17,13 @@ void UI::init() {
     gpio_set_dir(MUX_BINARY_PIN_C, GPIO_OUT);
     gpio_set_dir(MUX_BINARY_INPUT, GPIO_IN);
 
-    gpio_init(BTN_CHORD);
-    gpio_set_dir(BTN_CHORD, GPIO_IN);
-    gpio_pull_up(BTN_CHORD);
-    gpio_init(LED_CHORD);
-    gpio_set_dir(LED_CHORD, GPIO_OUT);
+    if (ENABLE_CHORD_MEMORY) {
+        gpio_init(BTN_CHORD);
+        gpio_set_dir(BTN_CHORD, GPIO_IN);
+        gpio_pull_up(BTN_CHORD);
+        gpio_init(LED_CHORD);
+        gpio_set_dir(LED_CHORD, GPIO_OUT);
+    }
 
     gpio_pull_up(MUX_BINARY_INPUT);
 
@@ -83,31 +85,33 @@ void UI::scan() {
     updated = true;
 
     // Read chord button
-    bool chord_is_pushed = !gpio_get(BTN_CHORD);
+    if (ENABLE_CHORD_MEMORY) {
+        bool chord_is_pushed = !gpio_get(BTN_CHORD);
 
-    if (chord_is_pushed && !m_btn_chord_pushed) {
-        m_t_chord_pushed = Utils::millis();
-        m_btn_chord_pushed = true;
-    }
-
-    // Not a long press
-    if (m_btn_chord_pushed && !chord_is_pushed) {
-        uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
-        if (pushtime > 50 && pushtime < LONG_PRESS_MILLIS) {
-            chord_on = !chord_on;
+        if (chord_is_pushed && !m_btn_chord_pushed) {
+            m_t_chord_pushed = Utils::millis();
+            m_btn_chord_pushed = true;
         }
-        m_btn_chord_pushed = false;
 
-    // Keep on pushing...
-    } else if (chord_is_pushed && chord_on) {
-        uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
-        if (pushtime >= LONG_PRESS_MILLIS) {
-            chord_on = false;
-            reset_chord = true;
+        // Not a long press
+        if (m_btn_chord_pushed && !chord_is_pushed) {
+            uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
+            if (pushtime > 50 && pushtime < LONG_PRESS_MILLIS) {
+                chord_on = !chord_on;
+            }
+            m_btn_chord_pushed = false;
+
+        // Keep on pushing...
+        } else if (chord_is_pushed && chord_on) {
+            uint32_t pushtime = Utils::millis() - m_t_chord_pushed;
+            if (pushtime >= LONG_PRESS_MILLIS) {
+                chord_on = false;
+                reset_chord = true;
+            }
         }
-    }
 
-    gpio_put(LED_CHORD, chord_on);
+        gpio_put(LED_CHORD, chord_on);
+    }
 
     // debug();
 }
