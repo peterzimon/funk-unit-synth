@@ -77,10 +77,10 @@
 #define MUX_BINARY_PIN_B            3
 #define MUX_BINARY_PIN_C            2
 #define MUX_BINARY_INPUT            8
-#define ADC_RING_LEN_PIN            26
-#define ADC_RING_LEN_CHANNEL        0
-#define ADC_SYNTH_MODE_PIN          27
-#define ADC_SYNTH_MODE_CHANNEL      1
+#define ADC_RING_LEN_PIN            27
+#define ADC_RING_LEN_CHANNEL        1
+#define ADC_SYNTH_MODE_PIN          26
+#define ADC_SYNTH_MODE_CHANNEL      0
 #define ENABLE_CHORD_MEMORY         false
 #define BTN_CHORD                   22
 #define LED_CHORD                   28

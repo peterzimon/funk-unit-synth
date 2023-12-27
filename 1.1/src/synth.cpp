@@ -133,6 +133,8 @@ void Synth::process() {
  * was fired.
 */
 void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
+    if (channel != MIDI_CHANNEL) return;
+
     if (note < LOWEST_MIDI_NOTE) return;
 
     // When chord is ON, then fill the paraphonic player with the number of
@@ -178,6 +180,8 @@ void Synth::note_on(uint8_t channel, uint8_t note, uint8_t velocity) {
  * event was fired.
 */
 void Synth::note_off(uint8_t channel, uint8_t note, uint8_t velocity) {
+    if (channel != MIDI_CHANNEL) return;
+
     if (note < LOWEST_MIDI_NOTE) return;
     if (ENABLE_CHORD_MEMORY && m_ui.chord_on) {
         if (m_no_of_played_notes) {
@@ -215,6 +219,8 @@ void Synth::chord_off() {
 }
 
 void Synth::cc(uint8_t channel, uint8_t data1, uint8_t data2) {
+    if (channel != MIDI_CHANNEL) return;
+
     if (data1 == 1) { // CC value 1 = modwheel
         m_modwheel = data2;
     }
@@ -226,6 +232,8 @@ void Synth::cc(uint8_t channel, uint8_t data1, uint8_t data2) {
  * event was fired.
 */
 void Synth::pitch_bend(uint8_t channel, uint16_t bend) {
+    if (channel != MIDI_CHANNEL) return;
+
     // m_converter->update_pitch_bend(bend);
     // m_update_dcos();
 
